@@ -1,8 +1,8 @@
 ##  @file
 #   @brief A UFO Fleet simulation for Swift simulator. Modified from the original UFOFleet class for Matplotlib by Ho Minh Quang Ngo. 
 #   Tested on Ubuntu + Chrome.
-#   @author Adam Scicluna
-#   @date Jul 1, 2025
+#   @author Adam Scicluna, Gavin Paul
+#   @date May 29, 2026
 
 import numpy as np
 import spatialmath.base as spbase
@@ -72,8 +72,8 @@ class SwiftUFOFleet:
                 'id': i,
                 'base': ufo_base,
                 'health': self._max_health,
-                'normal_ufo': None,    # Normal colored UFO
-                'red_ufo': None,       # Red colored UFO  
+                'normal_ufo': None,    # Normal coloured UFO
+                'red_ufo': None,       # Red coloured UFO
                 'is_hit': False,       # Track hit state
                 'visible': True
             }

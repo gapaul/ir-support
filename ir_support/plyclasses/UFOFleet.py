@@ -1,7 +1,7 @@
 ##  @file
 #   @brief A UFO Fleet simulation.
-#   @author Ho Minh Quang Ngo
-#   @date Jul 4, 2023
+#   @author Ho Minh Quang Ngo, Gavin Paul
+#   @date May 29, 2026
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -160,7 +160,7 @@ class UFOFLeet:
                 self.ufo_list[index]['plot_object'].set_edgecolors((0.5,0.1,0.1, 0.8))
             plt.pause(0.1)
 
-            # Then get back to default color
+            # Then get back to default colour
             if self._plot_type == 'scatter':
                 self.ufo_list[index]['plot_object'].set_facecolors(self._ufo_plotdata['color'])
                 self.ufo_list[index]['plot_object'].set_edgecolors((0.23,0.23,0.21, 0.8))

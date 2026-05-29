@@ -1,7 +1,7 @@
 ##  @file
 #   @brief A 3D Robot Class defined by standard DH parameters.
-#   @author Ho Minh Quang Ngo
-#   @date Jul 20, 2023
+#   @author Ho Minh Quang Ngo, Gavin Paul
+#   @date May 29, 2026
 
 import swift
 import numpy as np
@@ -96,7 +96,7 @@ class DHRobot3D(rtb.DHRobot, ABC):
 
         link_transforms = self._get_transforms(self._qtest)
 
-        # Get relation matrix between the pose of the DH Link and the pose of the corresponding 3d object
+        # Get relation matrix between the pose of the DH Link and the pose of the corresponding 3D object
         self._relation_matrices = [np.linalg.inv(link_transforms[i]) @ self._qtest_transforms[i]
                                    for i in range(len(link_transforms))]
 
@@ -112,7 +112,7 @@ class DHRobot3D(rtb.DHRobot, ABC):
     # -----------------------------------------------------------------------------------#
     def _get_transforms(self,q)->List[np.ndarray]:
         """
-        Get the transform list represent each link
+        Get the transform list representing each link
         """
         transforms = [self.base.A]
         L = self.links
@@ -123,7 +123,7 @@ class DHRobot3D(rtb.DHRobot, ABC):
     # -----------------------------------------------------------------------------------#
     def add_to_env(self, env:swift.Swift)->None:
         """
-        Add the robot into a input Swift environment
+        Add the robot to an input Swift environment
         """
         if not isinstance(env, swift.Swift):
             raise TypeError('Environment must be Swift!')

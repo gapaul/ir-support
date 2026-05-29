@@ -1,3 +1,9 @@
+##  @file
+#   @brief A function to create an ellipsoid
+#
+#   @author Ho Minh Quang Ngo, Gavin Paul
+#   @date May 29, 2026
+
 import numpy as np
 import matplotlib.pyplot as plt
 from typing import Union, Optional, Tuple, List
@@ -15,7 +21,7 @@ def make_ellipsoid(
 
         :param ellipsoid_info: 1x3 array-like (ellipsoid radii) or 3x3 array (inversion of the ellipsoid matrix)
         :param center: center of the ellipsoid
-        :param color: color for ellipsoid
+        :param color: colour for ellipsoid
         :param u: list of azimuthal angle in spherical coordinates (optional)
         :param v: list of polar angle in spherical coordinates (optional)
         :param ax: axis to plot on (optional)

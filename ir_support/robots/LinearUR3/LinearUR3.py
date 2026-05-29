@@ -1,7 +1,7 @@
 ##  @file
 #   @brief Rough version of UR3 Robot on a linear rail defined by standard static DH parameters with 3D model
-#   @author Adam Scicluna
-#   @date August 23, 2025
+#   @author Adam Scicluna, Gavin Paul
+#   @date May 29, 2026
 
 import swift
 import roboticstoolbox as rtb
@@ -26,7 +26,7 @@ class LinearUR3(DHRobot3D):
         links = self._create_DH()
 
         # Names of the robot link files in the directory
-        link3D_names = dict(link0 = 'base_rail', color0 = (0.2,0.2,0.2,1),      # color option only takes effect for stl file
+        link3D_names = dict(link0 = 'base_rail', color0 = (0.2,0.2,0.2,1),      # colour option only takes effect for stl file
                             link1 = 'slider_rail', color1 = (0.1,0.1,0.1,1),
                             link2 = 'shoulder_ur3',
                             link3 = 'upperarm_ur3',
@@ -95,5 +95,4 @@ if __name__ == "__main__":
     r = LinearUR3()
     input("Press enter to test movement of LinearUR3")
     r.test()
-
 
