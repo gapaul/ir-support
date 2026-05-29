@@ -1,0 +1,8 @@
+# Development and CI test dependencies.
+#
+# rvc3python is installed here because IR Support is used alongside the
+# Robotics Toolbox stack in 41013, but it is not currently declared as a
+# package dependency in pyproject.toml.
+rvc3python
+pytest>=8.0,<9.0
+pytest-cov>=5.0,<6.0

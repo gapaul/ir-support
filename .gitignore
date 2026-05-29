@@ -18,6 +18,8 @@ MANIFEST
 *.spec
 .cache
 .ipynb_checkpoints
+.pytest_cache/
+pytest-cache-files-*/
 .python-version
 .vscode/
 env/
