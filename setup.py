@@ -1,4 +1,4 @@
-# DEPRECATED: This setup.py is deprecated and should not be used. Use pyproject.toml or other modern packaging tools instead.
+# DEPRECATED: This setup.py is deprecated and should not be used. Refer to pyproject.toml and use poetry instead.
 from setuptools import setup, find_packages
 
 setup(
@@ -28,7 +28,7 @@ setup(
         "spatialmath-python==1.1.8",
         "matplotlib==3.7.2",
     ],
-    url="https://github.com/H-M-Quang-Ngo/ir-support",
+    url="https://github.com/gapaul/ir-support",
     author="Quang Ngo",
     author_email="quang.ngohominh@gmail.com",
 )

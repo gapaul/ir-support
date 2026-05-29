@@ -11,7 +11,7 @@ authors = [
     "Quang Ngo <quang.ngohominh@gmail.com>",
     "Gavin Paul <gavin.paul-1@uts.edu.au>",
     "Adam Scicluna <Adam.Scicluna@uts.edu.au>",
-    "Khoa Nguyen <Khoa.Nguyen@uts.edu.au>"    
+    "Khoa Nguyen <Khoa.Nguyen@uts.edu.au>"
            ]
 packages = [{include = "ir_support"}]
 
@@ -40,4 +40,4 @@ pygame = "2.6.1"
 line_profiler = "4.2.0"
 
 [tool.poetry.urls]
-issues = "https://github.com/H-M-Quang-Ngo/ir-support"
+issues = "https://github.com/gapaul/ir-support"
