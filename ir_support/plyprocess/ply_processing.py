@@ -274,19 +274,11 @@ def transform_vertices(vertices: np.ndarray,
     NDArray of N-vertices of the object after transform (Nx3)
 
     """
-    num_vertices = np.size(vertices, 0)
-
-    ## To do a matrix multiplication, we have to change the vertices array into homogeneous form and transpose it
-    # Switch to homogeneous form
-    one_col = np.ones([num_vertices, 1])
-    new_vertices = np.hstack((vertices, one_col))
-    new_vertices = np.transpose(new_vertices)
-
-    # Do matrix multiplication
-    new_vertices = transform @ np.array(new_vertices)
-    new_vertices = np.transpose(new_vertices)
-
-    return new_vertices[:,:-1]
+    vertices = np.asarray(vertices, dtype=float)
+    transform = np.asarray(transform, dtype=float)
+    vertices_homogeneous = np.column_stack((vertices, np.ones(len(vertices))))
+    transformed_vertices = transform @ vertices_homogeneous.T
+    return transformed_vertices.T[:, :3]
 
 def move_object(scatter_object: Path3DCollection,
                 transform: np.ndarray) -> None:
@@ -301,18 +293,10 @@ def move_object(scatter_object: Path3DCollection,
     :type transform: SE3 Array
 
     """
-    # Get vertices of the object
-    vertices = get_vertices(scatter_object)
-    num_vertices = np.size(vertices, 0)
-
-    ## To do a matrix multiplication, we have to change the vertices array into homogeneous form and transpose it
-    # Switch to homogeneous form
-    one_col = np.ones([num_vertices, 1])
-    vertices = np.hstack((vertices, one_col))
-    vertices = np.transpose(vertices)
-
-    # Do matrix multiplication
-    vertices = transform @ np.array(vertices)
+    vertices = np.asarray(get_vertices(scatter_object), dtype=float)
+    transform = np.asarray(transform, dtype=float)
+    vertices = np.column_stack((vertices, np.ones(len(vertices)))).T
+    vertices = transform @ vertices
 
     # Update the object position
     scatter_object._offsets3d = (vertices[0, :], vertices[1, :], vertices[2, :])
@@ -323,11 +307,11 @@ def default_color_array(size: int) -> np.ndarray:
     """
     values = np.linspace(0, 1, size)
     # Create the colour array with RGB values
-    color = np.zeros((size, 3))
-    color[:, 0] = values  # Red component
-    color[:, 1] = 1-values   # Green component
-    color[:, 2] = 0.5  # Blue component
-    return color
+    colours = np.zeros((size, 3))
+    colours[:, 0] = values  # Red component
+    colours[:, 1] = 1-values   # Green component
+    colours[:, 2] = 0.5  # Blue component
+    return colours
 
 # ---------------------------------------------------------------------------------------#
 if __name__ == "__main__":
