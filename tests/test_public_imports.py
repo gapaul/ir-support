@@ -20,6 +20,7 @@ def test_public_class_imports():
 def test_public_ply_imports():
     from ir_support import (  # noqa: F401
         RobotCow,
+        SwiftParrotQuadrotor,
         SwiftUFOFleet,
         UFOFLeet,
         place_fence,
