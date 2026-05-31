@@ -16,11 +16,11 @@ def parse_args():
     if "--" not in sys.argv:
         raise SystemExit(
             "Usage: blender --background --python convert_ply_to_dae_blender.py -- "
-            "input.ply output.dae [--palette source|ur3e]"
+            "input.(ply|stl) output.dae [--palette source|ur3e]"
         )
     args = sys.argv[sys.argv.index("--") + 1 :]
     if len(args) not in (2, 4):
-        raise SystemExit("Expected input PLY and output DAE paths")
+        raise SystemExit("Expected input mesh and output DAE paths")
 
     palette = "source"
     if len(args) == 4:
@@ -39,11 +39,27 @@ def clear_scene():
     bpy.ops.object.delete()
 
 
-def import_ply(path):
+def import_mesh(path):
+    suffix = path.suffix.lower()
+    if suffix == ".stl":
+        if hasattr(bpy.ops.wm, "stl_import"):
+            bpy.ops.wm.stl_import(filepath=str(path))
+        else:
+            bpy.ops.import_mesh.stl(filepath=str(path))
+        return
+
+    if suffix != ".ply":
+        raise SystemExit(f"Unsupported mesh type: {path.suffix}")
+
     if hasattr(bpy.ops.wm, "ply_import"):
-        bpy.ops.wm.ply_import(filepath=str(path), import_colors="LINEAR")
-    else:
-        bpy.ops.import_mesh.ply(filepath=str(path))
+        try:
+            bpy.ops.wm.ply_import(filepath=str(path), import_colors="LINEAR")
+            return
+        except RuntimeError:
+            if not hasattr(bpy.ops, "import_mesh") or not hasattr(bpy.ops.import_mesh, "ply"):
+                raise
+
+    bpy.ops.import_mesh.ply(filepath=str(path))
 
 
 def repair_source_path(path, robot_name, link_index):
@@ -283,7 +299,7 @@ def main():
     robot_name, link_index = robot_link_from_path(input_path)
     source_path = repair_source_path(input_path, robot_name, link_index)
     clear_scene()
-    import_ply(source_path)
+    import_mesh(source_path)
     repair_imported_geometry(robot_name, link_index)
     assign_colour_materials(palette, robot_name, link_index)
     export_dae(output_path)
