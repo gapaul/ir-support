@@ -1,4 +1,5 @@
-# DEPRECATED: This setup.py is deprecated and should not be used. Refer to pyproject.toml and use poetry instead.
+# Kept for tools that still inspect setup.py metadata.
+# For package metadata and release builds, prefer pyproject.toml/Poetry.
 from setuptools import setup, find_packages
 
 setup(
