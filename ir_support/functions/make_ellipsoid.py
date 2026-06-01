@@ -1,3 +1,9 @@
+##  @file
+#   @brief A function to create an ellipsoid
+#
+#   @author Ho Minh Quang Ngo, Gavin Paul
+#   @date May 29, 2026
+
 import numpy as np
 import matplotlib.pyplot as plt
 from typing import Union, Optional, Tuple, List
@@ -14,15 +20,18 @@ def make_ellipsoid(
         Simple custom function to create an ellipsoid.
 
         :param ellipsoid_info: 1x3 array-like (ellipsoid radii) or 3x3 array (inversion of the ellipsoid matrix)
-        :param center: center of the ellipsoid
-        :param color: color for ellipsoid
+        :param center: centre of the ellipsoid
+        :param color: colour for ellipsoid
         :param u: list of azimuthal angle in spherical coordinates (optional)
         :param v: list of polar angle in spherical coordinates (optional)
         :param ax: axis to plot on (optional)
         :return surface object & tuple of mesh data (X, Y, Z)
         """
+        ellipsoid_info = np.asarray(ellipsoid_info, dtype=float)
+        center = np.asarray(center, dtype=float)
+
         if np.shape(ellipsoid_info) == (1, 3) or np.shape(ellipsoid_info) == (3,):
-            lengths = ellipsoid_info
+            lengths = ellipsoid_info.reshape(3)
             eigenvectors = np.eye(3)
         elif np.shape(ellipsoid_info) == (3, 3):
             eigenvalues, eigenvectors = np.linalg.eig(ellipsoid_info)
@@ -37,24 +46,16 @@ def make_ellipsoid(
             v = np.linspace(0, np.pi, 50)
 
         # Generate surface points of the ellipsoid
-        X = []
-        Y = []
-        Z = []
-        for phi in u:
-            for theta in v:
-                point = np.array([
-                    lengths[0] * np.cos(phi) * np.sin(theta),
-                    lengths[1] * np.sin(phi) * np.sin(theta),
-                    lengths[2] * np.cos(theta)
-                ])
-                rotated_point = np.dot(eigenvectors, point)
-                X.append(rotated_point[0] + center[0])
-                Y.append(rotated_point[1] + center[1])
-                Z.append(rotated_point[2] + center[2])
-
-        X = np.array(X).reshape(len(u), len(v))
-        Y = np.array(Y).reshape(len(u), len(v))
-        Z = np.array(Z).reshape(len(u), len(v))
+        phi, theta = np.meshgrid(u, v, indexing='ij')
+        local_points = np.stack((
+            lengths[0] * np.cos(phi) * np.sin(theta),
+            lengths[1] * np.sin(phi) * np.sin(theta),
+            lengths[2] * np.cos(theta)
+        ), axis=-1)
+        rotated_points = local_points @ eigenvectors.T
+        X = rotated_points[:, :, 0] + center[0]
+        Y = rotated_points[:, :, 1] + center[1]
+        Z = rotated_points[:, :, 2] + center[2]
 
         if is_plot:
             # Plot ellipsoid

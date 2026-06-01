@@ -1,9 +1,15 @@
+##  @file
+#   @brief A function to draw an ellipse given its foci
+#
+#   @author Ho Minh Quang Ngo, Gavin Paul
+#   @date May 29, 2026
+
 import numpy as np
 import matplotlib.pyplot as plt
 
 def draw_possible_ellipse_given_foci(focus1:np.ndarray, focus2:np.ndarray, a=None, ax=None):
     """
-    Simple custom function to draw an ellipse with 2 given focii
+    Simple custom function to draw an ellipse with 2 given foci
 
     Parameters
     ----------
@@ -12,7 +18,7 @@ def draw_possible_ellipse_given_foci(focus1:np.ndarray, focus2:np.ndarray, a=Non
     focus2 : np.ndarray
         Second focus of the ellipse
     a : float, optional
-        Default length for semi-major axis of the ellipse, by default 0.75 * distance between focii
+        Default length for semi-major axis of the ellipse, by default 0.75 * distance between foci
     ax : matplotlib.axes.Axes, optional
         Axes to plot the ellipse, by default None
     """

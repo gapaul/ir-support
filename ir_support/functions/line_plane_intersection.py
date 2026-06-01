@@ -1,3 +1,8 @@
+##  @file
+#   @brief Find the intersection between a line segment and a plane.
+#   @author Gavin Paul
+#   @date May 29, 2026
+
 import numpy as np
 from typing import Union, List, Tuple
 
@@ -24,25 +29,30 @@ def line_plane_intersection(plane_normal:Union[np.ndarray, List[float]],
         Second point on the line
     """
 
-    intersection_point = [0,0,0]
-    u = np.array(point2_on_line) - np.array(point1_on_line)
-    w = np.array(point1_on_line) - np.array(point_on_plane)
-    D = np.dot(np.array(plane_normal), u)
-    N = -np.dot(np.array(plane_normal), w)
+    plane_normal = np.asarray(plane_normal, dtype=float)
+    point_on_plane = np.asarray(point_on_plane, dtype=float)
+    point1_on_line = np.asarray(point1_on_line, dtype=float)
+    point2_on_line = np.asarray(point2_on_line, dtype=float)
+
+    intersection_point = np.zeros(3)
+    line_vector = point2_on_line - point1_on_line
+    plane_to_line = point1_on_line - point_on_plane
+    denominator = np.dot(plane_normal, line_vector)
+    numerator = -np.dot(plane_normal, plane_to_line)
     check = 0
 
-    if np.abs(D) < pow(10,-7):                          # The segment is parallel to plane
-        if N == 0:                                      # The segment lies in plane
+    if np.abs(denominator) < 1e-7:                      # The segment is parallel to plane
+        if np.isclose(numerator, 0):                    # The segment lies in plane
             check = 2
             return intersection_point, check
         else:
             return intersection_point, check            # No intersection
 
     # Compute the intersection parameter
-    sI = N/D
-    intersection_point = point1_on_line + sI * u
+    segment_fraction = numerator / denominator
+    intersection_point = point1_on_line + segment_fraction * line_vector
 
-    if sI < 0 or sI > 1:
+    if segment_fraction < 0 or segment_fraction > 1:
         check = 3                                       # The intersection point lies outside the segment, so there is no intersection
     else:
         check = 1

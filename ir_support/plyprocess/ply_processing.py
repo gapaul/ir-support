@@ -1,7 +1,7 @@
 ##  @file
-#   @brief This file contains the necessary functions for plotting ply file using plyfile package.
-#   @author Ho Minh Quang Ngo
-#   @date Jul 25, 2023
+#   @brief This file contains the necessary functions for plotting PLY files using the plyfile package.
+#   @author Ho Minh Quang Ngo, Gavin Paul
+#   @date May 29, 2026
 from typing import Optional, Union, List, Any
 import numpy as np
 import matplotlib.pyplot as plt
@@ -22,7 +22,7 @@ def place_object(ply_file_path: Optional[str] = None,
                  simplified: int = 1,
                  **kwargs: Any) -> Union[Path3DCollection, Poly3DCollection]:
     """
-    Read a ply file and plot that object into current active axes. If there is no current active axes, a new one is created
+    Read a PLY file and plot that object into the current active axes. If there is no current active axes, a new one is created
 
     Parameters
     ----------
@@ -30,23 +30,23 @@ def place_object(ply_file_path: Optional[str] = None,
     :type: string
     :param vertices: object's input vertices
     :type vertices: NDArray of N-vertices of the object (Nx3)
-    :param vertices_color: object's input vertices color
-    :type vertices_color: NDArray of N-vertex color of the object (Nx3)
+    :param vertices_color: object's input vertex colour
+    :type vertices_color: NDArray of N-vertex colour of the object (Nx3)
     :param faces: face data in form of vertex indices array
-    :type faces: NDAarray of face data - M faces x vertex index for each face
-    :param faces_color: color data for each fay
-    :type faces: NDAarray of face data color - N faces x color each face
+    :type faces: NDArray of face data - M faces x vertex index for each face
+    :param faces_color: colour data for each face
+    :type faces: NDArray of face data colour - N faces x colour for each face
     :param output: Output object type. 'scatter' for pointcloud or 'surface' for mesh object. Default to 'scatter'
     :param ax: current axes to plot on, default to None will create new 3D axes or plot on current active axes
-    :param simplified: factor for simplifying the mesh object (i.e simplified = 10 will reduces the number of faces 10 times)
-                       Applied for 'surface' output only. Cannot ensure coloring
+    :param simplified: factor for simplifying the mesh object (i.e simplified = 10 will reduce the number of faces 10 times)
+                       Applied for 'surface' output only. Cannot ensure colouring
 
     :kwargs: all attributes of the return object can go with set_ (i.e input 'sizes = 1', then it will do set_sizes(1))
 
     Return
     ----------
     an object of `mpl_toolkits.mplot3d.art3d.Path3DCollection` if default output
-    or `mpl_toolkits.mplot3d.art3d.Poly3DCollection`if 'surface' output
+    or `mpl_toolkits.mplot3d.art3d.Poly3DCollection` if 'surface' output
     """
 
     if ply_file_path is not None:
@@ -74,7 +74,7 @@ def place_object(ply_file_path: Optional[str] = None,
         existing_axes = plt.gcf().axes
         if len(existing_axes) == 0: # If no current axes, then create one
             ax = plt.gcf().add_subplot(projection = '3d')
-        else: # If there is a current axes, plot one that one
+        else: # If there is a current axes, plot on that one
             ax = plt.gca()
 
     # Warning if plotting on a 2D axes
@@ -107,18 +107,18 @@ def place_object(ply_file_path: Optional[str] = None,
 # ---------------------------------------------------------------------------------------#
 def get_ply_data(ply_file_path:str, simplified:float = 1):
     """
-    Read a ply file and get the vertices, faces and vertices color, faces color data
+    Read a PLY file and get the vertices, faces, vertex colour and face colour data
 
     Parameters
     ----------
     :param ply_file_path: directory to the ply file
     :type: string
-    :param simplified: factor for simplifying the mesh object (i.e simplified = 10 will reduces the number of faces 10 times)
-                    Applied for 'surface' output only. Cannot ensure coloring
+    :param simplified: factor for simplifying the mesh object (i.e simplified = 10 will reduce the number of faces 10 times)
+                    Applied for 'surface' output only. Cannot ensure colouring
 
     Return
     ----------
-    NDArray Nx3 vertices, NDArray Nx3 vertex color, NDArray Nx3 faces, NDArray Nx3 face colors
+    NDArray Nx3 vertices, NDArray Nx3 vertex colour, NDArray Nx3 faces, NDArray Nx3 face colours
     """
 
     # Read the PLY file
@@ -126,23 +126,23 @@ def get_ply_data(ply_file_path:str, simplified:float = 1):
 
     # Access the vertex data
     vertex_data = plydata['vertex']
-    is_vertex_color =  'red' in vertex_data and 'green' in vertex_data and 'blue' in vertex_data # Check whether the file contains color
+    is_vertex_color =  'red' in vertex_data and 'green' in vertex_data and 'blue' in vertex_data # Check whether the file contains colour
 
     # Extract the vertices as a NumPy array
     vertices = []
     vertices_color = []
     for vertex in vertex_data:
         vertices.append((vertex['x'], vertex['y'], vertex['z']))
-        if is_vertex_color: # If the file has color for vertices, retrieve the data
+        if is_vertex_color: # If the file has colour for vertices, retrieve the data
             vertices_color.append(([vertex['red'],vertex['green'],vertex['blue']]))
     vertices = np.array(vertices)
     vertices_color = np.array(vertices_color)
 
-    # Correct the colour, or set default color
-    if is_vertex_color: # If the color exists, try change them to 0-1 RGB range
+    # Correct the colour, or set a default colour
+    if is_vertex_color: # If the colour exists, try to change it to 0-1 RGB range
         if np.any(np.abs(vertices_color) > 1):
             vertices_color = vertices_color/255
-    else: # Else set a default color
+    else: # Else set a default colour
         vertices_color = default_color_array(np.size(vertices,0))
 
     # Get the face data in form of vertex-indices list
@@ -151,13 +151,13 @@ def get_ply_data(ply_file_path:str, simplified:float = 1):
     for indices in plydata['face']['vertex_indices']:
         faces.append(np.array(list(indices), dtype= int))
 
-    # Get the face color if exist
+    # Get the face colour if it exists
     faces_color = []
     is_faces_color = 'red' in plydata['face'] and 'green' in plydata['face'] and 'blue' in plydata['face']
 
     if is_faces_color:
         faces_color = np.column_stack((plydata['face']['red'], plydata['face']['green'], plydata['face']['blue']))
-        # Correct the face color:
+        # Correct the face colour:
         if np.any(np.abs(faces_color) > 1):
             faces_color = faces_color/255
     # elif is_vertex_color:
@@ -274,19 +274,11 @@ def transform_vertices(vertices: np.ndarray,
     NDArray of N-vertices of the object after transform (Nx3)
 
     """
-    num_vertices = np.size(vertices, 0)
-
-    ## To do a matrix multiplication, we have to change the vertices array into homogeneous form and transpose it
-    # Switch to homogeneous form
-    one_col = np.ones([num_vertices, 1])
-    new_vertices = np.hstack((vertices, one_col))
-    new_vertices = np.transpose(new_vertices)
-
-    # Do matrix multiplication
-    new_vertices = transform @ np.array(new_vertices)
-    new_vertices = np.transpose(new_vertices)
-
-    return new_vertices[:,:-1]
+    vertices = np.asarray(vertices, dtype=float)
+    transform = np.asarray(transform, dtype=float)
+    vertices_homogeneous = np.column_stack((vertices, np.ones(len(vertices))))
+    transformed_vertices = transform @ vertices_homogeneous.T
+    return transformed_vertices.T[:, :3]
 
 def move_object(scatter_object: Path3DCollection,
                 transform: np.ndarray) -> None:
@@ -301,33 +293,25 @@ def move_object(scatter_object: Path3DCollection,
     :type transform: SE3 Array
 
     """
-    # Get vertices of the object
-    vertices = get_vertices(scatter_object)
-    num_vertices = np.size(vertices, 0)
-
-    ## To do a matrix multiplication, we have to change the vertices array into homogeneous form and transpose it
-    # Switch to homogeneous form
-    one_col = np.ones([num_vertices, 1])
-    vertices = np.hstack((vertices, one_col))
-    vertices = np.transpose(vertices)
-
-    # Do matrix multiplication
-    vertices = transform @ np.array(vertices)
+    vertices = np.asarray(get_vertices(scatter_object), dtype=float)
+    transform = np.asarray(transform, dtype=float)
+    vertices = np.column_stack((vertices, np.ones(len(vertices)))).T
+    vertices = transform @ vertices
 
     # Update the object position
     scatter_object._offsets3d = (vertices[0, :], vertices[1, :], vertices[2, :])
 
 def default_color_array(size: int) -> np.ndarray:
     """
-    Create an array of size x 3 RGB color [0-1]
+    Create an array of size x 3 RGB colour [0-1]
     """
     values = np.linspace(0, 1, size)
-    # Create the color array with RGB values
-    color = np.zeros((size, 3))
-    color[:, 0] = values  # Red component
-    color[:, 1] = 1-values   # Green component
-    color[:, 2] = 0.5  # Blue component
-    return color
+    # Create the colour array with RGB values
+    colours = np.zeros((size, 3))
+    colours[:, 0] = values  # Red component
+    colours[:, 1] = 1-values   # Green component
+    colours[:, 2] = 0.5  # Blue component
+    return colours
 
 # ---------------------------------------------------------------------------------------#
 if __name__ == "__main__":

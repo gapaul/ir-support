@@ -1,7 +1,7 @@
 ##  @file
 #   @brief UR5 Robot on a Linear rail defined by standard DH parameters with 3D model
-#   @author Ho Minh Quang Ngo
-#   @date Jul 20, 2023
+#   @author Ho Minh Quang Ngo, Gavin Paul
+#   @date May 29, 2026
 
 import swift
 import roboticstoolbox as rtb
@@ -26,7 +26,7 @@ class LinearUR5(DHRobot3D):
         links = self._create_DH()
 
         # Names of the robot link files in the directory
-        link3D_names = dict(link0 = 'base_rail', color0 = (0.2,0.2,0.2,1),      # color option only takes effect for stl file
+        link3D_names = dict(link0 = 'base_rail', color0 = (0.2,0.2,0.2,1),      # colour option only takes effect for stl file
                             link1 = 'slider_rail', color1 = (0.1,0.1,0.1,1),
                             link2 = 'shoulder_ur5',
                             link3 = 'upperarm_ur5',

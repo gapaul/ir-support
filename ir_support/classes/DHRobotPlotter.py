@@ -1,3 +1,9 @@
+##  @file
+#   @brief A class to create a 3D Robot defined by standard DH parameters, that can be displayed in the `Swift` simulator.
+#
+#   @author Ho Minh Quang Ngo, Gavin Paul
+#   @date May 29, 2026
+
 import roboticstoolbox as rtb
 import numpy as np
 from spatialgeometry import Cylinder
@@ -15,17 +21,17 @@ class CylindricalDHRobotPlot:
         self.cylinder_radius = cylinder_radius
         self.multicolor = multicolor
         
-        # Handle color options
+        # Handle colour options
         if multicolor:
             self.colors = self._generate_color_palette(len(robot.links))
         elif isinstance(color, list):
             self.colors = color
         else:
-            self.colors = [color]  # Single color for all links
+            self.colors = [color]  # Single colour for all links
 
         
     def _generate_color_palette(self, num_colors):
-        """Generate a distinct color palette for multi-colored links"""
+        """Generate a distinct colour palette for multicoloured links"""
         import colorsys
         
         colors = []
@@ -34,7 +40,7 @@ class CylindricalDHRobotPlot:
             saturation = 0.8
             value = 0.9
             rgb = colorsys.hsv_to_rgb(hue, saturation, value)
-            # Convert to hex or named color for Swift
+            # Convert to hex or named colour for Swift
             hex_color = '#{:02x}{:02x}{:02x}'.format(
                 int(rgb[0]*255), int(rgb[1]*255), int(rgb[2]*255)
             )
@@ -133,7 +139,7 @@ class CylindricalDHRobotPlot:
         # Create transformation matrix in local coordinates
         cylinder_pose = SE3.Rt(rotation, center)
         
-        # Use provided color or default
+        # Use provided colour or default
         if color is None:
             color = self.colors[0] if self.colors else "#3478f6"
         

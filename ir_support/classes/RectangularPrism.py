@@ -1,3 +1,8 @@
+##  @file
+#   @brief Utility class for rectangular-prism collision geometry.
+#   @author 41013 Teaching Team, Gavin Paul
+#   @date May 29, 2026
+
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
@@ -23,7 +28,7 @@ class RectangularPrism:
         self.width = width
         self.length = length
         self.height = height
-        self.center = center
+        self.center = np.asarray(center, dtype=float)
         self.color = color
         self.options = []
 
@@ -36,22 +41,18 @@ class RectangularPrism:
         self._plot_prism()
 
     def _calculate_vertices(self):
-        vertices = np.zeros((8, 3))
-        vertices[1] = [self.width, 0, 0]
-        vertices[2] = [self.width, self.length, 0]
-        vertices[3] = [0, self.length, 0]
-        vertices[4] = [0, 0, self.height]
-        vertices[5] = [self.width, 0, self.height]
-        vertices[6] = [self.width, self.length, self.height]
-        vertices[7] = [0, self.length, self.height]
-
-        # Shift vertices based on the center point
-        vertices -= np.array([self.width/2, self.length/2, self.height/2])  # Subtract half of width, length, and height
-
-        # Translate the vertices to the specified center
-        vertices += np.array(self.center)
-
-        return vertices
+        extents = np.array([self.width, self.length, self.height], dtype=float)
+        vertices = np.array([
+            [0, 0, 0],
+            [self.width, 0, 0],
+            [self.width, self.length, 0],
+            [0, self.length, 0],
+            [0, 0, self.height],
+            [self.width, 0, self.height],
+            [self.width, self.length, self.height],
+            [0, self.length, self.height],
+        ], dtype=float)
+        return vertices - extents / 2 + self.center
 
     def _calculate_faces(self):
         faces = [
@@ -65,13 +66,13 @@ class RectangularPrism:
         return faces
 
     def _calculate_normals(self):
-        normals = []
-        for face in self._faces:
-            v1 = self._vertices[face[1]] - self._vertices[face[0]]
-            v2 = self._vertices[face[2]] - self._vertices[face[1]]
-            normal = np.cross(v1, v2)
-            normals.append(normal)
-        return normals
+        return [
+            np.cross(
+                self._vertices[face[1]] - self._vertices[face[0]],
+                self._vertices[face[2]] - self._vertices[face[1]]
+            )
+            for face in self._faces
+        ]
 
     def _plot_prism(self):
         existing_axes = plt.gcf().axes

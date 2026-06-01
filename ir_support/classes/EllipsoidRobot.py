@@ -1,7 +1,10 @@
-# Require libraries
+##  @file
+#   @brief Generate and animate link ellipsoids for DH robots.
+#   @author 41013 Teaching Team, Gavin Paul
+#   @date May 29, 2026
+
 from typing import Optional, Union
 from roboticstoolbox.backends import PyPlot
-from scipy import linalg
 from ir_support.functions import make_ellipsoid
 import numpy as np
 import matplotlib.pyplot as plt
@@ -40,11 +43,11 @@ class EllipsoidRobot:
             self.robot = robot
         else:
             raise TypeError('Invalid input robot type. Requires DHRobot!')
-        if q == None:
+        if q is None:
             self.q = robot.q
         else:
             self.q = q
-        if fig == None or not isinstance(fig, PyPlot.PyPlot):
+        if fig is None or not isinstance(fig, PyPlot.PyPlot):
             warnings.warn("No input figure or invalid input figure. Use the robot's plot method instead")
             self.fig = robot.plot(self.q)
         else:
@@ -80,13 +83,16 @@ class EllipsoidRobot:
             ax2 = ellipsoid['ax2']
             ax3 = ellipsoid['ax3']
 
-            # Normalize ax1, ax2, ax3 if their norms are not zero
-            if linalg.norm(ax1) != 0:
-                ax1 = ax1 / linalg.norm(ax1)
-            if linalg.norm(ax2) != 0:
-                ax2 = ax2 / linalg.norm(ax2)
-            if linalg.norm(ax3) != 0:
-                ax3 = ax3 / linalg.norm(ax3)
+            # Normalise ax1, ax2, ax3 if their norms are not zero
+            ax1_norm = np.linalg.norm(ax1)
+            ax2_norm = np.linalg.norm(ax2)
+            ax3_norm = np.linalg.norm(ax3)
+            if ax1_norm != 0:
+                ax1 = ax1 / ax1_norm
+            if ax2_norm != 0:
+                ax2 = ax2 / ax2_norm
+            if ax3_norm != 0:
+                ax3 = ax3 / ax3_norm
 
             axes_matrix = np.column_stack((ax1, ax2, ax3))
             diagonal_matrix = np.diag(np.square([np.linalg.norm(ellipsoid['ax1']/2),
@@ -184,7 +190,7 @@ class EllipsoidRobot:
     # ---------------------------------------------------------------------------------------#
     def get_ellipsoid_parameters(self, link_index: int):
         """
-        Get center point, orientation matrix, and radii for a given link's ellipsoid.
+        Get centre point, orientation matrix, and radii for a given link's ellipsoid.
 
         Parameters
         ----------
@@ -194,7 +200,7 @@ class EllipsoidRobot:
         Returns
         -------
         center_point : np.ndarray
-            Translation vector [xc, yc, zc]
+            Centre translation vector [xc, yc, zc]
         R : np.ndarray
             3x3 orientation matrix (columns are principal axes)
         radii : np.ndarray

@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "ir-support-extra-robots"
+version = "0.1.0"
+description = "Optional robot model pack for ir-support."
+authors = ["41013 Robotics"]
+readme = "README.md"
+packages = [{include = "ir_support_extra_robots"}]
+include = ["ir_support_extra_robots/**/*.dae", "ir_support_extra_robots/**/*.md"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+ir-support = ">=1.2.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
