@@ -1,4 +1,5 @@
-﻿pandas>=2.0.3,<2.2.2
+﻿# DEPRECATED: This requirements.txt is deprecated and should not be used. Refer to pyproject.toml and use poetry instead.
+pandas>=2.0.3,<2.2.2
 trimesh>=4.0.0,<4.4.4
 plyfile>=1.0.1,<1.0.2
 keyboard>=0.13.5
