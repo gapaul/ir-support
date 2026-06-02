@@ -92,6 +92,34 @@ files = [
 ]
 
 [[package]]
+name = "bdsim"
+version = "1.2.2"
+description = "Simulate dynamic systems expressed in block diagram form using Python"
+optional = false
+python-versions = ">=3.7"
+groups = ["main"]
+files = [
+    {file = "bdsim-1.2.2-py3-none-any.whl", hash = "sha256:2a7427a9cd6432c931ff3d338955c9ee1db2748a3b26ce685159f7aa3af9fbff"},
+    {file = "bdsim-1.2.2.tar.gz", hash = "sha256:65a4c6a38b4a17cd2103bff808480844e55c756c3e33acd07971fc4b96b57aeb"},
+]
+
+[package.dependencies]
+ansitable = "*"
+matplotlib = "*"
+numpy = ">=1.17.4"
+progress = "*"
+scipy = "*"
+spatialmath-python = "*"
+
+[package.extras]
+all = ["ipympl", "ipywidgets", "pillow", "pyside6"]
+bdedit = ["pillow", "pyside6"]
+bdweb = ["fastapi (>=0.111)", "uvicorn[standard] (>=0.29)"]
+dev = ["coverage", "flake8", "ipython", "pytest", "pytest-qt", "pytest-timeout", "pytest-xvfb", "sympy"]
+docs = ["sphinx", "sphinx-autodoc-typehints", "sphinx-favicon", "sphinx-rtd-theme", "sphinxcontrib-jquery"]
+jupyter = ["ipympl", "ipywidgets"]
+
+[[package]]
 name = "blinker"
 version = "1.8.2"
 description = "Fast, simple object-to-object and broadcast signaling"
@@ -1071,6 +1099,73 @@ tests = ["coverage[toml] (>=6.1.1) ; python_version == \"3.6\"", "coverage[toml]
 tests-strict = ["coverage[toml] (==6.1.1) ; python_version == \"3.6\"", "coverage[toml] (==6.5.0) ; python_version < \"3.12\" and python_version >= \"3.10\"", "coverage[toml] (==6.5.0) ; python_version == \"3.7\"", "coverage[toml] (==6.5.0) ; python_version == \"3.8\"", "coverage[toml] (==6.5.0) ; python_version == \"3.9\"", "coverage[toml] (==7.3.0) ; python_version < \"4.0\" and python_version >= \"3.12\"", "pytest (==6.2.5) ; python_version == \"3.6\"", "pytest (==7.4.4) ; python_version < \"4.0\" and python_version >= \"3.13\"", "pytest (==7.4.4) ; python_version == \"3.10\"", "pytest (==7.4.4) ; python_version == \"3.11\"", "pytest (==7.4.4) ; python_version == \"3.12\"", "pytest (==7.4.4) ; python_version == \"3.7\"", "pytest (==7.4.4) ; python_version == \"3.8\"", "pytest (==7.4.4) ; python_version == \"3.9\"", "pytest-cov (==3.0.0) ; python_version >= \"3.6.0\"", "ubelt (==1.3.4)", "xdoctest (==1.1.3)"]
 
 [[package]]
+name = "machinevision-toolbox-python"
+version = "1.0.1"
+description = "Python tools for machine vision - education and research"
+optional = false
+python-versions = ">=3.7"
+groups = ["main"]
+markers = "python_version < \"3.10\""
+files = [
+    {file = "machinevision_toolbox_python-1.0.1-py3-none-any.whl", hash = "sha256:22663225435ea7f41d2b37754accff1c10cf2315f78dd7ae9bc8bca932b3c62b"},
+    {file = "machinevision_toolbox_python-1.0.1.tar.gz", hash = "sha256:5282aee3b00009dce71085ec99055e5b4d048431243a6bf1e11074d17578158f"},
+]
+
+[package.dependencies]
+ansitable = "*"
+matplotlib = "*"
+mvtb-data = "*"
+numpy = ">=1.17.4,<2.0.0"
+open3d = "*"
+opencv-contrib-python = "*"
+opencv-python = "*"
+pgraph-python = "*"
+scipy = "*"
+spatialmath-python = "*"
+
+[package.extras]
+dev = ["coverage", "flake8", "pytest"]
+docs = ["recommonmark", "sphinx", "sphinx-autorun", "sphinx-favicon", "sphinx-markdown-tables", "sphinx-rtd-theme", "sphinxcontrib-jsmath"]
+jupyter = ["ipympl", "ipywidgets"]
+
+[[package]]
+name = "machinevision-toolbox-python"
+version = "2.0.1"
+description = "Object-oriented machine vision for Python."
+optional = false
+python-versions = ">=3.10"
+groups = ["main"]
+markers = "python_version >= \"3.10\""
+files = [
+    {file = "machinevision_toolbox_python-2.0.1-py3-none-any.whl", hash = "sha256:fd8fb3248471afc925d747c907d31cdc6262fc9dcef38ea67269510611d6a19e"},
+    {file = "machinevision_toolbox_python-2.0.1.tar.gz", hash = "sha256:aaa26071787c85b907ef1137c2191996f1c69da2f42d0dff121d9f355e096c9f"},
+]
+
+[package.dependencies]
+ansitable = "*"
+matplotlib = "*"
+mvtb-data = "*"
+numpy = "*"
+opencv-contrib-python = "*"
+opencv-python = "*"
+pgraph-python = "*"
+pillow = "*"
+requests = "*"
+scipy = "*"
+spatialmath-python = "*"
+tqdm = "*"
+
+[package.extras]
+all = ["ipympl", "ipywidgets", "open3d-python", "pytesseract", "rosbags", "roslibpy", "torch", "websockets"]
+dev = ["coverage", "nbmake", "pytest", "ruff"]
+docs = ["pydata-sphinx-theme", "sphinx", "sphinx-autorun", "sphinx-codeautolink", "sphinx-copybutton", "sphinx-design", "sphinx-favicon", "sphinxcontrib-programoutput"]
+jupyter = ["ipympl", "ipywidgets"]
+ocr = ["pytesseract"]
+open3d = ["open3d-python"]
+ros = ["rosbags", "roslibpy", "websockets"]
+torch = ["torch"]
+
+[[package]]
 name = "markupsafe"
 version = "2.1.5"
 description = "Safely add untrusted strings to HTML/XML markup."
@@ -1228,6 +1323,35 @@ groups = ["main"]
 files = [
     {file = "more-itertools-10.3.0.tar.gz", hash = "sha256:e5d93ef411224fbcef366a6e8ddc4c5781bc6359d43412a65dd5964e46111463"},
     {file = "more_itertools-10.3.0-py3-none-any.whl", hash = "sha256:ea6a02e24a9161e51faad17a8782b92a0df82c12c1c8886fec7f0c3fa1a1b320"},
+]
+
+[[package]]
+name = "mpmath"
+version = "1.3.0"
+description = "Python library for arbitrary-precision floating-point arithmetic"
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "mpmath-1.3.0-py3-none-any.whl", hash = "sha256:a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c"},
+    {file = "mpmath-1.3.0.tar.gz", hash = "sha256:7a28eb2a9774d00c7bc92411c19a89209d5da7c4c9a9e227be8330a23a25b91f"},
+]
+
+[package.extras]
+develop = ["codecov", "pycodestyle", "pytest (>=4.6)", "pytest-cov", "wheel"]
+docs = ["sphinx"]
+gmpy = ["gmpy2 (>=2.1.0a4) ; platform_python_implementation != \"PyPy\""]
+tests = ["pytest (>=4.6)"]
+
+[[package]]
+name = "mvtb-data"
+version = "1.6.1"
+description = "Image and data files for the Machine Vision Toolbox for Python"
+optional = false
+python-versions = ">=3.7"
+groups = ["main"]
+files = [
+    {file = "mvtb_data-1.6.1-py3-none-any.whl", hash = "sha256:0ca9c30e100fa272421068a167ea6529085ff8f4afdca72e5fad681c52cabdbf"},
 ]
 
 [[package]]
@@ -1389,6 +1513,104 @@ tqdm = "*"
 werkzeug = ">=3.0.0"
 
 [[package]]
+name = "opencv-contrib-python"
+version = "4.11.0.86"
+description = "Wrapper package for OpenCV python bindings."
+optional = false
+python-versions = ">=3.6"
+groups = ["main"]
+markers = "python_version >= \"3.9\" and python_version < \"3.11\" or python_version == \"3.11\""
+files = [
+    {file = "opencv-contrib-python-4.11.0.86.tar.gz", hash = "sha256:4ff773dab44911da366b906621c9592d4eb96f6ad3777098933a23f064aab38e"},
+    {file = "opencv_contrib_python-4.11.0.86-cp37-abi3-macosx_13_0_arm64.whl", hash = "sha256:d911cedc511d98f79994580b245d59fc97f57f0f9923a99945d8b92c7ac671f6"},
+    {file = "opencv_contrib_python-4.11.0.86-cp37-abi3-macosx_13_0_x86_64.whl", hash = "sha256:e10a293af18aa5f842d012fa14e87345b3ee06db4c29bd592ff94b51f7ffca2b"},
+    {file = "opencv_contrib_python-4.11.0.86-cp37-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:f21034bc8b00eb286a0a0a92b99767bf596bfe426cf4bc2e79647d64ad0dd6da"},
+    {file = "opencv_contrib_python-4.11.0.86-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c47c0ef1098461cdc6fa1cdce4c942b8ec974c87423f4b5951443d26bb9ae407"},
+    {file = "opencv_contrib_python-4.11.0.86-cp37-abi3-win32.whl", hash = "sha256:194841c664ceaa0692410b4ed0af557425608e33db3a181ded28b87acb66748d"},
+    {file = "opencv_contrib_python-4.11.0.86-cp37-abi3-win_amd64.whl", hash = "sha256:654758a9ae8ca9a75fca7b64b19163636534f0eedffe1e14c3d7218988625c8d"},
+]
+
+[package.dependencies]
+numpy = [
+    {version = ">=1.21.0", markers = "python_version == \"3.9\" and platform_system == \"Darwin\" and platform_machine == \"arm64\""},
+    {version = ">=1.19.3", markers = "(python_version >= \"3.8\" and platform_system == \"Linux\" and platform_machine == \"aarch64\" or python_version >= \"3.9\") and (python_version > \"3.9\" or platform_system != \"Darwin\" or platform_machine != \"arm64\")"},
+    {version = ">=1.23.5", markers = "python_version >= \"3.11\""},
+    {version = ">=1.21.4", markers = "python_version >= \"3.10\" and platform_system == \"Darwin\""},
+    {version = ">=1.21.2", markers = "platform_system != \"Darwin\" and python_version >= \"3.10\""},
+]
+
+[[package]]
+name = "opencv-contrib-python"
+version = "4.13.0.92"
+description = "Wrapper package for OpenCV python bindings."
+optional = false
+python-versions = ">=3.6"
+groups = ["main"]
+markers = "python_version == \"3.8\""
+files = [
+    {file = "opencv_contrib_python-4.13.0.92-cp37-abi3-macosx_13_0_arm64.whl", hash = "sha256:53c8ab81376210dda5836307eb6bda7266f39a3820a9a070c7131510ba815fe1"},
+    {file = "opencv_contrib_python-4.13.0.92-cp37-abi3-macosx_14_0_x86_64.whl", hash = "sha256:1973d0fc773873f9d1b5bf0d1b65895da2f47b06ba033b7d58393f5c28ba0778"},
+    {file = "opencv_contrib_python-4.13.0.92-cp37-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:5f9cb522dd9e465dfca3536c15288f7936b9827432fb9c885eaf94dc5f88c2a3"},
+    {file = "opencv_contrib_python-4.13.0.92-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:f9ceec5886419860a31b518991a99e978e5a6a78dca1470103ad4ede0155f156"},
+    {file = "opencv_contrib_python-4.13.0.92-cp37-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:a3c54377c5cf9c45d9b1a207df26dc8fe4f1042d07036cb17d80930c04b25d97"},
+    {file = "opencv_contrib_python-4.13.0.92-cp37-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:fc5ee50e2be9d40e913536f7f20cc6f87f25d8e413ebb32a3335ab6edf245d3e"},
+    {file = "opencv_contrib_python-4.13.0.92-cp37-abi3-win32.whl", hash = "sha256:f5d02357f4d5575c300eab3ec1c7ecfed3a9a53e55a76927bab7cfc9e0a67b68"},
+    {file = "opencv_contrib_python-4.13.0.92-cp37-abi3-win_amd64.whl", hash = "sha256:cb694dcf76bb2c8d7fa573fc1a99339e8b6640194d7778381e74cc3445369e45"},
+]
+
+[package.dependencies]
+numpy = {version = "<2.0", markers = "python_version < \"3.9\""}
+
+[[package]]
+name = "opencv-python"
+version = "4.11.0.86"
+description = "Wrapper package for OpenCV python bindings."
+optional = false
+python-versions = ">=3.6"
+groups = ["main"]
+markers = "python_version >= \"3.9\" and python_version < \"3.11\" or python_version == \"3.11\""
+files = [
+    {file = "opencv-python-4.11.0.86.tar.gz", hash = "sha256:03d60ccae62304860d232272e4a4fda93c39d595780cb40b161b310244b736a4"},
+    {file = "opencv_python-4.11.0.86-cp37-abi3-macosx_13_0_arm64.whl", hash = "sha256:432f67c223f1dc2824f5e73cdfcd9db0efc8710647d4e813012195dc9122a52a"},
+    {file = "opencv_python-4.11.0.86-cp37-abi3-macosx_13_0_x86_64.whl", hash = "sha256:9d05ef13d23fe97f575153558653e2d6e87103995d54e6a35db3f282fe1f9c66"},
+    {file = "opencv_python-4.11.0.86-cp37-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:1b92ae2c8852208817e6776ba1ea0d6b1e0a1b5431e971a2a0ddd2a8cc398202"},
+    {file = "opencv_python-4.11.0.86-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6b02611523803495003bd87362db3e1d2a0454a6a63025dc6658a9830570aa0d"},
+    {file = "opencv_python-4.11.0.86-cp37-abi3-win32.whl", hash = "sha256:810549cb2a4aedaa84ad9a1c92fbfdfc14090e2749cedf2c1589ad8359aa169b"},
+    {file = "opencv_python-4.11.0.86-cp37-abi3-win_amd64.whl", hash = "sha256:085ad9b77c18853ea66283e98affefe2de8cc4c1f43eda4c100cf9b2721142ec"},
+]
+
+[package.dependencies]
+numpy = [
+    {version = ">=1.21.0", markers = "python_version == \"3.9\" and platform_system == \"Darwin\" and platform_machine == \"arm64\""},
+    {version = ">=1.19.3", markers = "(python_version >= \"3.8\" and platform_system == \"Linux\" and platform_machine == \"aarch64\" or python_version >= \"3.9\") and (python_version > \"3.9\" or platform_system != \"Darwin\" or platform_machine != \"arm64\")"},
+    {version = ">=1.23.5", markers = "python_version >= \"3.11\""},
+    {version = ">=1.21.4", markers = "python_version >= \"3.10\" and platform_system == \"Darwin\""},
+    {version = ">=1.21.2", markers = "platform_system != \"Darwin\" and python_version >= \"3.10\""},
+]
+
+[[package]]
+name = "opencv-python"
+version = "4.13.0.92"
+description = "Wrapper package for OpenCV python bindings."
+optional = false
+python-versions = ">=3.6"
+groups = ["main"]
+markers = "python_version == \"3.8\""
+files = [
+    {file = "opencv_python-4.13.0.92-cp37-abi3-macosx_13_0_arm64.whl", hash = "sha256:caf60c071ec391ba51ed00a4a920f996d0b64e3e46068aac1f646b5de0326a19"},
+    {file = "opencv_python-4.13.0.92-cp37-abi3-macosx_14_0_x86_64.whl", hash = "sha256:5868a8c028a0b37561579bfb8ac1875babdc69546d236249fff296a8c010ccf9"},
+    {file = "opencv_python-4.13.0.92-cp37-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:0bc2596e68f972ca452d80f444bc404e08807d021fbba40df26b61b18e01838a"},
+    {file = "opencv_python-4.13.0.92-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:402033cddf9d294693094de5ef532339f14ce821da3ad7df7c9f6e8316da32cf"},
+    {file = "opencv_python-4.13.0.92-cp37-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:bccaabf9eb7f897ca61880ce2869dcd9b25b72129c28478e7f2a5e8dee945616"},
+    {file = "opencv_python-4.13.0.92-cp37-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:620d602b8f7d8b8dab5f4b99c6eb353e78d3fb8b0f53db1bd258bb1aa001c1d5"},
+    {file = "opencv_python-4.13.0.92-cp37-abi3-win32.whl", hash = "sha256:372fe164a3148ac1ca51e5f3ad0541a4a276452273f503441d718fab9c5e5f59"},
+    {file = "opencv_python-4.13.0.92-cp37-abi3-win_amd64.whl", hash = "sha256:423d934c9fafb91aad38edf26efb46da91ffbc05f3f59c4b0c72e699720706f5"},
+]
+
+[package.dependencies]
+numpy = {version = "<2.0", markers = "python_version < \"3.9\""}
+
+[[package]]
 name = "packaging"
 version = "25.0"
 description = "Core utilities for Python packages"
@@ -1499,6 +1721,28 @@ files = [
 
 [package.dependencies]
 ptyprocess = ">=0.5"
+
+[[package]]
+name = "pgraph-python"
+version = "0.6.4"
+description = "Mathematical graphs for Python"
+optional = false
+python-versions = ">=3.7"
+groups = ["main"]
+files = [
+    {file = "pgraph_python-0.6.4-py3-none-any.whl", hash = "sha256:a90a3d5a896f9c83a29ecb52331c47b4eb45110a24fc64b2bf2d187cafa55838"},
+    {file = "pgraph_python-0.6.4.tar.gz", hash = "sha256:8da96dbf2c21a60b1383e5017bb8b8e2c7e0d79a8a051f3ebba726449ad66e8a"},
+]
+
+[package.dependencies]
+matplotlib = "*"
+numpy = ">=1.18.0"
+scipy = "*"
+spatialmath-python = "*"
+
+[package.extras]
+dev = ["pytest", "pytest-cov"]
+docs = ["recommonmark", "sphinx", "sphinx-autorun", "sphinx-favicon", "sphinx-rtd-theme"]
 
 [[package]]
 name = "pickleshare"
@@ -1677,6 +1921,18 @@ files = [
 numpy = ">=1.17"
 
 [[package]]
+name = "progress"
+version = "1.6.1"
+description = "Easy to use progress bars"
+optional = false
+python-versions = ">=3.6"
+groups = ["main"]
+files = [
+    {file = "progress-1.6.1-py3-none-any.whl", hash = "sha256:5239f22f305c12fdc8ce6e0e47f70f21622a935e16eafc4535617112e7c7ea0b"},
+    {file = "progress-1.6.1.tar.gz", hash = "sha256:c1ba719f862ce885232a759eab47971fe74dfc7bb76ab8a51ef5940bad35086c"},
+]
+
+[[package]]
 name = "prompt-toolkit"
 version = "3.0.51"
 description = "Library for building powerful interactive command lines in Python"
@@ -1718,6 +1974,26 @@ files = [
 
 [package.extras]
 tests = ["pytest"]
+
+[[package]]
+name = "pybullet"
+version = "3.2.7"
+description = "Official Python Interface for the Bullet Physics SDK specialized for Robotics Simulation and Reinforcement Learning"
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "pybullet-3.2.7-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:814e6b0c035a634b5c46f69065effb085cc451886dda4140576be2f34b461940"},
+    {file = "pybullet-3.2.7-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:5d858abf7c12a21ef3ed351cf81dac1b5e486ec25c9ab59bfc84beb89034edff"},
+    {file = "pybullet-3.2.7-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ab4b93e47fbea981e4a85c07083288a0af897bfedc1fd005636201c5b36e9a87"},
+    {file = "pybullet-3.2.7-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f6a23e6e8d59924a7eca3cc1709fac7353a585c4958d610729ca418f3e633a55"},
+    {file = "pybullet-3.2.7-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:637be83db2405d4f058a1125bd56bc954f355ff15e519a6738c00d4be3741c4e"},
+    {file = "pybullet-3.2.7-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:438a95e9d53af5b2e9bbf7b12e1846485e58532b57580c5290dee305fa8b4a6b"},
+    {file = "pybullet-3.2.7-pp37-pypy37_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3138029e00813d8bde6fa2068c8fde44c24adb29b04d39524ca29afc4203e00a"},
+    {file = "pybullet-3.2.7-pp38-pypy38_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:71e97acbce9a0dab14dc4942bf2134ed50c130c32a85ee18791c9bd08bc953d2"},
+    {file = "pybullet-3.2.7-pp39-pypy39_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:5457a2f32ea718bf09c5391a6b7695044c80ac6416571388caa56a0ccf67ba9a"},
+    {file = "pybullet-3.2.7.tar.gz", hash = "sha256:042879db8d101ac7590dee475fc6aded508b85fe1273fdbbfde1d88bd200e14f"},
+]
 
 [[package]]
 name = "pygame"
@@ -2003,7 +2279,7 @@ description = "Wrappers for the framework Accessibility on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"20.0\""
+markers = "platform_release >= \"20.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_Accessibility-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:dc05d558b8dc3670f95b86ff76ea8cab5350c1a97160ad2ed74c0333d38b69b7"},
     {file = "pyobjc_framework_Accessibility-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:46c8fae7ca20250e0ad269963d06d091f09f3a706940cd0933195d23eb4589b6"},
@@ -2025,7 +2301,7 @@ description = "Wrappers for the framework Accounts on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"12.0\""
+markers = "platform_release >= \"12.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_Accounts-10.3.2-py2.py3-none-any.whl", hash = "sha256:40ab8fa23b10bb3328c31adbf541d7862e5cf6a2c7c9d30a8ed92d9b45e9851b"},
     {file = "pyobjc_framework_Accounts-10.3.2-py3-none-any.whl", hash = "sha256:45eed359516530a25c5ed1da91d5eedf7c4e944fb76fe90dba83d90032a0c528"},
@@ -2064,7 +2340,7 @@ description = "Wrappers for the framework AdServices on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"20.0\""
+markers = "platform_release >= \"20.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_AdServices-10.3.2-py2.py3-none-any.whl", hash = "sha256:8c2644006198f9aa733f4ab4bd64d60e3e2a76d9a4347f0f307c18eaf264c18d"},
     {file = "pyobjc_framework_AdServices-10.3.2-py3-none-any.whl", hash = "sha256:94857b7938d1ed190289f3f28b246089533899fa970f06c5abce98b7a0f52f2e"},
@@ -2082,7 +2358,7 @@ description = "Wrappers for the framework AdSupport on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"18.0\""
+markers = "platform_release >= \"18.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_AdSupport-10.3.2-py2.py3-none-any.whl", hash = "sha256:4fe1d3a85dd5489ae990490991262d1402689ae13dc32f0fc53f94fe59544101"},
     {file = "pyobjc_framework_AdSupport-10.3.2-py3-none-any.whl", hash = "sha256:212c8b52c3870a21e3be476f565d5e1f3c298b244842fa4967c2fa3310c0e57d"},
@@ -2118,7 +2394,7 @@ description = "Wrappers for the framework AppleScriptObjC on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"10.0\""
+markers = "platform_release >= \"10.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_AppleScriptObjC-10.3.2-py2.py3-none-any.whl", hash = "sha256:a932ffdcf6a5b5ac884666bb0ae2a8075528f489b0b5aa4336fc22e6f011664e"},
     {file = "pyobjc_framework_AppleScriptObjC-10.3.2-py3-none-any.whl", hash = "sha256:e0a0496fc05e7b23d6030d9dfcd706167ad05e7032f69117bc0136234eebc12e"},
@@ -2162,7 +2438,7 @@ description = "Wrappers for the framework AppTrackingTransparency on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"20.0\""
+markers = "platform_release >= \"20.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_AppTrackingTransparency-10.3.2-py2.py3-none-any.whl", hash = "sha256:9dd9ccd50ef9553e8810a2b0ef1824f5c42aff44f7eedf30a7a38dd1dc57f0c3"},
     {file = "pyobjc_framework_AppTrackingTransparency-10.3.2-py3-none-any.whl", hash = "sha256:f68058481a48626375db21965e7bfecad8500103f21febfe3baeba8c59a3737c"},
@@ -2180,7 +2456,7 @@ description = "Wrappers for the framework AudioVideoBridging on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"12.0\""
+markers = "platform_release >= \"12.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_AudioVideoBridging-10.3.2-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:7d2ba4ae1e0fa66b8cf96c434c9c6a83f5c62e0cae44f1e3d9c5b11ec5954bde"},
     {file = "pyobjc_framework_AudioVideoBridging-10.3.2-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:827233f90741adc6d7b0288e13d489599c818b7069de59dd1f64868d9b532b3e"},
@@ -2204,7 +2480,7 @@ description = "Wrappers for the framework AuthenticationServices on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"19.0\""
+markers = "platform_release >= \"19.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_AuthenticationServices-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:912646f2f550eb8c8023fa388eecc09d0a6cdbf9b0b88ae61672b5f32ba5c814"},
     {file = "pyobjc_framework_AuthenticationServices-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:c26c369ba44177b2b019fbe0691b4d243fc4cb734c8704067fca4b56006547de"},
@@ -2225,7 +2501,7 @@ description = "Wrappers for the framework AutomaticAssessmentConfiguration on ma
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"19.0\""
+markers = "platform_release >= \"19.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_AutomaticAssessmentConfiguration-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:a8d7fe9f32b67392a7864a41f0190cace06dd6b6d9a973df46a88f19fbde419d"},
     {file = "pyobjc_framework_AutomaticAssessmentConfiguration-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:62a1f51491bf69790546664f4bcfa0b0f82d8a67a7cd6c88c23269607ed0ee40"},
@@ -2267,7 +2543,7 @@ description = "Wrappers for the framework AVFoundation on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"11.0\""
+markers = "platform_release >= \"11.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_AVFoundation-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:e64797d5ec23d8eb5162e14107c1979244c7a09cce2f7ed3bb3fbbb45ba1fec7"},
     {file = "pyobjc_framework_AVFoundation-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:1a357b4264909c9f29a467d6706e12a822c1d6b9b9b274dd5892500cc9265681"},
@@ -2291,7 +2567,7 @@ description = "Wrappers for the framework AVKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"13.0\""
+markers = "platform_release >= \"13.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_AVKit-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:a4b4949e02951ea47d1aa76e5c3049377e77909ccc27ff8d496cc829e4cb3241"},
     {file = "pyobjc_framework_AVKit-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:d884f5a51cf1e4f2ffaeba85ac8153635da54444a4a1b9be337f4994d0e7141d"},
@@ -2313,7 +2589,7 @@ description = "Wrappers for the framework AVRouting on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"22.0\""
+markers = "platform_release >= \"22.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_AVRouting-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:f5ab0a519a1c1324fd3c1295b5ba164e1b4689b49945dcd7b6062ca473e5d6e9"},
     {file = "pyobjc_framework_AVRouting-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:8c053fdcbf6609371c11178593cc6a75258a83797aa668c28d0be924d60f2262"},
@@ -2334,7 +2610,7 @@ description = "Wrappers for the framework BackgroundAssets on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"22.0\""
+markers = "platform_release >= \"22.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_BackgroundAssets-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:f11cba5896979eeb7d419b82ef7835a2aa9d2e9ca9c812816b0ba47c3b91f55a"},
     {file = "pyobjc_framework_BackgroundAssets-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:6d9f714ed58ec15c54b3204287b924e9bffecad1762763eb646612adc1c2e1e1"},
@@ -2355,7 +2631,7 @@ description = "Wrappers for the framework BrowserEngineKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"23.4\""
+markers = "platform_release >= \"23.4\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_BrowserEngineKit-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:ddc3422c5c5a644193d31260fa878434093ed20758d054901ba2cfe3720dd74f"},
     {file = "pyobjc_framework_BrowserEngineKit-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:d52afa42b38f2b7963ecd82314e0c33f2aa63417df78075affc026fd4e9dfb8d"},
@@ -2379,7 +2655,7 @@ description = "Wrappers for the framework BusinessChat on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"18.0\""
+markers = "platform_release >= \"18.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_BusinessChat-10.3.2-py2.py3-none-any.whl", hash = "sha256:99f520ec64de7d7dab540456ac39bc9931f843a5aa86280d86372c76821fa6c1"},
     {file = "pyobjc_framework_BusinessChat-10.3.2-py3-none-any.whl", hash = "sha256:d2a9e2af6e23ebf096b3e8a1107a762f08eb309b18b5a2be34125c0e6a7d3998"},
@@ -2397,7 +2673,7 @@ description = "Wrappers for the framework CalendarStore on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"9.0\""
+markers = "platform_release >= \"9.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_CalendarStore-10.3.2-py2.py3-none-any.whl", hash = "sha256:bf70bed667dea41ad20c707183804b375e979c185a73c6863810d59c62282ced"},
     {file = "pyobjc_framework_CalendarStore-10.3.2-py3-none-any.whl", hash = "sha256:80eb8909be1cf0972fdafb4a29bca1acb0bb86d5b1e343c795b94f4189799324"},
@@ -2415,7 +2691,7 @@ description = "Wrappers for the framework CallKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"20.0\""
+markers = "platform_release >= \"20.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_CallKit-10.3.2-py2.py3-none-any.whl", hash = "sha256:b3b9952b9c813f0eb3e99ac400fb5c40aeda4abce216efbe4aacc7c14324c395"},
     {file = "pyobjc_framework_CallKit-10.3.2-py3-none-any.whl", hash = "sha256:97a6b9e0ee4f9c8b6f668834197d6eab5d24655b655a3357b26f2a0fd2762e4a"},
@@ -2454,7 +2730,7 @@ description = "Wrappers for the framework Cinematic on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"23.0\""
+markers = "platform_release >= \"23.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_Cinematic-10.3.2-py2.py3-none-any.whl", hash = "sha256:67ad6860b0f171d2f2cede0afdd2707858cb7cb53b750b002e380e26500cb620"},
     {file = "pyobjc_framework_Cinematic-10.3.2-py3-none-any.whl", hash = "sha256:8eb1dfbddb95676a20e94ac6844e935d25faa58dfa5926427386004d0300f3e8"},
@@ -2475,7 +2751,7 @@ description = "Wrappers for the framework ClassKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"20.0\""
+markers = "platform_release >= \"20.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_ClassKit-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:bbb2a8f6ace45613c954db29c5aecbc1c497b933070cee95b15d277969f8f9cb"},
     {file = "pyobjc_framework_ClassKit-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:1046a6cc5e78bc1688ea4f42d40d51fab99cf91885c8fa80d071387c9381f0b6"},
@@ -2496,7 +2772,7 @@ description = "Wrappers for the framework CloudKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"14.0\""
+markers = "platform_release >= \"14.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_CloudKit-10.3.2-py2.py3-none-any.whl", hash = "sha256:6c9a17f085876874bf98328f608384228d1d841d387d977adef9a277e549709b"},
     {file = "pyobjc_framework_CloudKit-10.3.2-py3-none-any.whl", hash = "sha256:fb4872f1cec3135610237c763ca8ddef7ac3607f0fc502b67c678419d64ffb5c"},
@@ -2540,7 +2816,7 @@ description = "Wrappers for the framework Collaboration on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"9.0\""
+markers = "platform_release >= \"9.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_Collaboration-10.3.2-py2.py3-none-any.whl", hash = "sha256:4735cb4b8d701806a88cc295406308992d641ed88ae78053feb3ed3b79c91301"},
     {file = "pyobjc_framework_Collaboration-10.3.2-py3-none-any.whl", hash = "sha256:a96ae9f4f8320fe533e16d3c254f6f117b28ba0f4b0990aa350be23c388979f1"},
@@ -2558,7 +2834,7 @@ description = "Wrappers for the framework ColorSync on Mac OS X"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"17.0\""
+markers = "platform_release >= \"17.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_ColorSync-10.3.2-py2.py3-none-any.whl", hash = "sha256:ca2c0af7e22c02d32d8751d5a9cd8be11a51af51c526a3bdd536004401ba0f0c"},
     {file = "pyobjc_framework_ColorSync-10.3.2-py3-none-any.whl", hash = "sha256:3b1ad179c6442464d8ec995fb824895617272fd30cfc519851019efe82bbe431"},
@@ -2576,7 +2852,7 @@ description = "Wrappers for the framework Contacts on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"15.0\""
+markers = "platform_release >= \"15.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_Contacts-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:f88170a392c1d6a75b99d40fb4e95987ec2e8fb3a78d43fdfe7f552316b741ad"},
     {file = "pyobjc_framework_Contacts-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:8723c5e472b6fbe7cbdee5c999ffd32b4d93900cdb47f156d9304abe3f0068c1"},
@@ -2597,7 +2873,7 @@ description = "Wrappers for the framework ContactsUI on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"15.0\""
+markers = "platform_release >= \"15.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_ContactsUI-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:b0534f248e82b79798ed6cad9b78715b934e86a82d47526eb7bf8a28136cfa70"},
     {file = "pyobjc_framework_ContactsUI-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:c138defc6399ff4fb94861a8b6a17d8b13d254ebb101570131a790eda2dec32d"},
@@ -2665,7 +2941,7 @@ description = "Wrappers for the framework CoreBluetooth on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"14.0\""
+markers = "platform_release >= \"14.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_CoreBluetooth-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:af3e2f935a6a7e5b009b4cf63c64899592a7b46c3ddcbc8f2e28848842ef65f4"},
     {file = "pyobjc_framework_CoreBluetooth-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:973b78f47c7e2209a475e60bcc7d1b4a87be6645d39b4e8290ee82640e1cc364"},
@@ -2707,7 +2983,7 @@ description = "Wrappers for the framework CoreHaptics on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"19.0\""
+markers = "platform_release >= \"19.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_CoreHaptics-10.3.2-py2.py3-none-any.whl", hash = "sha256:7d09397cc514037b628b1d19716c9b750df8077410086e40071991ecc63cbda8"},
     {file = "pyobjc_framework_CoreHaptics-10.3.2-py3-none-any.whl", hash = "sha256:d360af7d72730e3c891f4034045a72837683ca82cb763e82e6b15dc5b47ee9fa"},
@@ -2725,7 +3001,7 @@ description = "Wrappers for the framework CoreLocation on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"10.0\""
+markers = "platform_release >= \"10.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_CoreLocation-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:ee7a7b8ca885caa32dfe88acce2df4d5f8c26c5334ed3899ed860b382af3809c"},
     {file = "pyobjc_framework_CoreLocation-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:787837f678048e593ac21f0308156c237f1fcea07c4ce6d3a3a983074a87f14b"},
@@ -2746,7 +3022,7 @@ description = "Wrappers for the framework CoreMedia on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"11.0\""
+markers = "platform_release >= \"11.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_CoreMedia-10.3.2-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:e50e293df5dd6a3b37f8850f52793e02f66214be5c01100ec81e853ff9cbc1da"},
     {file = "pyobjc_framework_CoreMedia-10.3.2-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:62f4c0307a789bf13eaaac0674aadb9067535bbcb02c511a0cf2a3520bb3a839"},
@@ -2770,7 +3046,7 @@ description = "Wrappers for the framework CoreMediaIO on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"11.0\""
+markers = "platform_release >= \"11.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_CoreMediaIO-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:068fa43ee4e8843315322d2e1511a3d178405437512c2f331557de1837f6a88f"},
     {file = "pyobjc_framework_CoreMediaIO-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:5d5a8fa4d45e6704cf7281cca4d8d57db1cfd4b3ee6885acfd6ead630babb4f8"},
@@ -2812,7 +3088,7 @@ description = "Wrappers for the framework CoreML on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"17.0\""
+markers = "platform_release >= \"17.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_CoreML-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:fcac461545f007d648d2ff67f2734420c77173b467549e4a9d6b38a75dad2df7"},
     {file = "pyobjc_framework_CoreML-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:feea183b192cc806485b7713f135e544e7fa7ece3cea0e8cde92db4ae19374ab"},
@@ -2833,7 +3109,7 @@ description = "Wrappers for the framework CoreMotion on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"19.0\""
+markers = "platform_release >= \"19.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_CoreMotion-10.3.2-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:32ca3c763f6f9ec2ca0a10f28668cb6087cc2eaab0aa5ee129888cc6985082d6"},
     {file = "pyobjc_framework_CoreMotion-10.3.2-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:1425400fcddf426ff9269368c0256a67d81e4be86c012f2ec12810737d369044"},
@@ -2879,7 +3155,7 @@ description = "Wrappers for the framework CoreSpotlight on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"17.0\""
+markers = "platform_release >= \"17.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_CoreSpotlight-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:6f5eb969078c747ad6ff17a6d14a54672f1a363cfb7dd4682fb4aa601486bdab"},
     {file = "pyobjc_framework_CoreSpotlight-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:da9d240831d0945214b265ebde82ee066ae187034275096591e26c9e243fa81b"},
@@ -2925,7 +3201,7 @@ description = "Wrappers for the framework CoreWLAN on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"10.0\""
+markers = "platform_release >= \"10.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_CoreWLAN-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:f8699e16bd490ae85e29accc210f9ad626a7fa45bfb1be0af506cf37875ea7b0"},
     {file = "pyobjc_framework_CoreWLAN-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:5225a2db40dbc1ca701a9d8b30155c929c504005ad0abd296945f89ccd2c1d1f"},
@@ -2946,7 +3222,7 @@ description = "Wrappers for the framework CryptoTokenKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"14.0\""
+markers = "platform_release >= \"14.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_CryptoTokenKit-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:b0b132b31eb2c297894c53646af133f8953a93914b16b58e83df39704e9d99c6"},
     {file = "pyobjc_framework_CryptoTokenKit-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:31bb0480a87da217208b0e77a2461ac398d5f407a86507820e44b94c16f48d81"},
@@ -2967,7 +3243,7 @@ description = "Wrappers for the framework DataDetection on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"21.0\""
+markers = "platform_release >= \"21.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_DataDetection-10.3.2-py2.py3-none-any.whl", hash = "sha256:f0fdf9d10fd45715f8e932d9dc508d6d63cd96a6e4b13ad92322dd21b79c882b"},
     {file = "pyobjc_framework_DataDetection-10.3.2-py3-none-any.whl", hash = "sha256:3d528510722b62851b9d53fe16fe9cdc1646433a33b07a64b5fafc29397509ef"},
@@ -2985,7 +3261,7 @@ description = "Wrappers for the framework DeviceCheck on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"19.0\""
+markers = "platform_release >= \"19.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_DeviceCheck-10.3.2-py2.py3-none-any.whl", hash = "sha256:d496ee7045ee92977cdc16625cf7cb871f8f798bf8253fe4fdffbd3cd58da0f5"},
     {file = "pyobjc_framework_DeviceCheck-10.3.2-py3-none-any.whl", hash = "sha256:6bf642ce5c88b556dd743ad0f39db32ddd23c9ac9ff830805b8b3ca831a5a4de"},
@@ -3003,7 +3279,7 @@ description = "Wrappers for the framework DictionaryServices on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"9.0\""
+markers = "platform_release >= \"9.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_DictionaryServices-10.3.2-py2.py3-none-any.whl", hash = "sha256:cb04610493fd54dd6647766b9f569d09c79626faf4949e892708c725fb0431ef"},
     {file = "pyobjc_framework_DictionaryServices-10.3.2-py3-none-any.whl", hash = "sha256:f5da9f55cb8c6bbf2eeeb9053cab9271f189ce28b1d09feb7b194197f1215d96"},
@@ -3097,7 +3373,7 @@ description = "Wrappers for the framework Accounts on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"12.0\""
+markers = "platform_release >= \"12.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_EventKit-10.3.2-py2.py3-none-any.whl", hash = "sha256:9dcadf1fc7f21d8bf9b81a9226849bd8a11fe0427c0ea39cd98ec5b60a85970c"},
     {file = "pyobjc_framework_EventKit-10.3.2-py3-none-any.whl", hash = "sha256:f83f3ef7f2067cbc23039077a691fee7c284e38593b0fed0fe4785ed2b7b17b1"},
@@ -3133,7 +3409,7 @@ description = "Wrappers for the framework ExecutionPolicy on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"19.0\""
+markers = "platform_release >= \"19.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_ExecutionPolicy-10.3.2-py2.py3-none-any.whl", hash = "sha256:509337de7c066c7fbf7f448391f73fb755baab132feee41858a948d59824e076"},
     {file = "pyobjc_framework_ExecutionPolicy-10.3.2-py3-none-any.whl", hash = "sha256:8fa8ea42f61deb9be8c71fa54b0121ae25f23996e77d29e29764b76fdbce4b05"},
@@ -3151,7 +3427,7 @@ description = "Wrappers for the framework ExtensionKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"22.0\""
+markers = "platform_release >= \"22.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_ExtensionKit-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:2e9c5435c26386ba723c877ff27a768ea064ae82be74ab0504a8bfd468aba494"},
     {file = "pyobjc_framework_ExtensionKit-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:f5146745dce217fae8cd7d78488fe64fff0b615d35fe62f13ca3b39a2a433188"},
@@ -3172,7 +3448,7 @@ description = "Wrappers for the framework ExternalAccessory on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"17.0\""
+markers = "platform_release >= \"17.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_ExternalAccessory-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:be63579105cd7204df4cdfa96fa9fa2d3d8b15b209627fd3e6f34a28084fd518"},
     {file = "pyobjc_framework_ExternalAccessory-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:045735ec21ecc1fb922aee7add867e7abb8f9412cd1fc62b48df8e553957f7f9"},
@@ -3193,7 +3469,7 @@ description = "Wrappers for the framework FileProvider on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"19.0\""
+markers = "platform_release >= \"19.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_FileProvider-10.3.2-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:b489fa1c766b526e4c43bdb53dd08255a92af88b502392555d7e293ac0769ddf"},
     {file = "pyobjc_framework_FileProvider-10.3.2-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:765d03584ccb85fae5c5df6e87cb2485a35d178c330f5021958b4b0165c044d0"},
@@ -3217,7 +3493,7 @@ description = "Wrappers for the framework FileProviderUI on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"19.0\""
+markers = "platform_release >= \"19.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_FileProviderUI-10.3.2-py2.py3-none-any.whl", hash = "sha256:c97456b4bccd0a9d2de5539dad0cf99013d64e77ee9bdea6eec17b803c6515ae"},
     {file = "pyobjc_framework_FileProviderUI-10.3.2-py3-none-any.whl", hash = "sha256:27553165ac3f8ee4a348602f691fdeb27f2322d2792dd3bd51a988243077d877"},
@@ -3235,7 +3511,7 @@ description = "Wrappers for the framework FinderSync on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"14.0\""
+markers = "platform_release >= \"14.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_FinderSync-10.3.2-py2.py3-none-any.whl", hash = "sha256:6217be137f38e225ce10d6b12eced87ffaee0e63e70d80dffd86cdf78932232a"},
     {file = "pyobjc_framework_FinderSync-10.3.2-py3-none-any.whl", hash = "sha256:74061ba4fd76a84530ad5150a7bd141a198fc67cbde77a09e011af0415cc6d83"},
@@ -3274,7 +3550,7 @@ description = "Wrappers for the framework GameCenter on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"12.0\""
+markers = "platform_release >= \"12.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_GameCenter-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:f553e66164860e876701b1d70f5c16f27b0c511f2cf6d099534c05c6c5da42f3"},
     {file = "pyobjc_framework_GameCenter-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:30bb9ec68e800fe65f9515e3b6b1e4a276e96ca5839aeed63833a87b488cf3fb"},
@@ -3295,7 +3571,7 @@ description = "Wrappers for the framework GameController on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"13.0\""
+markers = "platform_release >= \"13.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_GameController-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:7447a070b4c174bdc9fd659be4cc006942aa5dc543b1ad894c53eb9bc6dea852"},
     {file = "pyobjc_framework_GameController-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:33ace4bf412413713db81c366ab27f98cda99cbfac3c83aa83eef55eba6fdf8c"},
@@ -3316,7 +3592,7 @@ description = "Wrappers for the framework GameKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"12.0\""
+markers = "platform_release >= \"12.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_GameKit-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:572bbce91649276f7791ddacacb4a27536023abbe59f129a035fbb8b69d637d5"},
     {file = "pyobjc_framework_GameKit-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:557cea3328545f5d2a23535f0919d5b9c6e3c5c45f6043708ca7daaa57c8e2fa"},
@@ -3338,7 +3614,7 @@ description = "Wrappers for the framework GameplayKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"15.0\""
+markers = "platform_release >= \"15.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_GameplayKit-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:c3ed4a732b24051ebfc4c33e6aaec8d146bac5ab8845f09c2a970154fb2d58f3"},
     {file = "pyobjc_framework_GameplayKit-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:9c5350e8a7277363abf4bcfee70ab389523af8f4fa41b522c7c0abe35668516e"},
@@ -3360,7 +3636,7 @@ description = "Wrappers for the framework HealthKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"22.0\""
+markers = "platform_release >= \"22.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_HealthKit-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:8f88cceb5211e936329a4a893c5e93cb69263630374282f3910297af4c4ddcb8"},
     {file = "pyobjc_framework_HealthKit-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:0a4bdc0467da93d0cff1d7ea17e4f85e02acd572eb5a8924f6e618749624036d"},
@@ -3381,7 +3657,7 @@ description = "Wrappers for the framework ImageCaptureCore on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"10.0\""
+markers = "platform_release >= \"10.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_ImageCaptureCore-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:6ca99ca3dfc218c23a8d3ca3838ffdfe95703ceaf1c6b4ce7427085233d494b6"},
     {file = "pyobjc_framework_ImageCaptureCore-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:03f9f57ceaf72423087cb2f619151bd7eca326476038b2161869214e0707b4fc"},
@@ -3402,7 +3678,7 @@ description = "Wrappers for the framework InputMethodKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"9.0\""
+markers = "platform_release >= \"9.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_InputMethodKit-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:2da172bbf54ac7d84098feaed2f752698905c126a68d1d90e33d6f3f035838e2"},
     {file = "pyobjc_framework_InputMethodKit-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:613831ad328f0d7e0642c9a772fb0a6d6ca030704775d930bf8c2115ddfd0c36"},
@@ -3441,7 +3717,7 @@ description = "Wrappers for the framework InstantMessage on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"9.0\""
+markers = "platform_release >= \"9.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_InstantMessage-10.3.2-py2.py3-none-any.whl", hash = "sha256:ced4abd3e1c9bdafade9d3020130c9c4ea73141f97150583ac1f5945e3aa320c"},
     {file = "pyobjc_framework_InstantMessage-10.3.2-py3-none-any.whl", hash = "sha256:3886994feea5374b443ae7c73e2ab6c6f3bce43212fa8eeb71bb4dc1cd7fc788"},
@@ -3460,7 +3736,7 @@ description = "Wrappers for the framework Intents on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"16.0\""
+markers = "platform_release >= \"16.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_Intents-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:baf09181dfd6bd655f4a7413d936fbf240471f50304e0b20f236503e3a51e08d"},
     {file = "pyobjc_framework_Intents-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:2beca607ebc1abf9d538ff6909e7182ef11eeb0f3dcd2584f1f5d3a35f21cc6b"},
@@ -3481,7 +3757,7 @@ description = "Wrappers for the framework Intents on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"21.0\""
+markers = "platform_release >= \"21.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_IntentsUI-10.3.2-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:56ea72e6b4b049c48ea8043248cd19c32816d26ba9a8b0a4e940d0d3491782ad"},
     {file = "pyobjc_framework_IntentsUI-10.3.2-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:3ef19904246ffca3c544298807a0deb08aa0f5a345feb00ce56cb20c86aa689f"},
@@ -3544,7 +3820,7 @@ description = "Wrappers for the framework IOSurface on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"10.0\""
+markers = "platform_release >= \"10.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_IOSurface-10.3.2-py2.py3-none-any.whl", hash = "sha256:261778a5f28750ed878a0ce9e386748f196d1544ff116056edbb64c51c301b95"},
     {file = "pyobjc_framework_IOSurface-10.3.2-py3-none-any.whl", hash = "sha256:4b913aca8b1e2e35d0263684faea7e39327e825c65ce746ef37f95d958be0f73"},
@@ -3562,7 +3838,7 @@ description = "Wrappers for the framework iTunesLibrary on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"10.0\""
+markers = "platform_release >= \"10.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_iTunesLibrary-10.3.2-py2.py3-none-any.whl", hash = "sha256:ed4a2185662bb99cad5b83236f94c3a146c0ba3cb30d904bf19272e3748bdcbf"},
     {file = "pyobjc_framework_iTunesLibrary-10.3.2-py3-none-any.whl", hash = "sha256:a596908e42e6c5f001b3fd259900935e07869dd5d2715c7126743426c8993c75"},
@@ -3580,7 +3856,7 @@ description = "Wrappers for the framework KernelManagement on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"20.0\""
+markers = "platform_release >= \"20.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_KernelManagement-10.3.2-py2.py3-none-any.whl", hash = "sha256:eecdb649c96004ccfabb3a51393505a412fbd6e09a6d6ad7fad8cfd016c3c16f"},
     {file = "pyobjc_framework_KernelManagement-10.3.2-py3-none-any.whl", hash = "sha256:4f07160a18129c099080d64cf2373817cf0e5b6458b82a6d29bcd04dabbb64ea"},
@@ -3634,7 +3910,7 @@ description = "Wrappers for libdispatch on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"12.0\""
+markers = "platform_release >= \"12.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_libdispatch-10.3.2-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:35233a8b1135567c7696087f924e398799467c7f129200b559e8e4fa777af860"},
     {file = "pyobjc_framework_libdispatch-10.3.2-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:061f6aa0f88d11d993e6546ec734303cb8979f40ae0f5cd23541236a6b426abd"},
@@ -3658,7 +3934,7 @@ description = "Wrappers for xpc on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"12.0\""
+markers = "platform_release >= \"12.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_libxpc-10.3.2-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:568b31cae6a51e4d36edd61446288a5929f6bb504008c5273745ddf0f3517ada"},
     {file = "pyobjc_framework_libxpc-10.3.2-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:d175ac69780cd6ea608a8ad5bba124941a2ae621b8ad4cc0cab655822b97b213"},
@@ -3682,7 +3958,7 @@ description = "Wrappers for the framework LinkPresentation on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"19.0\""
+markers = "platform_release >= \"19.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_LinkPresentation-10.3.2-py2.py3-none-any.whl", hash = "sha256:f0222073074c74a9985b4f655ec1caeb9dde7a62143ea0c0575e2a5640589ee9"},
     {file = "pyobjc_framework_LinkPresentation-10.3.2-py3-none-any.whl", hash = "sha256:6fc65ab6e2bb91f5a17a49f760982d13dea719c8c2702d43be5f3df96adb3795"},
@@ -3701,7 +3977,7 @@ description = "Wrappers for the framework LocalAuthentication on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"14.0\""
+markers = "platform_release >= \"14.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_LocalAuthentication-10.3.2-py2.py3-none-any.whl", hash = "sha256:307d1dc7f361b52a9929ac961c33cfae2536e1eddeff25e2b3a5b996002dd86e"},
     {file = "pyobjc_framework_LocalAuthentication-10.3.2-py3-none-any.whl", hash = "sha256:fb53b0b7d75cc3a6b580dfc80daa4cf94215b397c420c379239e063e14dbd8a3"},
@@ -3720,7 +3996,7 @@ description = "Wrappers for the framework LocalAuthenticationEmbeddedUI on macOS
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"21.0\""
+markers = "platform_release >= \"21.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_LocalAuthenticationEmbeddedUI-10.3.2-py2.py3-none-any.whl", hash = "sha256:be046e8a9b0d0145850621c9dab2d264cbc5f79a34d55db8b8c6514135766ba1"},
     {file = "pyobjc_framework_LocalAuthenticationEmbeddedUI-10.3.2-py3-none-any.whl", hash = "sha256:0bc1a4f2ac2e908e686c1da2965a9ef51f13e95fe8baee84d6d1396ebcdcbd08"},
@@ -3739,7 +4015,7 @@ description = "Wrappers for the framework MailKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"21.0\""
+markers = "platform_release >= \"21.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_MailKit-10.3.2-py2.py3-none-any.whl", hash = "sha256:d0a6961d1adc0cda9c782265157365def72b65cfeb87a6552e2faf26fc42c0a0"},
     {file = "pyobjc_framework_MailKit-10.3.2-py3-none-any.whl", hash = "sha256:b13d4d0bb125e90215d4c933334c07ccd3e8b30ab379510513a42f924e6392fc"},
@@ -3757,7 +4033,7 @@ description = "Wrappers for the framework MapKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"13.0\""
+markers = "platform_release >= \"13.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_MapKit-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:e7cbdee855f6e953a7a9b13dac4ebef6d587132bbda7fab9fa13d4d16c850908"},
     {file = "pyobjc_framework_MapKit-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:0d4e1fbc0ef04aeac430ed5ba4abd99a5f36b823b3e3ff6cab138addcd54190c"},
@@ -3780,7 +4056,7 @@ description = "Wrappers for the framework MediaAccessibility on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"13.0\""
+markers = "platform_release >= \"13.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_MediaAccessibility-10.3.2-py2.py3-none-any.whl", hash = "sha256:65ee99905df8be28fef7998e6683811e1c59c1278c49ebd80f9b77fabd6de661"},
     {file = "pyobjc_framework_MediaAccessibility-10.3.2-py3-none-any.whl", hash = "sha256:94e633bcc4aea20093f2b5741e70c23288fecfbcd95d359cd63219b106b86b15"},
@@ -3798,7 +4074,7 @@ description = "Wrappers for the framework MediaLibrary on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"13.0\""
+markers = "platform_release >= \"13.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_MediaLibrary-10.3.2-py2.py3-none-any.whl", hash = "sha256:37f33b8a1cb3e8b6a2a02edb8cf842fef8d27c65f36fc1702aafa0b611411282"},
     {file = "pyobjc_framework_MediaLibrary-10.3.2-py3-none-any.whl", hash = "sha256:76ab6de61de1c4e77976d1e4dfde2f441246d74121fa1de52be08414ce767baa"},
@@ -3817,7 +4093,7 @@ description = "Wrappers for the framework MediaPlayer on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"16.0\""
+markers = "platform_release >= \"16.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_MediaPlayer-10.3.2-py2.py3-none-any.whl", hash = "sha256:6fa3a7edf52d0bf0668d51fbd5603151f39bd8ad7507f14385a92da1076c5aee"},
     {file = "pyobjc_framework_MediaPlayer-10.3.2-py3-none-any.whl", hash = "sha256:1476330e42cb4eb08ceaa20e66d06477b6a2c55897f742002ead6ad9d2fc4f22"},
@@ -3835,7 +4111,7 @@ description = "Wrappers for the framework MediaToolbox on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"13.0\""
+markers = "platform_release >= \"13.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_MediaToolbox-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:7fda2eba0cb8ab8e22f5a6d81d36c7460e5c418398ca68cecc883fb1958f7277"},
     {file = "pyobjc_framework_MediaToolbox-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:a8aaa627956b9b504f6674acdfcdf3c80b9fc22decdd9063fcd459386d0a34db"},
@@ -3856,7 +4132,7 @@ description = "Wrappers for the framework Metal on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"15.0\""
+markers = "platform_release >= \"15.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_Metal-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:b2b1b4027ff4c3aba7b05173503e88d4136f49b8378461d4d6e070be6cf504db"},
     {file = "pyobjc_framework_Metal-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:3ba684bac796177c1646bf4da8d4acaa747f2598ca369eb8df8012db660e3cd5"},
@@ -3877,7 +4153,7 @@ description = "Wrappers for the framework MetalFX on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"22.0\""
+markers = "platform_release >= \"22.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_MetalFX-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:1887760865f485a0bae03738e9c2796cad6adb5d6153deaae6a20e90c648ecd0"},
     {file = "pyobjc_framework_MetalFX-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:b9bc0e6633360fb99199d6e5269b0091af47a0d41868d782680ad65026517931"},
@@ -3898,7 +4174,7 @@ description = "Wrappers for the framework MetalKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"15.0\""
+markers = "platform_release >= \"15.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_MetalKit-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:e5af7289d9f5c9453194bd7b7cb149aafefdc13d01d02b64fe0a4d297ce02d0b"},
     {file = "pyobjc_framework_MetalKit-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:a23af118759422859b4e2112c30eff96950ba804d5dec51cad2165d7fd4b1386"},
@@ -3920,7 +4196,7 @@ description = "Wrappers for the framework MetalPerformanceShaders on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"17.0\""
+markers = "platform_release >= \"17.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_MetalPerformanceShaders-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:a4b5e139a2c744aa39e4686a5eb89fc492b5b59e03fb05841feb3c6deb65f30c"},
     {file = "pyobjc_framework_MetalPerformanceShaders-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:595894af4a3b2aa8ad2f48cbfd2af421ce065a232d7ed09a6d4441304e5d3272"},
@@ -3941,7 +4217,7 @@ description = "Wrappers for the framework MetalPerformanceShadersGraph on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"20.0\""
+markers = "platform_release >= \"20.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_MetalPerformanceShadersGraph-10.3.2-py2.py3-none-any.whl", hash = "sha256:b9b8f0ec18a299e095c79eacfc36ce6f2546a14462cf702efb8a9ec1954fc6e9"},
     {file = "pyobjc_framework_MetalPerformanceShadersGraph-10.3.2-py3-none-any.whl", hash = "sha256:6136cb33f653853bf70b9818794cc2f79471f2e4f3d9434d16d5b929bb4ecbb2"},
@@ -3959,7 +4235,7 @@ description = "Wrappers for the framework MetricKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"21.0\""
+markers = "platform_release >= \"21.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_MetricKit-10.3.2-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:d3b603cbef1bab8877a29663d6fc2ac4f99e9c34a69b9970745044432854fb47"},
     {file = "pyobjc_framework_MetricKit-10.3.2-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:29bbc80d73b7a0c1ab4cae05c6273b363b467e4887fde3e4f6f7bfbcb8304ea0"},
@@ -3983,7 +4259,7 @@ description = "Wrappers for the framework MLCompute on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"20.0\""
+markers = "platform_release >= \"20.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_MLCompute-10.3.2-py2.py3-none-any.whl", hash = "sha256:d8755b4b74bfa8f6a96221ac18edce0d7a94158ab92b94cdb8a91f1d224ae497"},
     {file = "pyobjc_framework_MLCompute-10.3.2-py3-none-any.whl", hash = "sha256:7472f29e04478c06a20f6fcc90a0c85a67ebf4282f3d940382215191c85e74df"},
@@ -4001,7 +4277,7 @@ description = "Wrappers for the framework ModelIO on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"15.0\""
+markers = "platform_release >= \"15.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_ModelIO-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:82ba2bb5d2c2b0f5fe10b74dcc80dda0553a783433f05d914414de0ac38ebac8"},
     {file = "pyobjc_framework_ModelIO-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:c8668b6758f4c3b303263d2dd47160c61891813d3e7afdb9069f6bb2f5a914cd"},
@@ -4023,7 +4299,7 @@ description = "Wrappers for the framework MultipeerConnectivity on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"14.0\""
+markers = "platform_release >= \"14.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_MultipeerConnectivity-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:e056e8b510fff328cc4d9b7eddf9f52c8324de8d7895cb9be66eadf8fc536660"},
     {file = "pyobjc_framework_MultipeerConnectivity-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:c4b50190d9c6891de31be4a36beba8e093150dd448e94026e4645ee33aa1a7db"},
@@ -4044,7 +4320,7 @@ description = "Wrappers for the framework NaturalLanguage on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"18.0\""
+markers = "platform_release >= \"18.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_NaturalLanguage-10.3.2-py2.py3-none-any.whl", hash = "sha256:d8cfa0f37f89ce2737334b64b3c9412c18abb60613b0d3e691ffbc66e3cd5636"},
     {file = "pyobjc_framework_NaturalLanguage-10.3.2-py3-none-any.whl", hash = "sha256:b684aa6a8023de2297c5673693ade2dbd0289950c6262d425ce7c90fefd9c4a0"},
@@ -4062,7 +4338,7 @@ description = "Wrappers for the framework NetFS on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"10.0\""
+markers = "platform_release >= \"10.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_NetFS-10.3.2-py2.py3-none-any.whl", hash = "sha256:d728d2b69042a18e7441fcbc6109d3ee7fcd9b5afa43cf48c28e6b9ce2acd047"},
     {file = "pyobjc_framework_NetFS-10.3.2-py3-none-any.whl", hash = "sha256:75089ddd8d0e2ca837ed64d0a0eeccfcc9f47d13ff586b427cbb64c2a6c8ba8e"},
@@ -4080,7 +4356,7 @@ description = "Wrappers for the framework Network on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"18.0\""
+markers = "platform_release >= \"18.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_Network-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:6b99ffc9ada5c44f1dfc5df32a343fe12653b21e78f90394a5343213bd3c8738"},
     {file = "pyobjc_framework_Network-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:c4b3f36a7869b4b69ed497cf99798339921c6ffb0e2796df2eda120a184cab18"},
@@ -4101,7 +4377,7 @@ description = "Wrappers for the framework NetworkExtension on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"15.0\""
+markers = "platform_release >= \"15.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_NetworkExtension-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:ae4446536bab08a86a1150231add4e27c7d2e449becf99defb22a85c43e3e15e"},
     {file = "pyobjc_framework_NetworkExtension-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:fc85398073d1626e4e4cd87b9f152489c2fb54361eac9424d786927170e24a9f"},
@@ -4122,7 +4398,7 @@ description = "Wrappers for the framework NotificationCenter on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"14.0\""
+markers = "platform_release >= \"14.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_NotificationCenter-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:b709b7d4c68e81cf7f8c6ac9a8f782ed73d3c811e18e506d36204a4372e582cf"},
     {file = "pyobjc_framework_NotificationCenter-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:573e45bc8726296b3830690b2896a8f2e1d6b5d15a4010b34cc1656bbd6c4311"},
@@ -4143,7 +4419,7 @@ description = "Wrappers for the framework OpenDirectory on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"10.0\""
+markers = "platform_release >= \"10.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_OpenDirectory-10.3.2-py2.py3-none-any.whl", hash = "sha256:276eb1615898e134e0bedd142b9003db65db5d542696c796567bc223882bea63"},
     {file = "pyobjc_framework_OpenDirectory-10.3.2-py3-none-any.whl", hash = "sha256:2f4fd45bac828eeb17c778cf8be0883f58828baa59bfdc3ebf5876aad1318627"},
@@ -4179,7 +4455,7 @@ description = "Wrappers for the framework OSLog on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"19.0\""
+markers = "platform_release >= \"19.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_OSLog-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:8e30364a0d2f00c8219e4517b28e01e1cb5187c168666589e096fa72ed3551d1"},
     {file = "pyobjc_framework_OSLog-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:958c7cbaa87f6da0dc89092010249b4f880c748b735ae4343c5e60dd9e0c0a31"},
@@ -4202,7 +4478,7 @@ description = "Wrappers for the framework PassKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"20.0\""
+markers = "platform_release >= \"20.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_PassKit-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:60d9244b2715b6c4803174c5c96b98fe226771f5a8e46551bb120804ef02d743"},
     {file = "pyobjc_framework_PassKit-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:f37d18fe27453a845ffdf1bb70d9a9f48ddb117ad6ad6f3fd8863b09294c5ae9"},
@@ -4223,7 +4499,7 @@ description = "Wrappers for the framework PencilKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"19.0\""
+markers = "platform_release >= \"19.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_PencilKit-10.3.2-py2.py3-none-any.whl", hash = "sha256:680a17eb204db9741545259be29e747f0fc0e35ae9c8ba889ffe4443236b19d8"},
     {file = "pyobjc_framework_PencilKit-10.3.2-py3-none-any.whl", hash = "sha256:a0780237de28e1cade0f3533d94ebf0c4844ca809eed3dea70e94d98ee708251"},
@@ -4241,7 +4517,7 @@ description = "Wrappers for the framework PHASE on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"21.0\""
+markers = "platform_release >= \"21.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_PHASE-10.3.2-py2.py3-none-any.whl", hash = "sha256:24791034d0c81023d8fd4d22a0373ed508a1624410c1364d4db12c615f6f0247"},
     {file = "pyobjc_framework_PHASE-10.3.2-py3-none-any.whl", hash = "sha256:a5a6672ed560b264e7f89ca5e50fcd5f3d2a3c5bd783cf5e85468d1efc8bceef"},
@@ -4259,7 +4535,7 @@ description = "Wrappers for the framework Photos on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"15.0\""
+markers = "platform_release >= \"15.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_Photos-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:7b1d3815a81efebfc24fb8cc70ba6fd49a9f261496b6a026a94d19e086b84fea"},
     {file = "pyobjc_framework_Photos-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:2a8453c5069ae6929bbc0880a0979d4b72986541366e2d0c4665c0874cde832a"},
@@ -4280,7 +4556,7 @@ description = "Wrappers for the framework PhotosUI on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"15.0\""
+markers = "platform_release >= \"15.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_PhotosUI-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:6dbbca4660d1d736694a123d15eecc43f004133ccb6cc761615c30982a37bda0"},
     {file = "pyobjc_framework_PhotosUI-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:574f03450feb9280904c32dc97c11a00aff1ddcf36250b4d8b100fc14509a7b0"},
@@ -4319,7 +4595,7 @@ description = "Wrappers for the framework PubSub on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "platform_release >= \"9.0\" and platform_release < \"18.0\" and sys_platform == \"darwin\""
+markers = "platform_release < \"18.0\" and sys_platform == \"darwin\" and platform_release >= \"9.0\""
 files = [
     {file = "pyobjc_framework_PubSub-10.3.2-py2.py3-none-any.whl", hash = "sha256:5e387ccf9438504c085668aab2942fc473a7bd34f3cbb1cc530cc5e0fc40349e"},
     {file = "pyobjc_framework_PubSub-10.3.2-py3-none-any.whl", hash = "sha256:7e343c138cfc26d687bb6c0dedf250e849899f16361570f89a58c1cf7c7e6887"},
@@ -4337,7 +4613,7 @@ description = "Wrappers for the framework PushKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"19.0\""
+markers = "platform_release >= \"19.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_PushKit-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:005ba32ecc1c50b1ddb9bd28bf224fe8fb012fd7fe9ac01c76792ea55c0eb098"},
     {file = "pyobjc_framework_PushKit-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:9231a7b66cb672f26500fbe9a6f3cd251ff2ff3e4def001b9f153a524c1bbfbb"},
@@ -4382,7 +4658,7 @@ description = "Wrappers for the framework QuickLookThumbnailing on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"19.0\""
+markers = "platform_release >= \"19.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_QuickLookThumbnailing-10.3.2-py2.py3-none-any.whl", hash = "sha256:fa3f98ae2e014ea3afeac071aeb9eb29ee405d4bf122980de11de0b9ce18b908"},
     {file = "pyobjc_framework_QuickLookThumbnailing-10.3.2-py3-none-any.whl", hash = "sha256:9d6a7c7c733a447d8076813fdf68532e5b5d81d75af85cf64efa32b992d52dae"},
@@ -4401,7 +4677,7 @@ description = "Wrappers for the framework ReplayKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"20.0\""
+markers = "platform_release >= \"20.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_ReplayKit-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:e8d1143119f9c707585baf65b1c2dd19445ea5be609d82911609f3cca38309d2"},
     {file = "pyobjc_framework_ReplayKit-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:fbcfae19fbd4f066c1135baf07c0513b6edd8b4392a3b18b44e31567f63e35a4"},
@@ -4422,7 +4698,7 @@ description = "Wrappers for the framework SafariServices on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"16.0\""
+markers = "platform_release >= \"16.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_SafariServices-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:b732b54f9c5f168ca475f5e2d3f8542100c42e08d90946d097ff46aeeee08750"},
     {file = "pyobjc_framework_SafariServices-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:afd1cce5f71f1d9c91c092c86e2d0b48fbfdc27793c8aab0222aa727e2440f10"},
@@ -4443,7 +4719,7 @@ description = "Wrappers for the framework SafetyKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"22.0\""
+markers = "platform_release >= \"22.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_SafetyKit-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:0d90d2224012d5b521b0431170d918ab73d00da037935dea652bfba30129a51a"},
     {file = "pyobjc_framework_SafetyKit-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:c49962f2d082558561750f46b776433dd53828835ebd9a8a5bb0f6069b0b9c8c"},
@@ -4465,7 +4741,7 @@ description = "Wrappers for the framework SceneKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"11.0\""
+markers = "platform_release >= \"11.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_SceneKit-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:02081f992ee2ea046aec269b69f496ce226b6216a3a9772dfafba59dedd4c86d"},
     {file = "pyobjc_framework_SceneKit-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:9a344a455136e186c9ecd92cc195aa64b41e9686db1890ae646499e654589c21"},
@@ -4487,7 +4763,7 @@ description = "Wrappers for the framework ScreenCaptureKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"21.4\""
+markers = "platform_release >= \"21.4\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_ScreenCaptureKit-10.3.2-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:1adc08dadfc0a0ad90c904f017442866491a9c943c9d4b5865b6a241dd4707ae"},
     {file = "pyobjc_framework_ScreenCaptureKit-10.3.2-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:050f322024ea3c19c46068a8a994eb39f70b349efb43fbe2512484a09923fbb9"},
@@ -4533,7 +4809,7 @@ description = "Wrappers for the framework ScreenTime on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"20.0\""
+markers = "platform_release >= \"20.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_ScreenTime-10.3.2-py2.py3-none-any.whl", hash = "sha256:5b56da2b391ad73ca31a29439637b911b49424d7c6194138de45a3242313b53a"},
     {file = "pyobjc_framework_ScreenTime-10.3.2-py3-none-any.whl", hash = "sha256:e6667965389139f8abbbf85759de6bf11ffa8c95fb8b2dd767f80d56f7deb8ac"},
@@ -4551,7 +4827,7 @@ description = "Wrappers for the framework ScriptingBridge on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"9.0\""
+markers = "platform_release >= \"9.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_ScriptingBridge-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:838a1a9f1d03f110780c273c356ebe255949f6bdb6487c8bd26fa8983fdf08b4"},
     {file = "pyobjc_framework_ScriptingBridge-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:f045ba439b8ba13febb76254c5a21ba9f76c82a0e27f0f414b5f782625f2e46f"},
@@ -4655,7 +4931,7 @@ description = "Wrappers for the framework SensitiveContentAnalysis on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"23.0\""
+markers = "platform_release >= \"23.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_SensitiveContentAnalysis-10.3.2-py2.py3-none-any.whl", hash = "sha256:1c31183ca67bda6c5b1982b094d2aea35deac13260d586238cebe26db5d755fa"},
     {file = "pyobjc_framework_SensitiveContentAnalysis-10.3.2-py3-none-any.whl", hash = "sha256:8d0e4bf06939706d48a6d24b326c9d388e943a3988f97df0591ecd5f575047d7"},
@@ -4674,7 +4950,7 @@ description = "Wrappers for the framework ServiceManagement on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"10.0\""
+markers = "platform_release >= \"10.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_ServiceManagement-10.3.2-py2.py3-none-any.whl", hash = "sha256:cd5e5e0e461550bb7c9ddb7170372530eb3a391c7ba797675be86f87fbd062b3"},
     {file = "pyobjc_framework_ServiceManagement-10.3.2-py3-none-any.whl", hash = "sha256:c7b4ff6cddc0ad2ff229432cddb77bf19cfba70296f54928c8004b87040d4255"},
@@ -4692,7 +4968,7 @@ description = "Wrappers for the framework SharedWithYou on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"22.0\""
+markers = "platform_release >= \"22.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_SharedWithYou-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:77f5f3a248386a33dc42938fa0435cdc22434acb511125c9cab32869d87f814f"},
     {file = "pyobjc_framework_SharedWithYou-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:d94d88115fac7a200fb36c7d4eff8960f3b0663074e290d096b92b7aababa66f"},
@@ -4713,7 +4989,7 @@ description = "Wrappers for the framework SharedWithYouCore on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"22.0\""
+markers = "platform_release >= \"22.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_SharedWithYouCore-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:b3a51b83c4bc09709d33e51dcb780e4c7d53aa044391464b8b252d44e866d78e"},
     {file = "pyobjc_framework_SharedWithYouCore-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:3bbeba3bf8549d7a2515edb9fbe0f1e6f164717c746f301e16efa65acdb0d076"},
@@ -4734,7 +5010,7 @@ description = "Wrappers for the framework ShazamKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"21.0\""
+markers = "platform_release >= \"21.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_ShazamKit-10.3.2-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:a9cdb1dcc688bc26375a57405f77866e59880cafb17097909f505df322e26e2e"},
     {file = "pyobjc_framework_ShazamKit-10.3.2-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:aba33267e5624473fc4985ffbc10b74542694c0ec96050e69bf7afc25367a3e1"},
@@ -4758,7 +5034,7 @@ description = "Wrappers for the framework Social on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"12.0\""
+markers = "platform_release >= \"12.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_Social-10.3.2-py2.py3-none-any.whl", hash = "sha256:9a2cbb8a25f1923e867ead924d9252992109a8462272dba47c1097e1fae4a61b"},
     {file = "pyobjc_framework_Social-10.3.2-py3-none-any.whl", hash = "sha256:741e8017d737ae3288dc7b242238ab5248657f5f00c575f7e924b65c8bfbedec"},
@@ -4776,7 +5052,7 @@ description = "Wrappers for the framework SoundAnalysis on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"19.0\""
+markers = "platform_release >= \"19.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_SoundAnalysis-10.3.2-py2.py3-none-any.whl", hash = "sha256:8d654057428004c6ffeccc92e663560a544dc1a8b4234c404af089c55e1ad803"},
     {file = "pyobjc_framework_SoundAnalysis-10.3.2-py3-none-any.whl", hash = "sha256:2c964e811adbdd5b86f207e6011e7ab6deb89896fb1bff19c1d7936ed6af7665"},
@@ -4794,7 +5070,7 @@ description = "Wrappers for the framework Speech on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"19.0\""
+markers = "platform_release >= \"19.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_Speech-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:4343a4626060877a0023aa6c76a8a242b5b77903fdfe3ff385ad7f0f2f6f64bb"},
     {file = "pyobjc_framework_Speech-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:372efaf0ace54a4b3a3dd09525e94f7dc9c964062cfe3523de89a68f0e75839f"},
@@ -4815,7 +5091,7 @@ description = "Wrappers for the framework SpriteKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"13.0\""
+markers = "platform_release >= \"13.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_SpriteKit-10.3.2-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:81a8ac28b908ced13d086c47a02855d50f6df26e48709704b5db21caa9d24c80"},
     {file = "pyobjc_framework_SpriteKit-10.3.2-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:76b215b7834d03f7b1d87b5566d254dca73fa1a66c70c2e8d2d2802c916fdbf5"},
@@ -4840,7 +5116,7 @@ description = "Wrappers for the framework StoreKit on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"11.0\""
+markers = "platform_release >= \"11.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_StoreKit-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:20aa3b272ea99c6d9852ecc58333fbdffb3f1ab3d94fa0acde30aaf6f8a590b4"},
     {file = "pyobjc_framework_StoreKit-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:f5747eea8acbdabb91f6928072724fc4e3519bc9c0b13ba3555b595cf434398a"},
@@ -4861,7 +5137,7 @@ description = "Wrappers for the framework Symbols on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"23.0\""
+markers = "platform_release >= \"23.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_Symbols-10.3.2-py2.py3-none-any.whl", hash = "sha256:f2d003989d857f62d9cf5f93dce83ea58f59319b0cdd6ef178ce1d380907831e"},
     {file = "pyobjc_framework_Symbols-10.3.2-py3-none-any.whl", hash = "sha256:bcc5453605ecbf462c1f868db91921eab4d23039d1ddc04f3be5fba719efe3c3"},
@@ -4922,7 +5198,7 @@ description = "Wrappers for the framework SystemExtensions on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"19.0\""
+markers = "platform_release >= \"19.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_SystemExtensions-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:78db9a79927423ff6320f69b0e2a8d72e709f6c62d17da40bc8afd2bd5190673"},
     {file = "pyobjc_framework_SystemExtensions-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:ea3c137f9ce6cc151fd10bf5e6575a3078621c8483999a35d10f9eb2cd1e0940"},
@@ -4943,7 +5219,7 @@ description = "Wrappers for the framework ThreadNetwork on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"22.0\""
+markers = "platform_release >= \"22.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_ThreadNetwork-10.3.2-py2.py3-none-any.whl", hash = "sha256:291d6cd9b7ccec8d82ab6be21597b9478a022d6cf2f63006c05fba2e0764c36f"},
     {file = "pyobjc_framework_ThreadNetwork-10.3.2-py3-none-any.whl", hash = "sha256:dd218e6f246e3a006b46cb76c4a82d7f45e2c827e91464fe12026fb0dcaa0409"},
@@ -4961,7 +5237,7 @@ description = "Wrappers for the framework UniformTypeIdentifiers on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"20.0\""
+markers = "platform_release >= \"20.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_UniformTypeIdentifiers-10.3.2-py2.py3-none-any.whl", hash = "sha256:9ee1c3297efead181deeae50d3322582517f6e5fd45e247f5691cdae995bda62"},
     {file = "pyobjc_framework_UniformTypeIdentifiers-10.3.2-py3-none-any.whl", hash = "sha256:a1a01cf7d41346e9c2002f979783d797b35f07def5b3c7c426f2c4f34f8163d1"},
@@ -4979,7 +5255,7 @@ description = "Wrappers for the framework UserNotifications on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"18.0\""
+markers = "platform_release >= \"18.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_UserNotifications-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:ecfdf119c50f23bcc501c51bfe5dab658a91d4f71c7fc96f197afbb7864598a4"},
     {file = "pyobjc_framework_UserNotifications-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:4b4374e72846f9773e1b424760d2b198e77a38497068822be1cf31da2861c421"},
@@ -5000,7 +5276,7 @@ description = "Wrappers for the framework UserNotificationsUI on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"20.0\""
+markers = "platform_release >= \"20.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_UserNotificationsUI-10.3.2-py2.py3-none-any.whl", hash = "sha256:fc7c1b88c59f64e9b0d859b456f8f08cdded7daa6360e073f99d91ae84d641af"},
     {file = "pyobjc_framework_UserNotificationsUI-10.3.2-py3-none-any.whl", hash = "sha256:6a59e6a08dfd1d9d4e0a9e3f61099731b2a901d189e14d97ccf8fe12fd011be4"},
@@ -5019,7 +5295,7 @@ description = "Wrappers for the framework VideoSubscriberAccount on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"18.0\""
+markers = "platform_release >= \"18.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_VideoSubscriberAccount-10.3.2-py2.py3-none-any.whl", hash = "sha256:aa3695a742f6ba04285a3721ca33bd537adcafd3ca018757fd95234a5c11baa1"},
     {file = "pyobjc_framework_VideoSubscriberAccount-10.3.2-py3-none-any.whl", hash = "sha256:c0ad86a912eed0d21fe8b93dda213928bad5c06cc106afa0d6fb7cf012f55f54"},
@@ -5037,7 +5313,7 @@ description = "Wrappers for the framework VideoToolbox on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"12.0\""
+markers = "platform_release >= \"12.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_VideoToolbox-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:05824777d723525dbe751370c5cbdd3bf70192628b0127c323d7238877b71df4"},
     {file = "pyobjc_framework_VideoToolbox-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:32f68e12382812942582af7e7989eb6bad20842dfa7fc49d42d9e030ab9d7d68"},
@@ -5060,7 +5336,7 @@ description = "Wrappers for the framework Virtualization on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"20.0\""
+markers = "platform_release >= \"20.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_Virtualization-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:b8db4421b5de5dd1f94cde2ee6d547d9d3a0099f826f662f0e11b98183fa7484"},
     {file = "pyobjc_framework_Virtualization-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:68159f5947956a08f26c3f94ce2dc390ed721b0edbbe7ab757ca9cb3217130f9"},
@@ -5081,7 +5357,7 @@ description = "Wrappers for the framework Vision on macOS"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "sys_platform == \"darwin\" and platform_release >= \"17.0\""
+markers = "platform_release >= \"17.0\" and sys_platform == \"darwin\""
 files = [
     {file = "pyobjc_framework_Vision-10.3.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:62efeeef9317d6014b26e4476de45f4b2853970272e1a236e45044ad8ac8b2fb"},
     {file = "pyobjc_framework_Vision-10.3.2-cp36-abi3-macosx_10_13_universal2.whl", hash = "sha256:cae03536f12ed5764ecfdcf9cf96b37e577cc6e8c466aeb23a6aa0682b45ae39"},
@@ -5225,7 +5501,7 @@ description = "Python for Window Extensions"
 optional = false
 python-versions = "*"
 groups = ["main"]
-markers = "sys_platform == \"win32\" and platform_python_implementation != \"PyPy\""
+markers = "platform_python_implementation != \"PyPy\" and sys_platform == \"win32\""
 files = [
     {file = "pywin32-310-cp310-cp310-win32.whl", hash = "sha256:6dd97011efc8bf51d6793a82292419eba2c71cf8e7250cfac03bba284454abc1"},
     {file = "pywin32-310-cp310-cp310-win_amd64.whl", hash = "sha256:c3e78706e4229b915a0821941a84e7ef420bf2b77e08c9dae3c76fd03fd2ae3d"},
@@ -5362,6 +5638,36 @@ files = [
 six = ">=1.7.0"
 
 [[package]]
+name = "roboticstoolbox-python"
+version = "1.1.1"
+description = "A Python library for robotics education and research"
+optional = false
+python-versions = ">=3.7"
+groups = ["main"]
+files = [
+    {file = "roboticstoolbox_python-1.1.1-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:70880605dde08c96b7c1f03ca16abaf79cd7e6501ba7ddfe4ccea933d15bdc08"},
+    {file = "roboticstoolbox_python-1.1.1.tar.gz", hash = "sha256:2615f808784b91907927ab40e39cc2e34db89a53e71a14b40f973756122ea9e4"},
+]
+
+[package.dependencies]
+ansitable = "*"
+matplotlib = "*"
+numpy = ">=1.17.4"
+pgraph-python = "*"
+progress = "*"
+rtb-data = "*"
+scipy = "*"
+spatialgeometry = ">=1.0.0"
+spatialmath-python = ">=1.1.5"
+swift-sim = ">=1.0.0"
+typing-extensions = "*"
+
+[package.extras]
+collision = ["pybullet"]
+dev = ["bdsim", "black", "flake8", "pybullet", "pytest", "pytest-cov", "pyyaml", "qpsolvers", "quadprog", "sympy"]
+docs = ["sphinx", "sphinx-autodoc-typehints", "sphinx-autorun", "sphinx-favicon", "sphinx-rtd-theme"]
+
+[[package]]
 name = "rpds-py"
 version = "0.20.1"
 description = "Python bindings to Rust's persistent data structures (rpds)"
@@ -5473,6 +5779,43 @@ files = [
     {file = "rpds_py-0.20.1-pp39-pypy39_pp73-win_amd64.whl", hash = "sha256:83cba698cfb3c2c5a7c3c6bac12fe6c6a51aae69513726be6411076185a8b24a"},
     {file = "rpds_py-0.20.1.tar.gz", hash = "sha256:e1791c4aabd117653530dccd24108fa03cc6baf21f58b950d0a73c3b3b29a350"},
 ]
+
+[[package]]
+name = "rtb-data"
+version = "1.1.0"
+description = "Data files for the Robotics Toolbox for Python."
+optional = false
+python-versions = ">=3.8"
+groups = ["main"]
+files = [
+    {file = "rtb_data-1.1.0-py3-none-any.whl", hash = "sha256:6b52e7acd99fbfdcba8204c917fd876a9728588e0ba9c2680c39523b2b68ac3f"},
+    {file = "rtb_data-1.1.0.tar.gz", hash = "sha256:aeec4fa8eb3f84de8a7dbee8af2f84afb081965fb2b14571cb2d048946be989c"},
+]
+
+[[package]]
+name = "rvc3python"
+version = "0.9.2"
+description = "Support for book: Robotics, Vision & Control 3 in Python"
+optional = false
+python-versions = ">=3.7"
+groups = ["main"]
+files = [
+    {file = "rvc3python-0.9.2-py3-none-any.whl", hash = "sha256:ff080fb4eac5d641ccbba178d6ff36510646ee786109cb519bd0f537742b0588"},
+    {file = "rvc3python-0.9.2.tar.gz", hash = "sha256:8901fc0f52181311e9875ea3f940c18899f49ea1946aca8c2be05481db56cac0"},
+]
+
+[package.dependencies]
+bdsim = ">=1.1"
+IPython = "*"
+machinevision-toolbox-python = "*"
+matplotlib = "*"
+numpy = "<2"
+pybullet = "*"
+roboticstoolbox-python = ">=1"
+sympy = "*"
+
+[package.extras]
+pytorch = ["torch", "torchvision"]
 
 [[package]]
 name = "scikit-image"
@@ -5646,6 +5989,54 @@ files = [
 ]
 
 [[package]]
+name = "spatialgeometry"
+version = "1.1.0"
+description = "A Shape and Geometry Description Package"
+optional = false
+python-versions = ">=3.7"
+groups = ["main"]
+files = [
+    {file = "spatialgeometry-1.1.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:c0764b44008e3797c6e154b653b4964ec9224836a1668a1e69909b4a46d2944d"},
+    {file = "spatialgeometry-1.1.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:d793425c7afbcc63f792d0cf1e2633b87055a8d9c31563ab049c24007572a08e"},
+    {file = "spatialgeometry-1.1.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:4cf28656881633a4165e1550473dc739797a7adc8b962b35391e6840e7d44447"},
+    {file = "spatialgeometry-1.1.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:5fc38ea9ee1f858edb31f332faca00374dd1ba3f5affa767c220deefa5b24510"},
+    {file = "spatialgeometry-1.1.0-cp310-cp310-win32.whl", hash = "sha256:14777a279f6ad20cef3c0384bb3f2861e5b549f6ed69efd0c7dd50dfb3f722ff"},
+    {file = "spatialgeometry-1.1.0-cp310-cp310-win_amd64.whl", hash = "sha256:56ecacb75a3a324a791916fe88ffff2a76f692a9b45eac8cd60febb5459bc484"},
+    {file = "spatialgeometry-1.1.0-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:fa65a83c0f337dd0f8a0079f49f79580759d1d600e51600a34e2ace6a68db671"},
+    {file = "spatialgeometry-1.1.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:05cf9f0ea322b973b3ac90fd1470d0e69bd9d106edfaabb41c5c80b96cba3e3a"},
+    {file = "spatialgeometry-1.1.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:70932e6fb86cfe7ca71f044668ed569015b6bd7ed9e817e17492d756a4847ed1"},
+    {file = "spatialgeometry-1.1.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d2e8eeb0a0638044155d1815479c299419db7c5c7ae98b265117eccb65f2f8c6"},
+    {file = "spatialgeometry-1.1.0-cp311-cp311-win32.whl", hash = "sha256:a4d8b9acad17937f4bf9f6bc932450b0f9700c3eb2c2a34ea465349536f50b07"},
+    {file = "spatialgeometry-1.1.0-cp311-cp311-win_amd64.whl", hash = "sha256:c16aacb679bee40b7a14744bc294f327d8adb140f5b989a5947aa7cd744bda2f"},
+    {file = "spatialgeometry-1.1.0-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:4aed62a6505d63d1859c8a909afc788ac588ba8f7b91afd024528fff5893a243"},
+    {file = "spatialgeometry-1.1.0-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:3d21fe7f1b0a8905881a1dae53e8fbbb352f1cb2b31918bca95ec0f34d19141d"},
+    {file = "spatialgeometry-1.1.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:5edfff744d73cedee8b8742d691bbffb16248aa07448f9b2b78e41658ffa2d5c"},
+    {file = "spatialgeometry-1.1.0-cp37-cp37m-win32.whl", hash = "sha256:5f0459c2a55fd152f46c3208c4ccc5b4c4cb7dc678460be3ac286fdc2814dc57"},
+    {file = "spatialgeometry-1.1.0-cp37-cp37m-win_amd64.whl", hash = "sha256:7dafa40f67f5feb7086206f6a3e05b06f7f2a3dc65c040e3c3e70f191b007b47"},
+    {file = "spatialgeometry-1.1.0-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:11254bca04a155f131117f4740918f2501512a5d7c61ff3f14d52468343a723c"},
+    {file = "spatialgeometry-1.1.0-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:e2be6e5c6e4efa8afd63e1462a37cb082459e47a929d34ad8efdec81639c09d0"},
+    {file = "spatialgeometry-1.1.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:f46b3cadd7bfaec54898795e36eda8d61850aebcd2bbb11054ecd07fea6092c9"},
+    {file = "spatialgeometry-1.1.0-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b18b8646c0e8e5c69f8d5fb7bda9a5979f4f09d6164f4d9a7a4e52911bdca5dd"},
+    {file = "spatialgeometry-1.1.0-cp38-cp38-win32.whl", hash = "sha256:768e7d5e5af9339fc0890213b30e19a4885f13ebc7c041ede3982b8210a183e2"},
+    {file = "spatialgeometry-1.1.0-cp38-cp38-win_amd64.whl", hash = "sha256:26ca10d6b24c91ca64f77201ef328ec346750565bbbf4b7a530689a9d66f523b"},
+    {file = "spatialgeometry-1.1.0-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:b0a7905df919b3d57c542ca0762ca2a07a5f993a039b1ce78d2255d01de01802"},
+    {file = "spatialgeometry-1.1.0-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:63d2444e0eb9d2d49a99a7e54e22c5ba0dd776787d680608ca158641e3667917"},
+    {file = "spatialgeometry-1.1.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:cc6002ebdf9ed6b11f2191a7e4f32988511534e197006717830ba805901e99ab"},
+    {file = "spatialgeometry-1.1.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b1b231de91ef3f40675d5b29ec8f4e0ac9530ba4c2f9f0f4d3759241ec72152d"},
+    {file = "spatialgeometry-1.1.0-cp39-cp39-win32.whl", hash = "sha256:d133a1a6d4ddbbf1b9b0705f203e0ed98c0988ee1413ab180fac84bea579c8e4"},
+    {file = "spatialgeometry-1.1.0-cp39-cp39-win_amd64.whl", hash = "sha256:053af13bf4847417353b12bb06199e94c6dd4a8cb87bfd3624af0ad2960d70e5"},
+    {file = "spatialgeometry-1.1.0.tar.gz", hash = "sha256:98b2b1023eed6197d26f31cf4643c51d1a41059ac6036a10b16dc389ec6af5a6"},
+]
+
+[package.dependencies]
+spatialmath-python = ">=1.0.0"
+
+[package.extras]
+collision = ["pybullet"]
+dev = ["black", "flake8", "pytest", "pytest-cov", "pyyaml", "roboticstoolbox-python (>=1.0.0,<1.1.0)", "swift-sim"]
+docs = ["sphinx", "sphinx-autorun", "sphinx-rtd-theme"]
+
+[[package]]
 name = "spatialmath-python"
 version = "1.1.8"
 description = "Provides spatial maths capability for Python"
@@ -5687,6 +6078,95 @@ pure-eval = "*"
 
 [package.extras]
 tests = ["cython", "littleutils", "pygments", "pytest", "typeguard"]
+
+[[package]]
+name = "swift-sim"
+version = "1.1.0"
+description = "A Python/Javascript Robot Simulator and Visualiser"
+optional = false
+python-versions = ">=3.7"
+groups = ["main"]
+files = [
+    {file = "swift-sim-1.1.0.tar.gz", hash = "sha256:77a99348419ed2ca854f695e1328e5c313a2fdac612ed4b2406e2551de14f7d0"},
+    {file = "swift_sim-1.1.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:45699d8b9936a4d2b3d5a6df9847158efb0cd876363157181680ef56fa20f5ee"},
+    {file = "swift_sim-1.1.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:3c7c8bcbaf3408cf5d0f3fd21b5bb32e34c8a95bf34f5d9e25eb1ac354b39621"},
+    {file = "swift_sim-1.1.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:1c6707cdfcef69e70ab658b817bc6ac6e40151b4047598de503ebdadacc76c63"},
+    {file = "swift_sim-1.1.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:7862a81c087084b58f0284402975a426337285547aa7fa6329f5ee1846bbd3c1"},
+    {file = "swift_sim-1.1.0-cp310-cp310-win32.whl", hash = "sha256:e5a045e3a81694825ea20e2aec8914908af1db79f22ba2aa5cc6f943a39b8ff3"},
+    {file = "swift_sim-1.1.0-cp310-cp310-win_amd64.whl", hash = "sha256:0598def99601b45b39e5547bfff7520f47200288ccb4af1dea8563dc176ccafa"},
+    {file = "swift_sim-1.1.0-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:07fbd7bea5016efc4fa309e885f5b34a2660577221232b455036159b00881f4e"},
+    {file = "swift_sim-1.1.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:47c63c23763af1a6957c9ad360600f0d1f3ee2b152195c87bb81add44beaab9e"},
+    {file = "swift_sim-1.1.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a670b3d73f8c28b27cdd91da4cd81f20009457a3418f1ce7d8e41e816520aad7"},
+    {file = "swift_sim-1.1.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8b199a7e26fce68f0323246caacf3b9ec135d652f09d1acab09c1232c8bf3d1c"},
+    {file = "swift_sim-1.1.0-cp311-cp311-win32.whl", hash = "sha256:e0a62c17ca7215237bd3543e8b61b810720f3fae1d230eaffb674863dcd03f53"},
+    {file = "swift_sim-1.1.0-cp311-cp311-win_amd64.whl", hash = "sha256:0c2bdaa9d95f76fa40e35e9159e3633a74bb8cc5e66dd467fc708a2e1a454c09"},
+    {file = "swift_sim-1.1.0-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:fc669590df02fccd2a920180b91a73e39316de337c93dde4729f8b6896c5bb59"},
+    {file = "swift_sim-1.1.0-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:56d530b4d6cc56bfe4c1dca47d0f907d5b745ae2d4ac929698bda27c3695b993"},
+    {file = "swift_sim-1.1.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:256c6b8eed4405cc315857c8d6f4c2e99396ef7b18e0e009785630e4adfdfd31"},
+    {file = "swift_sim-1.1.0-cp37-cp37m-win32.whl", hash = "sha256:54096ec173d336a2e7df0d0e5d7c67b0fdd1670124fc7d31687bda8f5079c124"},
+    {file = "swift_sim-1.1.0-cp37-cp37m-win_amd64.whl", hash = "sha256:694f6149e5fba1aabb51836f8d16a37fc564b4cf27120b6ffddf954650305c2e"},
+    {file = "swift_sim-1.1.0-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:22d18c4e96e5ec1a49693ebffc81accc7ae5c02354cd49bcb45d8169e1d0c725"},
+    {file = "swift_sim-1.1.0-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:db323f1c0f9fae867b0dfb7a4c797ad158bbdfb9b9190e8278ccd82ece32607d"},
+    {file = "swift_sim-1.1.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:9f4dfa4203727bb9fba3fa913a8081d034fb4d4875a6b43258c6f3eb3cbcdeb4"},
+    {file = "swift_sim-1.1.0-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:85e62b241a938f98e69d1a323567523fd901feef1fad7fa5a4d1e5890a81ed48"},
+    {file = "swift_sim-1.1.0-cp38-cp38-win32.whl", hash = "sha256:714d4571e7d4808d5950ba64cd1f572df72da5f2cf7fd8da3f23597d5bcc8367"},
+    {file = "swift_sim-1.1.0-cp38-cp38-win_amd64.whl", hash = "sha256:0f199d4f39cca6dd30f31be1782a3d808a6a6bc071b8b65da6cae0fa4aa5ced6"},
+    {file = "swift_sim-1.1.0-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:527acec185a516d8e52c7265b7c95e4df8d31db8356e47cde93bfc2cf87669ff"},
+    {file = "swift_sim-1.1.0-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:ba6e07ed53333ee42e220ba1e81f6302a91b42a2c300730e9cebf47178eca4c7"},
+    {file = "swift_sim-1.1.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:6bbba6fa14a17defefa3fe487cc1dc2c17a40f86dfa7d09df312ce9f1392b0f8"},
+    {file = "swift_sim-1.1.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e324e96cf2c027a5e62bb6437b8234a49460e45b246a460b3e70742dbbe2119d"},
+    {file = "swift_sim-1.1.0-cp39-cp39-win32.whl", hash = "sha256:eda319fb4c6b913bf97afdab6bdf1e5f01283ae0853a6debae5cbc8546cc0b12"},
+    {file = "swift_sim-1.1.0-cp39-cp39-win_amd64.whl", hash = "sha256:20371492a8a79d9732083607781ccce56d2ba713fe46e6c38a95eb7ccb78e312"},
+]
+
+[package.dependencies]
+numpy = ">=1.17.4"
+spatialgeometry = ">=1.0.0"
+websockets = "*"
+
+[package.extras]
+dev = ["black", "flake8", "pytest", "pytest-cov", "pyyaml", "roboticstoolbox-python (>=1.0.0,<1.1.0)", "swift-sim"]
+docs = ["sphinx", "sphinx-autorun", "sphinx-rtd-theme"]
+nb = ["ipython", "notebook"]
+vision = ["aiortc", "opencv-python"]
+
+[[package]]
+name = "sympy"
+version = "1.13.3"
+description = "Computer algebra system (CAS) in Python"
+optional = false
+python-versions = ">=3.8"
+groups = ["main"]
+markers = "python_version == \"3.8\""
+files = [
+    {file = "sympy-1.13.3-py3-none-any.whl", hash = "sha256:54612cf55a62755ee71824ce692986f23c88ffa77207b30c1368eda4a7060f73"},
+    {file = "sympy-1.13.3.tar.gz", hash = "sha256:b27fd2c6530e0ab39e275fc9b683895367e51d5da91baa8d3d64db2565fec4d9"},
+]
+
+[package.dependencies]
+mpmath = ">=1.1.0,<1.4"
+
+[package.extras]
+dev = ["hypothesis (>=6.70.0)", "pytest (>=7.1.0)"]
+
+[[package]]
+name = "sympy"
+version = "1.14.0"
+description = "Computer algebra system (CAS) in Python"
+optional = false
+python-versions = ">=3.9"
+groups = ["main"]
+markers = "python_version >= \"3.9\" and python_version < \"3.11\" or python_version == \"3.11\""
+files = [
+    {file = "sympy-1.14.0-py3-none-any.whl", hash = "sha256:e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5"},
+    {file = "sympy-1.14.0.tar.gz", hash = "sha256:d3d3fe8df1e5a0b42f0e7bdf50541697dbe7d23746e894990c030e2b05e72517"},
+]
+
+[package.dependencies]
+mpmath = ">=1.1.0,<1.4"
+
+[package.extras]
+dev = ["hypothesis (>=6.70.0)", "pytest (>=7.1.0)"]
 
 [[package]]
 name = "threadpoolctl"
@@ -5833,6 +6313,255 @@ files = [
 ]
 
 [[package]]
+name = "websockets"
+version = "13.1"
+description = "An implementation of the WebSocket Protocol (RFC 6455 & 7692)"
+optional = false
+python-versions = ">=3.8"
+groups = ["main"]
+markers = "python_version == \"3.8\""
+files = [
+    {file = "websockets-13.1-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:f48c749857f8fb598fb890a75f540e3221d0976ed0bf879cf3c7eef34151acee"},
+    {file = "websockets-13.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:c7e72ce6bda6fb9409cc1e8164dd41d7c91466fb599eb047cfda72fe758a34a7"},
+    {file = "websockets-13.1-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:f779498eeec470295a2b1a5d97aa1bc9814ecd25e1eb637bd9d1c73a327387f6"},
+    {file = "websockets-13.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:4676df3fe46956fbb0437d8800cd5f2b6d41143b6e7e842e60554398432cf29b"},
+    {file = "websockets-13.1-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:a7affedeb43a70351bb811dadf49493c9cfd1ed94c9c70095fd177e9cc1541fa"},
+    {file = "websockets-13.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1971e62d2caa443e57588e1d82d15f663b29ff9dfe7446d9964a4b6f12c1e700"},
+    {file = "websockets-13.1-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:5f2e75431f8dc4a47f31565a6e1355fb4f2ecaa99d6b89737527ea917066e26c"},
+    {file = "websockets-13.1-cp310-cp310-musllinux_1_2_i686.whl", hash = "sha256:58cf7e75dbf7e566088b07e36ea2e3e2bd5676e22216e4cad108d4df4a7402a0"},
+    {file = "websockets-13.1-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:c90d6dec6be2c7d03378a574de87af9b1efea77d0c52a8301dd831ece938452f"},
+    {file = "websockets-13.1-cp310-cp310-win32.whl", hash = "sha256:730f42125ccb14602f455155084f978bd9e8e57e89b569b4d7f0f0c17a448ffe"},
+    {file = "websockets-13.1-cp310-cp310-win_amd64.whl", hash = "sha256:5993260f483d05a9737073be197371940c01b257cc45ae3f1d5d7adb371b266a"},
+    {file = "websockets-13.1-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:61fc0dfcda609cda0fc9fe7977694c0c59cf9d749fbb17f4e9483929e3c48a19"},
+    {file = "websockets-13.1-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:ceec59f59d092c5007e815def4ebb80c2de330e9588e101cf8bd94c143ec78a5"},
+    {file = "websockets-13.1-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:c1dca61c6db1166c48b95198c0b7d9c990b30c756fc2923cc66f68d17dc558fd"},
+    {file = "websockets-13.1-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:308e20f22c2c77f3f39caca508e765f8725020b84aa963474e18c59accbf4c02"},
+    {file = "websockets-13.1-cp311-cp311-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:62d516c325e6540e8a57b94abefc3459d7dab8ce52ac75c96cad5549e187e3a7"},
+    {file = "websockets-13.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:87c6e35319b46b99e168eb98472d6c7d8634ee37750d7693656dc766395df096"},
+    {file = "websockets-13.1-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:5f9fee94ebafbc3117c30be1844ed01a3b177bb6e39088bc6b2fa1dc15572084"},
+    {file = "websockets-13.1-cp311-cp311-musllinux_1_2_i686.whl", hash = "sha256:7c1e90228c2f5cdde263253fa5db63e6653f1c00e7ec64108065a0b9713fa1b3"},
+    {file = "websockets-13.1-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:6548f29b0e401eea2b967b2fdc1c7c7b5ebb3eeb470ed23a54cd45ef078a0db9"},
+    {file = "websockets-13.1-cp311-cp311-win32.whl", hash = "sha256:c11d4d16e133f6df8916cc5b7e3e96ee4c44c936717d684a94f48f82edb7c92f"},
+    {file = "websockets-13.1-cp311-cp311-win_amd64.whl", hash = "sha256:d04f13a1d75cb2b8382bdc16ae6fa58c97337253826dfe136195b7f89f661557"},
+    {file = "websockets-13.1-cp312-cp312-macosx_10_9_universal2.whl", hash = "sha256:9d75baf00138f80b48f1eac72ad1535aac0b6461265a0bcad391fc5aba875cfc"},
+    {file = "websockets-13.1-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:9b6f347deb3dcfbfde1c20baa21c2ac0751afaa73e64e5b693bb2b848efeaa49"},
+    {file = "websockets-13.1-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:de58647e3f9c42f13f90ac7e5f58900c80a39019848c5547bc691693098ae1bd"},
+    {file = "websockets-13.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a1b54689e38d1279a51d11e3467dd2f3a50f5f2e879012ce8f2d6943f00e83f0"},
+    {file = "websockets-13.1-cp312-cp312-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:cf1781ef73c073e6b0f90af841aaf98501f975d306bbf6221683dd594ccc52b6"},
+    {file = "websockets-13.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8d23b88b9388ed85c6faf0e74d8dec4f4d3baf3ecf20a65a47b836d56260d4b9"},
+    {file = "websockets-13.1-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:3c78383585f47ccb0fcf186dcb8a43f5438bd7d8f47d69e0b56f71bf431a0a68"},
+    {file = "websockets-13.1-cp312-cp312-musllinux_1_2_i686.whl", hash = "sha256:d6d300f8ec35c24025ceb9b9019ae9040c1ab2f01cddc2bcc0b518af31c75c14"},
+    {file = "websockets-13.1-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:a9dcaf8b0cc72a392760bb8755922c03e17a5a54e08cca58e8b74f6902b433cf"},
+    {file = "websockets-13.1-cp312-cp312-win32.whl", hash = "sha256:2f85cf4f2a1ba8f602298a853cec8526c2ca42a9a4b947ec236eaedb8f2dc80c"},
+    {file = "websockets-13.1-cp312-cp312-win_amd64.whl", hash = "sha256:38377f8b0cdeee97c552d20cf1865695fcd56aba155ad1b4ca8779a5b6ef4ac3"},
+    {file = "websockets-13.1-cp313-cp313-macosx_10_13_universal2.whl", hash = "sha256:a9ab1e71d3d2e54a0aa646ab6d4eebfaa5f416fe78dfe4da2839525dc5d765c6"},
+    {file = "websockets-13.1-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:b9d7439d7fab4dce00570bb906875734df13d9faa4b48e261c440a5fec6d9708"},
+    {file = "websockets-13.1-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:327b74e915cf13c5931334c61e1a41040e365d380f812513a255aa804b183418"},
+    {file = "websockets-13.1-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:325b1ccdbf5e5725fdcb1b0e9ad4d2545056479d0eee392c291c1bf76206435a"},
+    {file = "websockets-13.1-cp313-cp313-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:346bee67a65f189e0e33f520f253d5147ab76ae42493804319b5716e46dddf0f"},
+    {file = "websockets-13.1-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:91a0fa841646320ec0d3accdff5b757b06e2e5c86ba32af2e0815c96c7a603c5"},
+    {file = "websockets-13.1-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:18503d2c5f3943e93819238bf20df71982d193f73dcecd26c94514f417f6b135"},
+    {file = "websockets-13.1-cp313-cp313-musllinux_1_2_i686.whl", hash = "sha256:a9cd1af7e18e5221d2878378fbc287a14cd527fdd5939ed56a18df8a31136bb2"},
+    {file = "websockets-13.1-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:70c5be9f416aa72aab7a2a76c90ae0a4fe2755c1816c153c1a2bcc3333ce4ce6"},
+    {file = "websockets-13.1-cp313-cp313-win32.whl", hash = "sha256:624459daabeb310d3815b276c1adef475b3e6804abaf2d9d2c061c319f7f187d"},
+    {file = "websockets-13.1-cp313-cp313-win_amd64.whl", hash = "sha256:c518e84bb59c2baae725accd355c8dc517b4a3ed8db88b4bc93c78dae2974bf2"},
+    {file = "websockets-13.1-cp38-cp38-macosx_10_9_universal2.whl", hash = "sha256:c7934fd0e920e70468e676fe7f1b7261c1efa0d6c037c6722278ca0228ad9d0d"},
+    {file = "websockets-13.1-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:149e622dc48c10ccc3d2760e5f36753db9cacf3ad7bc7bbbfd7d9c819e286f23"},
+    {file = "websockets-13.1-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:a569eb1b05d72f9bce2ebd28a1ce2054311b66677fcd46cf36204ad23acead8c"},
+    {file = "websockets-13.1-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:95df24ca1e1bd93bbca51d94dd049a984609687cb2fb08a7f2c56ac84e9816ea"},
+    {file = "websockets-13.1-cp38-cp38-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:d8dbb1bf0c0a4ae8b40bdc9be7f644e2f3fb4e8a9aca7145bfa510d4a374eeb7"},
+    {file = "websockets-13.1-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:035233b7531fb92a76beefcbf479504db8c72eb3bff41da55aecce3a0f729e54"},
+    {file = "websockets-13.1-cp38-cp38-musllinux_1_2_aarch64.whl", hash = "sha256:e4450fc83a3df53dec45922b576e91e94f5578d06436871dce3a6be38e40f5db"},
+    {file = "websockets-13.1-cp38-cp38-musllinux_1_2_i686.whl", hash = "sha256:463e1c6ec853202dd3657f156123d6b4dad0c546ea2e2e38be2b3f7c5b8e7295"},
+    {file = "websockets-13.1-cp38-cp38-musllinux_1_2_x86_64.whl", hash = "sha256:6d6855bbe70119872c05107e38fbc7f96b1d8cb047d95c2c50869a46c65a8e96"},
+    {file = "websockets-13.1-cp38-cp38-win32.whl", hash = "sha256:204e5107f43095012b00f1451374693267adbb832d29966a01ecc4ce1db26faf"},
+    {file = "websockets-13.1-cp38-cp38-win_amd64.whl", hash = "sha256:485307243237328c022bc908b90e4457d0daa8b5cf4b3723fd3c4a8012fce4c6"},
+    {file = "websockets-13.1-cp39-cp39-macosx_10_9_universal2.whl", hash = "sha256:9b37c184f8b976f0c0a231a5f3d6efe10807d41ccbe4488df8c74174805eea7d"},
+    {file = "websockets-13.1-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:163e7277e1a0bd9fb3c8842a71661ad19c6aa7bb3d6678dc7f89b17fbcc4aeb7"},
+    {file = "websockets-13.1-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:4b889dbd1342820cc210ba44307cf75ae5f2f96226c0038094455a96e64fb07a"},
+    {file = "websockets-13.1-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:586a356928692c1fed0eca68b4d1c2cbbd1ca2acf2ac7e7ebd3b9052582deefa"},
+    {file = "websockets-13.1-cp39-cp39-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:7bd6abf1e070a6b72bfeb71049d6ad286852e285f146682bf30d0296f5fbadfa"},
+    {file = "websockets-13.1-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6d2aad13a200e5934f5a6767492fb07151e1de1d6079c003ab31e1823733ae79"},
+    {file = "websockets-13.1-cp39-cp39-musllinux_1_2_aarch64.whl", hash = "sha256:df01aea34b6e9e33572c35cd16bae5a47785e7d5c8cb2b54b2acdb9678315a17"},
+    {file = "websockets-13.1-cp39-cp39-musllinux_1_2_i686.whl", hash = "sha256:e54affdeb21026329fb0744ad187cf812f7d3c2aa702a5edb562b325191fcab6"},
+    {file = "websockets-13.1-cp39-cp39-musllinux_1_2_x86_64.whl", hash = "sha256:9ef8aa8bdbac47f4968a5d66462a2a0935d044bf35c0e5a8af152d58516dbeb5"},
+    {file = "websockets-13.1-cp39-cp39-win32.whl", hash = "sha256:deeb929efe52bed518f6eb2ddc00cc496366a14c726005726ad62c2dd9017a3c"},
+    {file = "websockets-13.1-cp39-cp39-win_amd64.whl", hash = "sha256:7c65ffa900e7cc958cd088b9a9157a8141c991f8c53d11087e6fb7277a03f81d"},
+    {file = "websockets-13.1-pp310-pypy310_pp73-macosx_10_15_x86_64.whl", hash = "sha256:5dd6da9bec02735931fccec99d97c29f47cc61f644264eb995ad6c0c27667238"},
+    {file = "websockets-13.1-pp310-pypy310_pp73-macosx_11_0_arm64.whl", hash = "sha256:2510c09d8e8df777177ee3d40cd35450dc169a81e747455cc4197e63f7e7bfe5"},
+    {file = "websockets-13.1-pp310-pypy310_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:f1c3cf67185543730888b20682fb186fc8d0fa6f07ccc3ef4390831ab4b388d9"},
+    {file = "websockets-13.1-pp310-pypy310_pp73-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:bcc03c8b72267e97b49149e4863d57c2d77f13fae12066622dc78fe322490fe6"},
+    {file = "websockets-13.1-pp310-pypy310_pp73-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:004280a140f220c812e65f36944a9ca92d766b6cc4560be652a0a3883a79ed8a"},
+    {file = "websockets-13.1-pp310-pypy310_pp73-win_amd64.whl", hash = "sha256:e2620453c075abeb0daa949a292e19f56de518988e079c36478bacf9546ced23"},
+    {file = "websockets-13.1-pp38-pypy38_pp73-macosx_10_9_x86_64.whl", hash = "sha256:9156c45750b37337f7b0b00e6248991a047be4aa44554c9886fe6bdd605aab3b"},
+    {file = "websockets-13.1-pp38-pypy38_pp73-macosx_11_0_arm64.whl", hash = "sha256:80c421e07973a89fbdd93e6f2003c17d20b69010458d3a8e37fb47874bd67d51"},
+    {file = "websockets-13.1-pp38-pypy38_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:82d0ba76371769d6a4e56f7e83bb8e81846d17a6190971e38b5de108bde9b0d7"},
+    {file = "websockets-13.1-pp38-pypy38_pp73-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:e9875a0143f07d74dc5e1ded1c4581f0d9f7ab86c78994e2ed9e95050073c94d"},
+    {file = "websockets-13.1-pp38-pypy38_pp73-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a11e38ad8922c7961447f35c7b17bffa15de4d17c70abd07bfbe12d6faa3e027"},
+    {file = "websockets-13.1-pp38-pypy38_pp73-win_amd64.whl", hash = "sha256:4059f790b6ae8768471cddb65d3c4fe4792b0ab48e154c9f0a04cefaabcd5978"},
+    {file = "websockets-13.1-pp39-pypy39_pp73-macosx_10_15_x86_64.whl", hash = "sha256:25c35bf84bf7c7369d247f0b8cfa157f989862c49104c5cf85cb5436a641d93e"},
+    {file = "websockets-13.1-pp39-pypy39_pp73-macosx_11_0_arm64.whl", hash = "sha256:83f91d8a9bb404b8c2c41a707ac7f7f75b9442a0a876df295de27251a856ad09"},
+    {file = "websockets-13.1-pp39-pypy39_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7a43cfdcddd07f4ca2b1afb459824dd3c6d53a51410636a2c7fc97b9a8cf4842"},
+    {file = "websockets-13.1-pp39-pypy39_pp73-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:48a2ef1381632a2f0cb4efeff34efa97901c9fbc118e01951ad7cfc10601a9bb"},
+    {file = "websockets-13.1-pp39-pypy39_pp73-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:459bf774c754c35dbb487360b12c5727adab887f1622b8aed5755880a21c4a20"},
+    {file = "websockets-13.1-pp39-pypy39_pp73-win_amd64.whl", hash = "sha256:95858ca14a9f6fa8413d29e0a585b31b278388aa775b8a81fa24830123874678"},
+    {file = "websockets-13.1-py3-none-any.whl", hash = "sha256:a9a396a6ad26130cdae92ae10c36af09d9bfe6cafe69670fd3b6da9b07b4044f"},
+    {file = "websockets-13.1.tar.gz", hash = "sha256:a3b3366087c1bc0a2795111edcadddb8b3b59509d5db5d7ea3fdd69f954a8878"},
+]
+
+[[package]]
+name = "websockets"
+version = "15.0.1"
+description = "An implementation of the WebSocket Protocol (RFC 6455 & 7692)"
+optional = false
+python-versions = ">=3.9"
+groups = ["main"]
+markers = "python_version == \"3.9\""
+files = [
+    {file = "websockets-15.0.1-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:d63efaa0cd96cf0c5fe4d581521d9fa87744540d4bc999ae6e08595a1014b45b"},
+    {file = "websockets-15.0.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:ac60e3b188ec7574cb761b08d50fcedf9d77f1530352db4eef1707fe9dee7205"},
+    {file = "websockets-15.0.1-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:5756779642579d902eed757b21b0164cd6fe338506a8083eb58af5c372e39d9a"},
+    {file = "websockets-15.0.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:0fdfe3e2a29e4db3659dbd5bbf04560cea53dd9610273917799f1cde46aa725e"},
+    {file = "websockets-15.0.1-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:4c2529b320eb9e35af0fa3016c187dffb84a3ecc572bcee7c3ce302bfeba52bf"},
+    {file = "websockets-15.0.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ac1e5c9054fe23226fb11e05a6e630837f074174c4c2f0fe442996112a6de4fb"},
+    {file = "websockets-15.0.1-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:5df592cd503496351d6dc14f7cdad49f268d8e618f80dce0cd5a36b93c3fc08d"},
+    {file = "websockets-15.0.1-cp310-cp310-musllinux_1_2_i686.whl", hash = "sha256:0a34631031a8f05657e8e90903e656959234f3a04552259458aac0b0f9ae6fd9"},
+    {file = "websockets-15.0.1-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:3d00075aa65772e7ce9e990cab3ff1de702aa09be3940d1dc88d5abf1ab8a09c"},
+    {file = "websockets-15.0.1-cp310-cp310-win32.whl", hash = "sha256:1234d4ef35db82f5446dca8e35a7da7964d02c127b095e172e54397fb6a6c256"},
+    {file = "websockets-15.0.1-cp310-cp310-win_amd64.whl", hash = "sha256:39c1fec2c11dc8d89bba6b2bf1556af381611a173ac2b511cf7231622058af41"},
+    {file = "websockets-15.0.1-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:823c248b690b2fd9303ba00c4f66cd5e2d8c3ba4aa968b2779be9532a4dad431"},
+    {file = "websockets-15.0.1-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:678999709e68425ae2593acf2e3ebcbcf2e69885a5ee78f9eb80e6e371f1bf57"},
+    {file = "websockets-15.0.1-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:d50fd1ee42388dcfb2b3676132c78116490976f1300da28eb629272d5d93e905"},
+    {file = "websockets-15.0.1-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:d99e5546bf73dbad5bf3547174cd6cb8ba7273062a23808ffea025ecb1cf8562"},
+    {file = "websockets-15.0.1-cp311-cp311-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:66dd88c918e3287efc22409d426c8f729688d89a0c587c88971a0faa2c2f3792"},
+    {file = "websockets-15.0.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8dd8327c795b3e3f219760fa603dcae1dcc148172290a8ab15158cf85a953413"},
+    {file = "websockets-15.0.1-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:8fdc51055e6ff4adeb88d58a11042ec9a5eae317a0a53d12c062c8a8865909e8"},
+    {file = "websockets-15.0.1-cp311-cp311-musllinux_1_2_i686.whl", hash = "sha256:693f0192126df6c2327cce3baa7c06f2a117575e32ab2308f7f8216c29d9e2e3"},
+    {file = "websockets-15.0.1-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:54479983bd5fb469c38f2f5c7e3a24f9a4e70594cd68cd1fa6b9340dadaff7cf"},
+    {file = "websockets-15.0.1-cp311-cp311-win32.whl", hash = "sha256:16b6c1b3e57799b9d38427dda63edcbe4926352c47cf88588c0be4ace18dac85"},
+    {file = "websockets-15.0.1-cp311-cp311-win_amd64.whl", hash = "sha256:27ccee0071a0e75d22cb35849b1db43f2ecd3e161041ac1ee9d2352ddf72f065"},
+    {file = "websockets-15.0.1-cp312-cp312-macosx_10_13_universal2.whl", hash = "sha256:3e90baa811a5d73f3ca0bcbf32064d663ed81318ab225ee4f427ad4e26e5aff3"},
+    {file = "websockets-15.0.1-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:592f1a9fe869c778694f0aa806ba0374e97648ab57936f092fd9d87f8bc03665"},
+    {file = "websockets-15.0.1-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:0701bc3cfcb9164d04a14b149fd74be7347a530ad3bbf15ab2c678a2cd3dd9a2"},
+    {file = "websockets-15.0.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:e8b56bdcdb4505c8078cb6c7157d9811a85790f2f2b3632c7d1462ab5783d215"},
+    {file = "websockets-15.0.1-cp312-cp312-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:0af68c55afbd5f07986df82831c7bff04846928ea8d1fd7f30052638788bc9b5"},
+    {file = "websockets-15.0.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:64dee438fed052b52e4f98f76c5790513235efaa1ef7f3f2192c392cd7c91b65"},
+    {file = "websockets-15.0.1-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:d5f6b181bb38171a8ad1d6aa58a67a6aa9d4b38d0f8c5f496b9e42561dfc62fe"},
+    {file = "websockets-15.0.1-cp312-cp312-musllinux_1_2_i686.whl", hash = "sha256:5d54b09eba2bada6011aea5375542a157637b91029687eb4fdb2dab11059c1b4"},
+    {file = "websockets-15.0.1-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:3be571a8b5afed347da347bfcf27ba12b069d9d7f42cb8c7028b5e98bbb12597"},
+    {file = "websockets-15.0.1-cp312-cp312-win32.whl", hash = "sha256:c338ffa0520bdb12fbc527265235639fb76e7bc7faafbb93f6ba80d9c06578a9"},
+    {file = "websockets-15.0.1-cp312-cp312-win_amd64.whl", hash = "sha256:fcd5cf9e305d7b8338754470cf69cf81f420459dbae8a3b40cee57417f4614a7"},
+    {file = "websockets-15.0.1-cp313-cp313-macosx_10_13_universal2.whl", hash = "sha256:ee443ef070bb3b6ed74514f5efaa37a252af57c90eb33b956d35c8e9c10a1931"},
+    {file = "websockets-15.0.1-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:5a939de6b7b4e18ca683218320fc67ea886038265fd1ed30173f5ce3f8e85675"},
+    {file = "websockets-15.0.1-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:746ee8dba912cd6fc889a8147168991d50ed70447bf18bcda7039f7d2e3d9151"},
+    {file = "websockets-15.0.1-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:595b6c3969023ecf9041b2936ac3827e4623bfa3ccf007575f04c5a6aa318c22"},
+    {file = "websockets-15.0.1-cp313-cp313-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:3c714d2fc58b5ca3e285461a4cc0c9a66bd0e24c5da9911e30158286c9b5be7f"},
+    {file = "websockets-15.0.1-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:0f3c1e2ab208db911594ae5b4f79addeb3501604a165019dd221c0bdcabe4db8"},
+    {file = "websockets-15.0.1-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:229cf1d3ca6c1804400b0a9790dc66528e08a6a1feec0d5040e8b9eb14422375"},
+    {file = "websockets-15.0.1-cp313-cp313-musllinux_1_2_i686.whl", hash = "sha256:756c56e867a90fb00177d530dca4b097dd753cde348448a1012ed6c5131f8b7d"},
+    {file = "websockets-15.0.1-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:558d023b3df0bffe50a04e710bc87742de35060580a293c2a984299ed83bc4e4"},
+    {file = "websockets-15.0.1-cp313-cp313-win32.whl", hash = "sha256:ba9e56e8ceeeedb2e080147ba85ffcd5cd0711b89576b83784d8605a7df455fa"},
+    {file = "websockets-15.0.1-cp313-cp313-win_amd64.whl", hash = "sha256:e09473f095a819042ecb2ab9465aee615bd9c2028e4ef7d933600a8401c79561"},
+    {file = "websockets-15.0.1-cp39-cp39-macosx_10_9_universal2.whl", hash = "sha256:5f4c04ead5aed67c8a1a20491d54cdfba5884507a48dd798ecaf13c74c4489f5"},
+    {file = "websockets-15.0.1-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:abdc0c6c8c648b4805c5eacd131910d2a7f6455dfd3becab248ef108e89ab16a"},
+    {file = "websockets-15.0.1-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:a625e06551975f4b7ea7102bc43895b90742746797e2e14b70ed61c43a90f09b"},
+    {file = "websockets-15.0.1-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:d591f8de75824cbb7acad4e05d2d710484f15f29d4a915092675ad3456f11770"},
+    {file = "websockets-15.0.1-cp39-cp39-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:47819cea040f31d670cc8d324bb6435c6f133b8c7a19ec3d61634e62f8d8f9eb"},
+    {file = "websockets-15.0.1-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ac017dd64572e5c3bd01939121e4d16cf30e5d7e110a119399cf3133b63ad054"},
+    {file = "websockets-15.0.1-cp39-cp39-musllinux_1_2_aarch64.whl", hash = "sha256:4a9fac8e469d04ce6c25bb2610dc535235bd4aa14996b4e6dbebf5e007eba5ee"},
+    {file = "websockets-15.0.1-cp39-cp39-musllinux_1_2_i686.whl", hash = "sha256:363c6f671b761efcb30608d24925a382497c12c506b51661883c3e22337265ed"},
+    {file = "websockets-15.0.1-cp39-cp39-musllinux_1_2_x86_64.whl", hash = "sha256:2034693ad3097d5355bfdacfffcbd3ef5694f9718ab7f29c29689a9eae841880"},
+    {file = "websockets-15.0.1-cp39-cp39-win32.whl", hash = "sha256:3b1ac0d3e594bf121308112697cf4b32be538fb1444468fb0a6ae4feebc83411"},
+    {file = "websockets-15.0.1-cp39-cp39-win_amd64.whl", hash = "sha256:b7643a03db5c95c799b89b31c036d5f27eeb4d259c798e878d6937d71832b1e4"},
+    {file = "websockets-15.0.1-pp310-pypy310_pp73-macosx_10_15_x86_64.whl", hash = "sha256:0c9e74d766f2818bb95f84c25be4dea09841ac0f734d1966f415e4edfc4ef1c3"},
+    {file = "websockets-15.0.1-pp310-pypy310_pp73-macosx_11_0_arm64.whl", hash = "sha256:1009ee0c7739c08a0cd59de430d6de452a55e42d6b522de7aa15e6f67db0b8e1"},
+    {file = "websockets-15.0.1-pp310-pypy310_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:76d1f20b1c7a2fa82367e04982e708723ba0e7b8d43aa643d3dcd404d74f1475"},
+    {file = "websockets-15.0.1-pp310-pypy310_pp73-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:f29d80eb9a9263b8d109135351caf568cc3f80b9928bccde535c235de55c22d9"},
+    {file = "websockets-15.0.1-pp310-pypy310_pp73-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b359ed09954d7c18bbc1680f380c7301f92c60bf924171629c5db97febb12f04"},
+    {file = "websockets-15.0.1-pp310-pypy310_pp73-win_amd64.whl", hash = "sha256:cad21560da69f4ce7658ca2cb83138fb4cf695a2ba3e475e0559e05991aa8122"},
+    {file = "websockets-15.0.1-pp39-pypy39_pp73-macosx_10_15_x86_64.whl", hash = "sha256:7f493881579c90fc262d9cdbaa05a6b54b3811c2f300766748db79f098db9940"},
+    {file = "websockets-15.0.1-pp39-pypy39_pp73-macosx_11_0_arm64.whl", hash = "sha256:47b099e1f4fbc95b701b6e85768e1fcdaf1630f3cbe4765fa216596f12310e2e"},
+    {file = "websockets-15.0.1-pp39-pypy39_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:67f2b6de947f8c757db2db9c71527933ad0019737ec374a8a6be9a956786aaf9"},
+    {file = "websockets-15.0.1-pp39-pypy39_pp73-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:d08eb4c2b7d6c41da6ca0600c077e93f5adcfd979cd777d747e9ee624556da4b"},
+    {file = "websockets-15.0.1-pp39-pypy39_pp73-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:4b826973a4a2ae47ba357e4e82fa44a463b8f168e1ca775ac64521442b19e87f"},
+    {file = "websockets-15.0.1-pp39-pypy39_pp73-win_amd64.whl", hash = "sha256:21c1fa28a6a7e3cbdc171c694398b6df4744613ce9b36b1a498e816787e28123"},
+    {file = "websockets-15.0.1-py3-none-any.whl", hash = "sha256:f7a866fbc1e97b5c617ee4116daaa09b722101d4a3c170c787450ba409f9736f"},
+    {file = "websockets-15.0.1.tar.gz", hash = "sha256:82544de02076bafba038ce055ee6412d68da13ab47f0c60cab827346de828dee"},
+]
+
+[[package]]
+name = "websockets"
+version = "16.0"
+description = "An implementation of the WebSocket Protocol (RFC 6455 & 7692)"
+optional = false
+python-versions = ">=3.10"
+groups = ["main"]
+markers = "python_version >= \"3.10\""
+files = [
+    {file = "websockets-16.0-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:04cdd5d2d1dacbad0a7bf36ccbcd3ccd5a30ee188f2560b7a62a30d14107b31a"},
+    {file = "websockets-16.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:8ff32bb86522a9e5e31439a58addbb0166f0204d64066fb955265c4e214160f0"},
+    {file = "websockets-16.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:583b7c42688636f930688d712885cf1531326ee05effd982028212ccc13e5957"},
+    {file = "websockets-16.0-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:7d837379b647c0c4c2355c2499723f82f1635fd2c26510e1f587d89bc2199e72"},
+    {file = "websockets-16.0-cp310-cp310-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:df57afc692e517a85e65b72e165356ed1df12386ecb879ad5693be08fac65dde"},
+    {file = "websockets-16.0-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:2b9f1e0d69bc60a4a87349d50c09a037a2607918746f07de04df9e43252c77a3"},
+    {file = "websockets-16.0-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:335c23addf3d5e6a8633f9f8eda77efad001671e80b95c491dd0924587ece0b3"},
+    {file = "websockets-16.0-cp310-cp310-win32.whl", hash = "sha256:37b31c1623c6605e4c00d466c9d633f9b812ea430c11c8a278774a1fde1acfa9"},
+    {file = "websockets-16.0-cp310-cp310-win_amd64.whl", hash = "sha256:8e1dab317b6e77424356e11e99a432b7cb2f3ec8c5ab4dabbcee6add48f72b35"},
+    {file = "websockets-16.0-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:31a52addea25187bde0797a97d6fc3d2f92b6f72a9370792d65a6e84615ac8a8"},
+    {file = "websockets-16.0-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:417b28978cdccab24f46400586d128366313e8a96312e4b9362a4af504f3bbad"},
+    {file = "websockets-16.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:af80d74d4edfa3cb9ed973a0a5ba2b2a549371f8a741e0800cb07becdd20f23d"},
+    {file = "websockets-16.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:08d7af67b64d29823fed316505a89b86705f2b7981c07848fb5e3ea3020c1abe"},
+    {file = "websockets-16.0-cp311-cp311-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:7be95cfb0a4dae143eaed2bcba8ac23f4892d8971311f1b06f3c6b78952ee70b"},
+    {file = "websockets-16.0-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:d6297ce39ce5c2e6feb13c1a996a2ded3b6832155fcfc920265c76f24c7cceb5"},
+    {file = "websockets-16.0-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:1c1b30e4f497b0b354057f3467f56244c603a79c0d1dafce1d16c283c25f6e64"},
+    {file = "websockets-16.0-cp311-cp311-win32.whl", hash = "sha256:5f451484aeb5cafee1ccf789b1b66f535409d038c56966d6101740c1614b86c6"},
+    {file = "websockets-16.0-cp311-cp311-win_amd64.whl", hash = "sha256:8d7f0659570eefb578dacde98e24fb60af35350193e4f56e11190787bee77dac"},
+    {file = "websockets-16.0-cp312-cp312-macosx_10_13_universal2.whl", hash = "sha256:71c989cbf3254fbd5e84d3bff31e4da39c43f884e64f2551d14bb3c186230f00"},
+    {file = "websockets-16.0-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:8b6e209ffee39ff1b6d0fa7bfef6de950c60dfb91b8fcead17da4ee539121a79"},
+    {file = "websockets-16.0-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:86890e837d61574c92a97496d590968b23c2ef0aeb8a9bc9421d174cd378ae39"},
+    {file = "websockets-16.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:9b5aca38b67492ef518a8ab76851862488a478602229112c4b0d58d63a7a4d5c"},
+    {file = "websockets-16.0-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:e0334872c0a37b606418ac52f6ab9cfd17317ac26365f7f65e203e2d0d0d359f"},
+    {file = "websockets-16.0-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:a0b31e0b424cc6b5a04b8838bbaec1688834b2383256688cf47eb97412531da1"},
+    {file = "websockets-16.0-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:485c49116d0af10ac698623c513c1cc01c9446c058a4e61e3bf6c19dff7335a2"},
+    {file = "websockets-16.0-cp312-cp312-win32.whl", hash = "sha256:eaded469f5e5b7294e2bdca0ab06becb6756ea86894a47806456089298813c89"},
+    {file = "websockets-16.0-cp312-cp312-win_amd64.whl", hash = "sha256:5569417dc80977fc8c2d43a86f78e0a5a22fee17565d78621b6bb264a115d4ea"},
+    {file = "websockets-16.0-cp313-cp313-macosx_10_13_universal2.whl", hash = "sha256:878b336ac47938b474c8f982ac2f7266a540adc3fa4ad74ae96fea9823a02cc9"},
+    {file = "websockets-16.0-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:52a0fec0e6c8d9a784c2c78276a48a2bdf099e4ccc2a4cad53b27718dbfd0230"},
+    {file = "websockets-16.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:e6578ed5b6981005df1860a56e3617f14a6c307e6a71b4fff8c48fdc50f3ed2c"},
+    {file = "websockets-16.0-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:95724e638f0f9c350bb1c2b0a7ad0e83d9cc0c9259f3ea94e40d7b02a2179ae5"},
+    {file = "websockets-16.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:c0204dc62a89dc9d50d682412c10b3542d748260d743500a85c13cd1ee4bde82"},
+    {file = "websockets-16.0-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:52ac480f44d32970d66763115edea932f1c5b1312de36df06d6b219f6741eed8"},
+    {file = "websockets-16.0-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:6e5a82b677f8f6f59e8dfc34ec06ca6b5b48bc4fcda346acd093694cc2c24d8f"},
+    {file = "websockets-16.0-cp313-cp313-win32.whl", hash = "sha256:abf050a199613f64c886ea10f38b47770a65154dc37181bfaff70c160f45315a"},
+    {file = "websockets-16.0-cp313-cp313-win_amd64.whl", hash = "sha256:3425ac5cf448801335d6fdc7ae1eb22072055417a96cc6b31b3861f455fbc156"},
+    {file = "websockets-16.0-cp314-cp314-macosx_10_15_universal2.whl", hash = "sha256:8cc451a50f2aee53042ac52d2d053d08bf89bcb31ae799cb4487587661c038a0"},
+    {file = "websockets-16.0-cp314-cp314-macosx_10_15_x86_64.whl", hash = "sha256:daa3b6ff70a9241cf6c7fc9e949d41232d9d7d26fd3522b1ad2b4d62487e9904"},
+    {file = "websockets-16.0-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:fd3cb4adb94a2a6e2b7c0d8d05cb94e6f1c81a0cf9dc2694fb65c7e8d94c42e4"},
+    {file = "websockets-16.0-cp314-cp314-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:781caf5e8eee67f663126490c2f96f40906594cb86b408a703630f95550a8c3e"},
+    {file = "websockets-16.0-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:caab51a72c51973ca21fa8a18bd8165e1a0183f1ac7066a182ff27107b71e1a4"},
+    {file = "websockets-16.0-cp314-cp314-musllinux_1_2_aarch64.whl", hash = "sha256:19c4dc84098e523fd63711e563077d39e90ec6702aff4b5d9e344a60cb3c0cb1"},
+    {file = "websockets-16.0-cp314-cp314-musllinux_1_2_x86_64.whl", hash = "sha256:a5e18a238a2b2249c9a9235466b90e96ae4795672598a58772dd806edc7ac6d3"},
+    {file = "websockets-16.0-cp314-cp314-win32.whl", hash = "sha256:a069d734c4a043182729edd3e9f247c3b2a4035415a9172fd0f1b71658a320a8"},
+    {file = "websockets-16.0-cp314-cp314-win_amd64.whl", hash = "sha256:c0ee0e63f23914732c6d7e0cce24915c48f3f1512ec1d079ed01fc629dab269d"},
+    {file = "websockets-16.0-cp314-cp314t-macosx_10_15_universal2.whl", hash = "sha256:a35539cacc3febb22b8f4d4a99cc79b104226a756aa7400adc722e83b0d03244"},
+    {file = "websockets-16.0-cp314-cp314t-macosx_10_15_x86_64.whl", hash = "sha256:b784ca5de850f4ce93ec85d3269d24d4c82f22b7212023c974c401d4980ebc5e"},
+    {file = "websockets-16.0-cp314-cp314t-macosx_11_0_arm64.whl", hash = "sha256:569d01a4e7fba956c5ae4fc988f0d4e187900f5497ce46339c996dbf24f17641"},
+    {file = "websockets-16.0-cp314-cp314t-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:50f23cdd8343b984957e4077839841146f67a3d31ab0d00e6b824e74c5b2f6e8"},
+    {file = "websockets-16.0-cp314-cp314t-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:152284a83a00c59b759697b7f9e9cddf4e3c7861dd0d964b472b70f78f89e80e"},
+    {file = "websockets-16.0-cp314-cp314t-musllinux_1_2_aarch64.whl", hash = "sha256:bc59589ab64b0022385f429b94697348a6a234e8ce22544e3681b2e9331b5944"},
+    {file = "websockets-16.0-cp314-cp314t-musllinux_1_2_x86_64.whl", hash = "sha256:32da954ffa2814258030e5a57bc73a3635463238e797c7375dc8091327434206"},
+    {file = "websockets-16.0-cp314-cp314t-win32.whl", hash = "sha256:5a4b4cc550cb665dd8a47f868c8d04c8230f857363ad3c9caf7a0c3bf8c61ca6"},
+    {file = "websockets-16.0-cp314-cp314t-win_amd64.whl", hash = "sha256:b14dc141ed6d2dde437cddb216004bcac6a1df0935d79656387bd41632ba0bbd"},
+    {file = "websockets-16.0-pp311-pypy311_pp73-macosx_10_15_x86_64.whl", hash = "sha256:349f83cd6c9a415428ee1005cadb5c2c56f4389bc06a9af16103c3bc3dcc8b7d"},
+    {file = "websockets-16.0-pp311-pypy311_pp73-macosx_11_0_arm64.whl", hash = "sha256:4a1aba3340a8dca8db6eb5a7986157f52eb9e436b74813764241981ca4888f03"},
+    {file = "websockets-16.0-pp311-pypy311_pp73-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:f4a32d1bd841d4bcbffdcb3d2ce50c09c3909fbead375ab28d0181af89fd04da"},
+    {file = "websockets-16.0-pp311-pypy311_pp73-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:0298d07ee155e2e9fda5be8a9042200dd2e3bb0b8a38482156576f863a9d457c"},
+    {file = "websockets-16.0-pp311-pypy311_pp73-win_amd64.whl", hash = "sha256:a653aea902e0324b52f1613332ddf50b00c06fdaf7e92624fbf8c77c78fa5767"},
+    {file = "websockets-16.0-py3-none-any.whl", hash = "sha256:1637db62fad1dc833276dded54215f2c7fa46912301a24bd94d45d46a011ceec"},
+    {file = "websockets-16.0.tar.gz", hash = "sha256:5f6261a5e56e8d5c42a4497b364ea24d94d9563e8fbd44e78ac40879c60179b5"},
+]
+
+[[package]]
 name = "werkzeug"
 version = "3.0.6"
 description = "The comprehensive WSGI web application library."
@@ -5885,4 +6614,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.8,<3.12"
-content-hash = "d2c63914ea9512823c45a5b721782311d12ffd27d536035ea2fb3c04a665f183"
+content-hash = "f42186348f1d4d6878390d0810ab18becde1bd0a878a0ab4c7d6f7ae319d9458"
