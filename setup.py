@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="ir_support",
-    version="1.1.0b",
+    version="1.3.0",
     description="Python package including some classes & functions supporting the subject 41013 Industrial Robotics at UTS, along with the Robotics Toolbox for Python",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
@@ -17,8 +17,9 @@ setup(
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.8,<3.12",
-    packages=find_packages(include=["ir_support"]),
+    packages=find_packages(include=["ir_support", "ir_support.*"]),
     install_requires=[
+        "rvc3python>=0.9.2,<0.10.0",
         "pandas>=2.0.3,<2.2.2",
         "trimesh>=4.0.0,<4.4.4",
         "plyfile>=1.0.1,<1.0.2",
@@ -28,6 +29,8 @@ setup(
         "open3d>=0.18.0",
         "spatialmath-python==1.1.8",
         "matplotlib==3.7.2",
+        "pygame==2.6.1",
+        "line_profiler==4.2.0",
     ],
     url="https://github.com/gapaul/ir-support",
     author="Quang Ngo",

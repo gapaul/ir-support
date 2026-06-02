@@ -1,5 +1,6 @@
 # Kept for GitHub dependency scanning and simple pip-based development installs.
 # For package metadata and release builds, prefer pyproject.toml/Poetry.
+rvc3python>=0.9.2,<0.10.0
 pandas>=2.0.3,<2.2.2
 trimesh>=4.0.0,<4.4.4
 plyfile>=1.0.1,<1.0.2
