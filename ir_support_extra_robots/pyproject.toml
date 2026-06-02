@@ -9,9 +9,8 @@ include = ["ir_support_extra_robots/**/*.dae", "ir_support_extra_robots/**/*.md"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.11"
-ir-support = ">=1.2.6"
+ir-support = ">=1.3.0,<2.0.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
