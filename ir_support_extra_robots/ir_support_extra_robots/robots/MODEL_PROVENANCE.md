@@ -24,3 +24,19 @@ Selected student-derived models:
 - `FanucCRX5IA` from FANUC CRX-5iA candidate, Group_9, 2023S; original stem `Fanuc5iA`.
 - `FanucLRMate200iD` from FANUC LR Mate 200iD, Tony_A2_2, 2024S; original stem `Fanuc200iD`.
 - `YaskawaGP4` from Yaskawa GP4, Group_48, 2023S; original stem `YaskawaGP4`.
+
+Assignment 2 candidate migration, batch 2:
+
+- Attempt started: 2026-06-03
+- `ABBIRB2600` from ABB IRB2600, A2_Khoa_51_MarcusF_HarrshawarthanG_YutoB, 2025S.
+- `KukaKR3R540` from KUKA KR3 540, A2_Khoa_51_MarcusF_HarrshawarthanG_YutoB, 2025S.
+- `KukaKR10R1100` from KUKA KR10 R1100, A2_Tony_12_AbishaN_JessicaL_AryaD, 2025S.
+- `EpsonVT6` from Epson VT6, A2_Tony_12_AbishaN_JessicaL_AryaD, 2025S.
+- `FanucLRMate200iC` from FANUC LR Mate 200iC, A2_Khoa_51_MarcusF_HarrshawarthanG_YutoB, 2025S.
+- `KukaKR60` from KUKA KR60, A2_Khoa_51_MarcusF_HarrshawarthanG_YutoB, 2025S.
+- `UnitreeZ1` from Unitree Z1, A2_Tan_8_DineshS_DanishS_MahakS, 2025S.
+- `ProSixVT6` from Epson ProSix VT6, A2_Tan_8_DineshS_DanishS_MahakS, 2025S.
+- `MyCobot320` from Elephant Robotics MyCobot 320, A2_Tan_8_DineshS_DanishS_MahakS, 2025S.
+- `MitsubishiRV2RF` from Mitsubishi RV-2FR, A2_Khoa_57_HongLinhN_NhatMinhV, 2025S.
+
+These models are staged for visual inspection in `tests/view_student_candidate_robots_batch2_swift.py` and are not yet exported through the main `ir_support_extra_robots.robots.__all__` list.

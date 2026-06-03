@@ -28,3 +28,4 @@ env/
 .venv/
 venv/
 ENV/
+tests/_swift_screenshots/

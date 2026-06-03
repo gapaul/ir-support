@@ -27,6 +27,10 @@ class UTSMeshRobot(DHRobot3D):
         link3d_names = {
             f"link{i}": f"{mesh_stem}Link{i}" for i in range(len(links) + 1)
         }
+        link_colors = getattr(self, "link_colors", None)
+        if link_colors is not None:
+            for i, colour in enumerate(link_colors):
+                link3d_names[f"color{i}"] = tuple(colour)
         qtest_transforms = self._link_frame_transforms(links, self.home_q)
 
         super().__init__(
