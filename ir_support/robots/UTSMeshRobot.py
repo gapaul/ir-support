@@ -19,6 +19,7 @@ class UTSMeshRobot(DHRobot3D):
         name: Optional[str] = None,
         home_q: Optional[Iterable[float]] = None,
         base: Optional[Union[SE3, np.ndarray]] = None,
+        meshes_are_global_at_home: bool = False,
     ):
         self.home_q = np.array(
             list(home_q) if home_q is not None else [0.0] * len(links),
@@ -31,7 +32,10 @@ class UTSMeshRobot(DHRobot3D):
         if link_colors is not None:
             for i, colour in enumerate(link_colors):
                 link3d_names[f"color{i}"] = tuple(colour)
-        qtest_transforms = self._link_frame_transforms(links, self.home_q)
+        if meshes_are_global_at_home:
+            qtest_transforms = [np.eye(4) for _ in range(len(links) + 1)]
+        else:
+            qtest_transforms = self._link_frame_transforms(links, self.home_q)
 
         super().__init__(
             list(links),

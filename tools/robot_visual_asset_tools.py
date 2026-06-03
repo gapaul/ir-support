@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 import re
 import shutil
 from pathlib import Path
@@ -167,3 +168,163 @@ def replace_mesh_stem(class_file: Path, old_stem: str, new_stem: str) -> None:
 
 def dae_total_size(paths: Iterable[Path]) -> float:
     return sum(path.stat().st_size for path in paths) / (1024 * 1024)
+
+
+def rotation_matrix(axis: str, angle_radians: float) -> tuple[tuple[float, float, float], ...]:
+    """Return a 3x3 rotation matrix for simple mesh-coordinate repairs."""
+    c = math.cos(angle_radians)
+    s = math.sin(angle_radians)
+    axis = axis.lower()
+    if axis == "x":
+        return ((1.0, 0.0, 0.0), (0.0, c, -s), (0.0, s, c))
+    if axis == "y":
+        return ((c, 0.0, s), (0.0, 1.0, 0.0), (-s, 0.0, c))
+    if axis == "z":
+        return ((c, -s, 0.0), (s, c, 0.0), (0.0, 0.0, 1.0))
+    raise ValueError("axis must be 'x', 'y', or 'z'")
+
+
+def transform_dae_positions(
+    path: Path,
+    *,
+    scale: float | Sequence[float] = 1.0,
+    rotation: tuple[tuple[float, float, float], ...] | None = None,
+    translation: Sequence[float] = (0.0, 0.0, 0.0),
+) -> None:
+    """Apply a simple coordinate transform to position arrays in a Collada file."""
+    text = path.read_text(encoding="utf-8", errors="ignore")
+
+    if isinstance(scale, (int, float)):
+        sx = sy = sz = float(scale)
+    else:
+        sx, sy, sz = (float(value) for value in scale)
+    tx, ty, tz = (float(value) for value in translation)
+    matrix = rotation or ((1.0, 0.0, 0.0), (0.0, 1.0, 0.0), (0.0, 0.0, 1.0))
+
+    def replace(match: re.Match[str]) -> str:
+        open_tag, values, close_tag = match.groups()
+        tag_lower = open_tag.lower()
+        if "position" not in tag_lower:
+            return match.group(0)
+
+        numbers = [float(value) for value in values.split()]
+        if len(numbers) % 3 != 0:
+            return match.group(0)
+
+        output: list[str] = []
+        for index in range(0, len(numbers), 3):
+            x = numbers[index] * sx
+            y = numbers[index + 1] * sy
+            z = numbers[index + 2] * sz
+            rx = matrix[0][0] * x + matrix[0][1] * y + matrix[0][2] * z + tx
+            ry = matrix[1][0] * x + matrix[1][1] * y + matrix[1][2] * z + ty
+            rz = matrix[2][0] * x + matrix[2][1] * y + matrix[2][2] * z + tz
+            output.extend((f"{rx:.9g}", f"{ry:.9g}", f"{rz:.9g}"))
+
+        return open_tag + " ".join(output) + close_tag
+
+    updated = re.sub(
+        r"(<float_array\b[^>]*>)([^<]*)(</float_array>)",
+        replace,
+        text,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    if updated != text:
+        path.write_text(updated, encoding="utf-8", newline="\n")
+
+
+def write_cylinder_dae(
+    path: Path,
+    *,
+    radius: float,
+    length: float,
+    colour: Rgba,
+    axis: str = "z",
+    segments: int = 32,
+) -> None:
+    """Write a small Collada cylinder for replacing student end-effectors."""
+    axis = axis.lower()
+    if axis not in {"x", "y", "z"}:
+        raise ValueError("axis must be 'x', 'y', or 'z'")
+
+    def point(a: float, b: float, c: float) -> tuple[float, float, float]:
+        if axis == "x":
+            return (c, a, b)
+        if axis == "y":
+            return (a, c, b)
+        return (a, b, c)
+
+    half = length / 2.0
+    vertices: list[tuple[float, float, float]] = []
+    for z in (-half, half):
+        for i in range(segments):
+            theta = 2.0 * math.pi * i / segments
+            vertices.append(point(radius * math.cos(theta), radius * math.sin(theta), z))
+
+    bottom_center = len(vertices)
+    vertices.append(point(0.0, 0.0, -half))
+    top_center = len(vertices)
+    vertices.append(point(0.0, 0.0, half))
+
+    faces: list[tuple[int, int, int]] = []
+    for i in range(segments):
+        j = (i + 1) % segments
+        faces.append((i, j, segments + j))
+        faces.append((i, segments + j, segments + i))
+        faces.append((bottom_center, j, i))
+        faces.append((top_center, segments + i, segments + j))
+
+    position_text = " ".join(f"{coord:.9g}" for vertex in vertices for coord in vertex)
+    index_text = " ".join(str(index) for face in faces for index in face)
+    path.write_text(
+        f'''<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  {_effect_library(colour)}
+  <library_geometries>
+    <geometry id="mesh" name="mesh">
+      <mesh>
+        <source id="mesh-positions">
+          <float_array id="mesh-positions-array" count="{len(vertices) * 3}">{position_text}</float_array>
+          <technique_common>
+            <accessor source="#mesh-positions-array" count="{len(vertices)}" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="mesh-vertices">
+          <input semantic="POSITION" source="#mesh-positions"/>
+        </vertices>
+        <triangles material="ir_support_material" count="{len(faces)}">
+          <input semantic="VERTEX" source="#mesh-vertices" offset="0"/>
+          <p>{index_text}</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Cylinder" name="Cylinder">
+        <instance_geometry url="#mesh">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="ir_support_material" target="#ir_support_material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
+''',
+        encoding="utf-8",
+        newline="\n",
+    )

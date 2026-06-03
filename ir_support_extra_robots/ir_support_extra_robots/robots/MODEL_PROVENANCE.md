@@ -40,3 +40,18 @@ Assignment 2 candidate migration, batch 2:
 - `MitsubishiRV2RF` from Mitsubishi RV-2FR, A2_Khoa_57_HongLinhN_NhatMinhV, 2025S.
 
 These models are staged for visual inspection in `tests/view_student_candidate_robots_batch2_swift.py` and are not yet exported through the main `ir_support_extra_robots.robots.__all__` list.
+
+Assignment 2 candidate migration, batch 3:
+
+- Attempt started: 2026-06-03
+- `DensoVP6242` from DENSO VP6242 student model, Group_76, 2023S; active class includes two fixed intermediate visual links.
+- `DensoVS068` from DENSO VS068, Khoa_A2_7, 2024S.
+- `DobotCR10` from Dobot CR10, Group_58, 2023S.
+- `DobotNova2` from Dobot Nova2, Danial_A2_2, 2024S.
+- `FanucM20` from FANUC M-20, Group_82, 2023S; wrist/end-flange visuals simplified and final offsets tightened using ROS-Industrial M-20iA frame spacing because the submitted end geometry was not reliably aligned with the DH chain.
+- `IgusReBel` from igus ReBeL with student rail variant, Danial_A2_6, 2024S.
+- `KukaLBRiiwa14` from KUKA LBR iiwa 14, Group_51, 2023S; Robotiq gripper assets omitted.
+- `ABBIRB1520ID` from ABB IRB 1520ID, Tony_A2_1, 2024S; submitted terminal tool offset shortened so the visual wrist flange remains attached to the arm.
+- `ABBIRB1660ID` from ABB IRB 1660ID with student rail variant, Group_63, 2023S; student rail joint omitted and DH signs corrected to keep the global-home arm meshes attached while moving.
+
+These models are staged for visual inspection in `tests/view_student_candidate_robots_batch3_swift.py` and are not yet exported through the main `ir_support_extra_robots.robots.__all__` list.
