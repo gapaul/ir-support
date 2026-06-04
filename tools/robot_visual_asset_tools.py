@@ -1,13 +1,45 @@
+"""Helpers for preparing robot visual assets for Swift.
+
+Mesh porting checklist:
+- Prefer DAE assets with double-sided materials so thin or open robot panels do
+  not disappear when viewed from the back side.
+- Check each mesh bounding box after conversion. If a robot link is hundreds or
+  thousands of units across, it is probably still in millimetres while the DH
+  model is in metres. If it is tiny, it may have been scaled twice.
+- Compare the total visual mesh envelope with the DH reach and with typical
+  industrial robot dimensions. Small cobots are usually below about 1.5 m
+  reach; medium industrial arms are a few metres; anything wildly outside that
+  range needs scale or frame investigation before being accepted.
+- Decide whether meshes are link-local or global-at-home before changing DH
+  parameters. Use meshes_are_global_at_home=True for assets that were exported
+  already assembled in the home pose.
+"""
+
 from __future__ import annotations
 
+from collections import defaultdict
+from dataclasses import dataclass
 import math
 import re
 import shutil
+import xml.etree.ElementTree as ET
 from pathlib import Path
-from typing import Iterable, Sequence
+from typing import Callable, Iterable, Sequence
 
 
 Rgba = tuple[float, float, float, float]
+
+
+@dataclass(frozen=True)
+class DaeComponent:
+    """Summary of a disconnected triangle component in a Collada mesh."""
+
+    index: int
+    face_count: int
+    vertex_count: int
+    minimum: tuple[float, float, float]
+    maximum: tuple[float, float, float]
+    extent: tuple[float, float, float]
 
 
 def rgba_text(rgba: Rgba) -> str:
@@ -41,6 +73,30 @@ def _replace_shininess(text: str, value: str = "20") -> str:
     return pattern.sub(rf"\g<1>{value}\g<3>", text)
 
 
+def _double_sided_extra() -> str:
+    return """
+      <extra>
+        <technique profile="GOOGLEEARTH">
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>"""
+
+
+def _ensure_double_sided_text(text: str) -> str:
+    def replace(match: re.Match[str]) -> str:
+        effect = match.group(0)
+        if "double_sided" in effect.lower():
+            return effect
+        return effect.replace("</effect>", _double_sided_extra() + "\n    </effect>")
+
+    return re.sub(
+        r"<effect\b[^>]*>.*?</effect>",
+        replace,
+        text,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+
+
 def _effect_library(diffuse: Rgba) -> str:
     ambient = scaled_rgb_text(diffuse, 0.45, minimum=0.015)
     return f"""
@@ -56,6 +112,11 @@ def _effect_library(diffuse: Rgba) -> str:
             <shininess><float>20</float></shininess>
           </phong>
         </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
       </profile_COMMON>
     </effect>
   </library_effects>
@@ -75,6 +136,8 @@ def ensure_single_material(path: Path, diffuse: Rgba) -> None:
     if "<library_effects" not in updated:
         updated = updated.replace("</asset>", "</asset>" + _effect_library(diffuse), 1)
 
+    updated = _ensure_double_sided_text(updated)
+
     diffuse_text = rgba_text(diffuse)
     ambient_text = scaled_rgb_text(diffuse, 0.45, minimum=0.015)
     updated, diffuse_count = _replace_shader_colour(updated, "diffuse", diffuse_text)
@@ -84,6 +147,7 @@ def ensure_single_material(path: Path, diffuse: Rgba) -> None:
 
     if diffuse_count == 0:
         updated = updated.replace("</asset>", "</asset>" + _effect_library(diffuse), 1)
+        updated = _ensure_double_sided_text(updated)
 
     if 'material="ir_support_material"' not in updated and "ir_support_material" in updated:
         updated = re.sub(
@@ -231,6 +295,152 @@ def transform_dae_positions(
     )
     if updated != text:
         path.write_text(updated, encoding="utf-8", newline="\n")
+
+
+def remove_dae_components_where(
+    path: Path,
+    predicate: Callable[[DaeComponent], bool],
+) -> list[DaeComponent]:
+    """Remove disconnected triangle components selected by a bounding-box predicate."""
+    namespace = "http://www.collada.org/2005/11/COLLADASchema"
+    ET.register_namespace("", namespace)
+    ns = {"c": namespace}
+
+    tree = ET.parse(path)
+    root = tree.getroot()
+    removed: list[DaeComponent] = []
+
+    for mesh in root.findall(".//c:mesh", ns):
+        float_array = None
+        for candidate in mesh.findall(".//c:float_array", ns):
+            if "position" in (candidate.get("id") or "").lower():
+                float_array = candidate
+                break
+        if float_array is None:
+            continue
+
+        numbers = [float(value) for value in (float_array.text or "").split()]
+        if len(numbers) % 3 != 0:
+            continue
+        positions = [
+            (numbers[index], numbers[index + 1], numbers[index + 2])
+            for index in range(0, len(numbers), 3)
+        ]
+
+        face_vertices: list[tuple[int, int, int]] = []
+        triangle_groups = []
+        for triangles in mesh.findall("c:triangles", ns):
+            inputs = triangles.findall("c:input", ns)
+            vertex_inputs = [item for item in inputs if item.get("semantic") == "VERTEX"]
+            if not vertex_inputs:
+                continue
+
+            stride = max(int(item.get("offset", "0")) for item in inputs) + 1
+            vertex_offset = int(vertex_inputs[0].get("offset", "0"))
+            values = [int(value) for value in (triangles.find("c:p", ns).text or "").split()]
+            count = int(triangles.get("count", "0"))
+            chunks = [
+                values[index * 3 * stride : (index + 1) * 3 * stride]
+                for index in range(count)
+            ]
+
+            global_indices: list[int] = []
+            for chunk in chunks:
+                vertices = tuple(chunk[axis * stride + vertex_offset] for axis in range(3))
+                global_indices.append(len(face_vertices))
+                face_vertices.append(vertices)
+
+            triangle_groups.append((triangles, chunks, global_indices))
+
+        vertex_to_faces: dict[int, list[int]] = defaultdict(list)
+        for face_index, vertices in enumerate(face_vertices):
+            for vertex in vertices:
+                vertex_to_faces[vertex].append(face_index)
+
+        seen = [False] * len(face_vertices)
+        face_to_component: dict[int, DaeComponent] = {}
+        for start in range(len(face_vertices)):
+            if seen[start]:
+                continue
+
+            stack = [start]
+            seen[start] = True
+            component_faces: list[int] = []
+            component_vertices: set[int] = set()
+            while stack:
+                face_index = stack.pop()
+                component_faces.append(face_index)
+                for vertex in face_vertices[face_index]:
+                    component_vertices.add(vertex)
+                    for neighbour in vertex_to_faces[vertex]:
+                        if not seen[neighbour]:
+                            seen[neighbour] = True
+                            stack.append(neighbour)
+
+            xs, ys, zs = zip(*(positions[vertex] for vertex in component_vertices))
+            minimum = (min(xs), min(ys), min(zs))
+            maximum = (max(xs), max(ys), max(zs))
+            component = DaeComponent(
+                index=len(removed) + len({summary for summary in face_to_component.values()}),
+                face_count=len(component_faces),
+                vertex_count=len(component_vertices),
+                minimum=minimum,
+                maximum=maximum,
+                extent=tuple(maximum[axis] - minimum[axis] for axis in range(3)),
+            )
+            for face_index in component_faces:
+                face_to_component[face_index] = component
+
+        components = []
+        for component in face_to_component.values():
+            if component not in components:
+                components.append(component)
+        components.sort(key=lambda item: item.face_count, reverse=True)
+        component_indices = {id(component): index for index, component in enumerate(components)}
+        normalized_components = {
+            component: DaeComponent(
+                index=component_indices[id(component)],
+                face_count=component.face_count,
+                vertex_count=component.vertex_count,
+                minimum=component.minimum,
+                maximum=component.maximum,
+                extent=component.extent,
+            )
+            for component in components
+        }
+
+        remove_faces: set[int] = set()
+        for face_index, component in face_to_component.items():
+            normalized = normalized_components[component]
+            if predicate(normalized):
+                remove_faces.add(face_index)
+        removed.extend(
+            component
+            for component in normalized_components.values()
+            if predicate(component)
+        )
+
+        if not remove_faces:
+            continue
+
+        for triangles, chunks, global_indices in triangle_groups:
+            kept_chunks = [
+                chunk
+                for chunk, face_index in zip(chunks, global_indices)
+                if face_index not in remove_faces
+            ]
+            if kept_chunks:
+                triangles.set("count", str(len(kept_chunks)))
+                triangles.find("c:p", ns).text = " ".join(
+                    str(value) for chunk in kept_chunks for value in chunk
+                )
+            else:
+                mesh.remove(triangles)
+
+    if removed:
+        tree.write(path, encoding="utf-8", xml_declaration=True)
+
+    return removed
 
 
 def write_cylinder_dae(

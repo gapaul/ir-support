@@ -55,3 +55,19 @@ Assignment 2 candidate migration, batch 3:
 - `ABBIRB1660ID` from ABB IRB 1660ID with student rail variant, Group_63, 2023S; student rail joint omitted and DH signs corrected to keep the global-home arm meshes attached while moving.
 
 These models are staged for visual inspection in `tests/view_student_candidate_robots_batch3_swift.py` and are not yet exported through the main `ir_support_extra_robots.robots.__all__` list.
+
+Assignment 2 candidate migration, batch 4:
+
+- Attempt started: 2026-06-03
+- `DoosanA0509` from Doosan A0509, Group_75, 2023S; original stem `A0509`.
+- `DobotNova5` from Dobot Nova5, Group_49, 2023S.
+- `UR16e` from Universal Robots UR16e, Group_72, 2023S, with related 2024S sources identified in the audit; DAE assets downsampled to keep package size manageable.
+- `OmronTM12` from Omron TM12, Group_1 and Group_37, 2023S; DAE assets downsampled to keep package size manageable, and an attached suction-tool mesh was removed from the final link to better match the bare robot.
+- `OmronTM5700` from Omron TM5-700, Group_14, 2023S, with related sources from Group_21 and Mahdi_A2_5 identified in the audit; DAE assets downsampled to keep package size manageable.
+- `KukaKR4` from KUKA KR4, Group_41, 2023S.
+- `KukaKR5Arc` from KUKA KR5 Arc STL assets in Danial_A2_5 and related 2024S submissions; STL assets were converted to DAE and assigned KUKA-style visual colours.
+- `KukaKR6R900` from KUKA KR6 R900, Group_61, 2023S.
+- `KukaTitan` from KUKA Titan, Karlos_A2_1, 2024S; DAE assets were normalized from millimetres to metres and treated as global-at-home meshes.
+- `BCN3DMoveo` from BCN3D Moveo, Group_36, 2023S; the base PLY required an STL fallback conversion because Blender rejected the source PLY face-index type. Materials were set to an approximate BCN3D dark-body/blue-accent scheme and marked double-sided for Swift viewing. Link 2 remains visibly hollow in places because the student mesh includes open U-bracket geometry.
+
+These models are staged for visual inspection in `tests/view_student_candidate_robots_batch4_swift.py` and are not yet exported through the main `ir_support_extra_robots.robots.__all__` list.
