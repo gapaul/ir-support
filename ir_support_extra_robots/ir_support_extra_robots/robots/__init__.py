@@ -53,6 +53,11 @@ from .UR16e.UR16e import UR16e
 from .UR5e.UR5e import UR5e
 from .YaskawaGP4.YaskawaGP4 import YaskawaGP4
 
+from .OmronTM12X.OmronTM12X import OmronTM12X
+from .KukaK6R900.KukaK6R900 import KukaK6R900
+from .Kuka361.Kuka361 import Kuka361
+from .KukaAgilusKR.KukaAgilusKR import KukaAgilusKR
+from .JakaZu3.JakaZu3 import JakaZu3
 __all__ = [
     "ABBCRB15000",
     "ABBGoFa10",
@@ -108,4 +113,9 @@ __all__ = [
     "UR16e",
     "UR5e",
     "YaskawaGP4",
+    "OmronTM12X",
+    "KukaK6R900",
+    "Kuka361",
+    "KukaAgilusKR",
+    "JakaZu3",
 ]

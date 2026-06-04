@@ -86,3 +86,15 @@ Assignment 2 candidate migration, batch 5:
 - `KukaKR10` from KUKA KR10, Khoa_A2_8, 2024S; using the Draft 3 link mesh set. Link 6 flat end-effector mounting plate was replaced with a small circular wrist flange, and link 1/2 triangles were duplicated with reversed winding for geometric double-sided viewing.
 
 These batch 5 models have passed visual inspection for the optional extra robot package and are not promoted into the core lab model set.
+
+
+Assignment 2 candidate migration, batch 6:
+
+- Attempt started: 2026-06-05
+- `OmronTM12X` from Omron/Techman TM12X, Group_69, 2023S.
+- `KukaK6R900` from KUKA K6 R900, Sheila_A2_2, 2024S.
+- `Kuka361` from a KUKA-style student model named Kuka361/Kuker, Katia_A2_2, 2024S; exact commercial model identity has not been verified.
+- `KukaAgilusKR` from a KUKA Agilus-family KR candidate, Group_33, 2023S; the source comment identifies the family but not the exact variant.
+- `JakaZu3` from JAKA Zu3, Group_24, 2023S; the source cites JAKA Zu3 STEP files and published DH parameters.
+- `UniversalRobotsURP` was attempted from a student source named URP / Universal Robot 3 kg payload, Group_12, 2023S, then rejected after review. Universal Robots documents the 3 kg payload model as UR3e, not URP, and the student meshes/kinematics did not match a recognisable off-the-shelf UR robot.
+- Generic `fanuc`, Richardo/Emily/Thomais/Mark, `PR2`, and `THOR` shortlist entries were not imported in this batch because they were duplicates, not clearly industrial-arm candidates, or not identifiable enough for a clean package name.
