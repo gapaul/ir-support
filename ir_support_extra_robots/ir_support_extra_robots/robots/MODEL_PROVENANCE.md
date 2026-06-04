@@ -71,3 +71,18 @@ Assignment 2 candidate migration, batch 4:
 - `BCN3DMoveo` from BCN3D Moveo, Group_36, 2023S; the base PLY required an STL fallback conversion because Blender rejected the source PLY face-index type. Materials were set to an approximate BCN3D dark-body/blue-accent scheme and marked double-sided for Swift viewing. Link 2 remains visibly hollow in places because the student mesh includes open U-bracket geometry.
 
 These models are staged for visual inspection in `tests/view_student_candidate_robots_batch4_swift.py` and are not yet exported through the main `ir_support_extra_robots.robots.__all__` list.
+
+Assignment 2 candidate migration, batch 5:
+
+- Attempt started: 2026-06-04
+- Visual inspection accepted on 2026-06-04 for `Pulse75`, `MotomanGP7`, `FanucCRX10IAL`, `ABBIRB6740_260_300`, `OmronTM5900`, `KukaKR6R700CR`, and `KukaKR10`. `Pulse90` was rejected.
+- `Pulse75` from Rozum Robotics PULSE 75, Group_68, 2023S; rail-style prismatic first joint removed, rail plates and the remaining low thin plate trimmed from the base mesh, and base lowered onto the xy plane for the IR Support candidate model.
+- `Pulse90` was attempted from Rozum Robotics PULSE 90, Group_52, 2023S, but rejected on 2026-06-04 because the DH parameters, base pose, and DAE link locations could not be reconciled into a usable Swift model.
+- `MotomanGP7` from Yaskawa Motoman GP7, A2_Tony_14_JonathanD_RhysH, 2025S; selected as a cleaner GP7 DAE source than the larger shortlist PLY set.
+- `FanucCRX10IAL` from FANUC CRX-10iA/L, A2_AnhMinh_42_DaniyaS_ZainK, 2025S; using the smaller v2 DAE mesh set and the submitted identity CAD calibration transforms.
+- `ABBIRB6740_260_300` from ABB IRB 6740-260/3.00, A2_Tony_19_JaidenP_VuNhatMinhH, 2025S.
+- `OmronTM5900` from Omron TM5-900, Group_70, 2023S; using the full TM5 link mesh set.
+- `KukaKR6R700CR` from KUKA KR6 R700 CR, Group_8, 2023S.
+- `KukaKR10` from KUKA KR10, Khoa_A2_8, 2024S; using the Draft 3 link mesh set. Link 6 flat end-effector mounting plate was replaced with a small circular wrist flange, and link 1/2 triangles were duplicated with reversed winding for geometric double-sided viewing.
+
+These batch 5 models have passed visual inspection for the optional extra robot package and are not promoted into the core lab model set.
