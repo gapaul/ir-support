@@ -98,3 +98,19 @@ Assignment 2 candidate migration, batch 6:
 - `JakaZu3` from JAKA Zu3, Group_24, 2023S; the source cites JAKA Zu3 STEP files and published DH parameters.
 - `UniversalRobotsURP` was attempted from a student source named URP / Universal Robot 3 kg payload, Group_12, 2023S, then rejected after review. Universal Robots documents the 3 kg payload model as UR3e, not URP, and the student meshes/kinematics did not match a recognisable off-the-shelf UR robot.
 - Generic `fanuc`, Richardo/Emily/Thomais/Mark, `PR2`, and `THOR` shortlist entries were not imported in this batch because they were duplicates, not clearly industrial-arm candidates, or not identifiable enough for a clean package name.
+
+Assignment 2 candidate migration, batch 7:
+
+- Attempt started: 2026-06-05
+- `ABBIRB1200` from ABB IRB 1200, Group_50, 2023S.
+- `ABBIRB1100` from ABB IRB 1100, Group_2, 2023S.
+- `ABBIRB910SC` from ABB IRB 910SC SCARA candidate, Group_114, 2023S.
+- `EpsonVT6L` from Epson VT6L, A2_Adam_61_DanielI_DanielT_EmilB, 2025S; large DAE source downsampled for the candidate package.
+- `UR30` from Universal Robots UR30, Katia_A2_5, 2024S.
+- `UFactoryXArm6` from uFactory xArm6, Sheila_A2_7, 2024S.
+- `UFactoryLite6` from uFactory Lite6, Group_5, 2023S; prismatic rail stripped from the original LinearLite6 source; first DH height adjusted to the standalone Lite6 value.
+- `KukaLBRiiwa7` from KUKA LBR iiwa 7, Group_38, 2023S.
+- Rejected after visual review: `ABBYuMi` from Group_65, 2023S. The model remained folded and visually unreliable after a home-pose correction, so this student project should not be re-selected unless a substantially different source model is found.
+- Rejected after visual review: `UR35e` from Katia_A2_2, 2024S. The submitted name does not match an identified Universal Robots product line, and the DH dimensions/meshes did not justify keeping it as a candidate.
+
+These models are staged for visual inspection in `tests/view_student_candidate_robots_batch7_swift.py` and are not yet promoted into the core lab model set.
