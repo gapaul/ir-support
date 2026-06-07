@@ -173,6 +173,62 @@ def ensure_single_material(path: Path, diffuse: Rgba) -> None:
         path.write_text(updated, encoding="utf-8", newline="\n")
 
 
+
+def make_dae_triangles_geometrically_double_sided(path: Path) -> None:
+    """Duplicate Collada triangle winding when Swift ignores material hints."""
+    text = path.read_text(encoding="utf-8", errors="ignore")
+    if "geometric_double_sided" in text:
+        return
+
+    namespace = "http://www.collada.org/2005/11/COLLADASchema"
+    ET.register_namespace("", namespace)
+    ns = {"c": namespace}
+    tree = ET.parse(path)
+    root = tree.getroot()
+    changed = False
+
+    for triangles in root.findall(".//c:triangles", ns):
+        p_node = triangles.find("c:p", ns)
+        if p_node is None or not (p_node.text or "").strip():
+            continue
+
+        inputs = triangles.findall("c:input", ns)
+        if not inputs:
+            continue
+        stride = max(int(item.get("offset", "0")) for item in inputs) + 1
+        values = [int(value) for value in p_node.text.split()]
+        face_size = 3 * stride
+        if len(values) % face_size != 0:
+            continue
+
+        chunks = [
+            values[index : index + face_size]
+            for index in range(0, len(values), face_size)
+        ]
+        reversed_chunks = []
+        for chunk in chunks:
+            v0 = chunk[0:stride]
+            v1 = chunk[stride : 2 * stride]
+            v2 = chunk[2 * stride : 3 * stride]
+            reversed_chunks.append(v2 + v1 + v0)
+
+        p_node.text = " ".join(
+            str(value)
+            for chunk in (chunks + reversed_chunks)
+            for value in chunk
+        )
+        triangles.set("count", str(len(chunks) * 2))
+        changed = True
+
+    if not changed:
+        return
+
+    extra = ET.SubElement(root, f"{{{namespace}}}extra")
+    technique = ET.SubElement(extra, f"{{{namespace}}}technique", {"profile": "IR_SUPPORT"})
+    marker = ET.SubElement(technique, f"{{{namespace}}}geometric_double_sided")
+    marker.text = "1"
+    tree.write(path, encoding="utf-8", xml_declaration=True)
+
 def copy_link_dae_set(
     source_dir: Path,
     source_names: Sequence[str],

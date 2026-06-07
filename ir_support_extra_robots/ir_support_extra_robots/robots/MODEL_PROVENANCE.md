@@ -114,3 +114,18 @@ Assignment 2 candidate migration, batch 7:
 - Rejected after visual review: `UR35e` from Katia_A2_2, 2024S. The submitted name does not match an identified Universal Robots product line, and the DH dimensions/meshes did not justify keeping it as a candidate.
 
 These models are staged for visual inspection in `tests/view_student_candidate_robots_batch7_swift.py` and are not yet promoted into the core lab model set.
+
+Assignment 2 candidate migration, batch 8:
+
+- Attempt started: 2026-06-05
+- `UR20` from Universal Robots UR20, Tony_A2_5, 2024S.
+- `YaskawaHC20DTP` from Yaskawa HC20DTP, Group_60, 2023S; source cites Yaskawa HC20DTP datasheet dimensions. Recoloured on 2026-06-07 to a Yaskawa-style grey/white/dark collaborative robot scheme after review.
+- `PAROL6` from PAROL6 desktop robot arm, A2_Louis_25_RubyL_MadeleineC, 2025S; source STL set used with the submitted mesh calibration offsets. DAE triangle winding was duplicated on 2026-06-07 because the converted STL meshes rendered with severe one-sided holes in Swift. On 2026-06-07 the per-link materials were revised to calmer diffuse colours while retaining enough lighting response for surface detail.
+- `ABBIRB1300` from ABB 1300-class candidate from a student folder named CRB1300, A2_AnhMinh_46_PhuTrungN_NhatThienM_MohammadFaiyadH, 2025S; source DAE meshes were authored in millimetres and scaled to metres. The meshes are treated as global-at-home assets because the submitted links were exported in assembled home-pose coordinates. On 2026-06-07 the detached student end-effector plate was replaced with a tiny placeholder mesh so the required link file remains present without a floating visual artefact.
+- `LinearCRB1100`, generic `fanuc`, Richardo/Emily/Thomais/Mark `CRX10iA`, and generic `CRX10` shortlist entries were inspected and not imported because they were duplicates, rail variants, or not confidently identifiable as a unique off-the-shelf robot.
+- `UR3e` and `HansCute` were removed from this batch because equivalent models already exist in the core `ir_support.robots` package.
+- Rejected after visual review: student-sourced `Sawyer` from Group_42, 2023S. The candidate was not visible in Swift, while the core `ir_support.robots.Sawyer` model rendered correctly.
+- Rejected after visual review: `PR2Left` from Quang_A2_3, 2024S. The partial left-arm PR2 mesh rendered as a fragmented two-arm/platform assembly and was not a good fit for the optional industrial/collaborative robot pack.
+
+These models are staged for visual inspection in `tests/view_student_candidate_robots_batch8_swift.py` and are not yet promoted into the core lab model set.
+

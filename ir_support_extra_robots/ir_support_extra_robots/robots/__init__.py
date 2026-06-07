@@ -2,6 +2,7 @@ from .ABBCRB15000.ABBCRB15000 import ABBCRB15000
 from .ABBGoFa10.ABBGoFa10 import ABBGoFa10
 from .ABBIRB1100.ABBIRB1100 import ABBIRB1100
 from .ABBIRB1200.ABBIRB1200 import ABBIRB1200
+from .ABBIRB1300.ABBIRB1300 import ABBIRB1300
 from .ABBIRB1520ID.ABBIRB1520ID import ABBIRB1520ID
 from .ABBIRB1660ID.ABBIRB1660ID import ABBIRB1660ID
 from .ABBIRB2600.ABBIRB2600 import ABBIRB2600
@@ -55,6 +56,7 @@ from .OmronTM12.OmronTM12 import OmronTM12
 from .OmronTM12X.OmronTM12X import OmronTM12X
 from .OmronTM5700.OmronTM5700 import OmronTM5700
 from .OmronTM5900.OmronTM5900 import OmronTM5900
+from .PAROL6.PAROL6 import PAROL6
 from .ProSixVT6.ProSixVT6 import ProSixVT6
 from .Pulse75.Pulse75 import Pulse75
 from .Turtlebot3Waffle.Turtlebot3Waffle import Turtlebot3Waffle
@@ -62,15 +64,18 @@ from .UFactoryLite6.UFactoryLite6 import UFactoryLite6
 from .UFactoryXArm6.UFactoryXArm6 import UFactoryXArm6
 from .UnitreeZ1.UnitreeZ1 import UnitreeZ1
 from .UR16e.UR16e import UR16e
+from .UR20.UR20 import UR20
 from .UR30.UR30 import UR30
 from .UR5e.UR5e import UR5e
 from .YaskawaGP4.YaskawaGP4 import YaskawaGP4
+from .YaskawaHC20DTP.YaskawaHC20DTP import YaskawaHC20DTP
 
 __all__ = [
     "ABBCRB15000",
     "ABBGoFa10",
     "ABBIRB1100",
     "ABBIRB1200",
+    "ABBIRB1300",
     "ABBIRB1520ID",
     "ABBIRB1660ID",
     "ABBIRB2600",
@@ -124,6 +129,7 @@ __all__ = [
     "OmronTM12X",
     "OmronTM5700",
     "OmronTM5900",
+    "PAROL6",
     "ProSixVT6",
     "Pulse75",
     "Turtlebot3Waffle",
@@ -131,7 +137,9 @@ __all__ = [
     "UFactoryXArm6",
     "UnitreeZ1",
     "UR16e",
+    "UR20",
     "UR30",
     "UR5e",
     "YaskawaGP4",
+    "YaskawaHC20DTP",
 ]
