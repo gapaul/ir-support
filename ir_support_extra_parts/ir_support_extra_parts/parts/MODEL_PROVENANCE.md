@@ -62,9 +62,37 @@ Attempted move into ir_support_extra_parts on 2026-06-08. Robot link meshes, ful
 - `SafetyLight` from `Group_68`, 2023S; original stem `SafetyLightDesign`; converted from PLY to DAE.
 - `WallShelf` from `Group_68`, 2023S; original stem `WShelfDesign`; converted from PLY to DAE.
 
+## Student Object Batch 3
+
+Attempted move into ir_support_extra_parts on 2026-06-08. Robot link meshes, full environments, duplicated existing parts, and oversized scene models were excluded from this batch. A malformed source `table1.dae` and several PLY files that Blender could not import cleanly were skipped in favour of cleaner DAE candidates.
+
+- `BarTable` from `Khoa_A2_10`, 2024S; original stem `bartable`; retained as a DAE prop and normalised for Swift.
+- `RobotTable` from `A2_Khoa_52_BenH_JaydnT_NguyenH`, 2025S; original stem `Robottable`; scaled from millimetres and normalised as a DAE prop.
+- `OfficeDesk` from `Group_42`, 2023S; original stem `desk`; corrected after Swift inspection because it had been scaled too small, then normalised as a DAE prop.
+- `SimpleTable` from `A2_Khoa_52_BenH_JaydnT_NguyenH`, 2025S; original stem `GenericDeskFinal`; scaled from millimetres, normalised as a DAE prop, and renamed from `GenericDesk` after Swift inspection.
+- `DishRack` from `A2_AnhMinh_46_PhuTrungN_NhatThienM_MohammadFaiyadH`, 2025S; original stem `Dish_Holder`; scaled from millimetres and normalised as a DAE prop.
+- `BoxBin` from `A2_AnhMinh_44_LachlanC_ZacharyO_NathanielG`, 2025S; original stem `Box_Bin`; retained as a DAE prop, scaled down to a reusable bin-sized object, and normalised for Swift.
+- `SuctionCup` from `A2_Richardo_35_LewisW_EdenL`, 2025S; original stem `suction_cup`; corrected after Swift inspection because it had been scaled too small, then normalised as a DAE prop.
+- `PrintBin` from `A2_Louis_26_AdamS_JacobB_JordanR`, 2025S; original stem `print_bin`; corrected after Swift inspection because the imported DAE mesh was extremely small, then normalised as a DAE prop.
+- `BuildPlateWorkbench` from `A2_Louis_26_AdamS_JacobB_JordanR`, 2025S; original stem `build_plate_table`; corrected after Swift inspection because the imported DAE mesh was extremely small, then normalised as a DAE prop and renamed from `BuildPlateTable` without clashing with the existing `Workbench` asset.
+- `CerealBoxGreen` from `Karlos_A2_4`, 2024S; original stem `CerealBox_Green`; converted from PLY to DAE and given front/back CEREAL labels with corrected text orientation.
+- `FireAlarm` from `Group_40`, 2023S; original stem `FireAlarm`; converted from PLY to DAE.
+- `TakeawayCup` from `A2_Tony_21_JackH_SaiS_LiamD`, 2025S; original stem `Mcdonalds Cup`; retained as a DAE prop and normalised for Swift.
+- `PlateFixture` from `A2_AnhMinh_46_PhuTrungN_NhatThienM_MohammadFaiyadH`, 2025S; original stem `Plate_Fix`; scaled from millimetres, decimated, and normalised as a DAE prop.
+- `StandingBarTable` from `A2_Khoa_57_HongLinhN_NhatMinhV`, 2025S; original stem `tableunderbox`; scaled from millimetres, normalised as a DAE prop, and renamed from `UnderBoxTable` after Swift inspection.
+- `PushButton` from `A2_Louis_26_AdamS_JacobB_JordanR`, 2025S; original stem `Button`; corrected after Swift inspection because it had been scaled too small, then decimated, normalised, and recoloured with a red push dome and dark grey base.
+
+Rejected after Swift inspection:
+
+- `BlackjackTable` from `A2_Tony_18_JoshuaI_MunirA_IsabelleW`, 2025S; original stem `blackjack_table`; remained invisible/unusable in Swift and was removed from batch 3.
+- `ComputerTable` from `Karlos_A2_4`, 2024S; original stem `ComputerTable`; not a useful general computer table prop and removed from batch 3.
+- `FridgeCabinetTop` from `A2_AnhMinh_46_PhuTrungN_NhatThienM_MohammadFaiyadH`, 2025S; original stem `Fridge_Cabinet_Top`; too specific for the reusable object pack.
+- `PrintBed` from `Group_79`, 2023S; original stem `moddedprintbed`; too specific for the reusable object pack.
+- `TopCabinet` from `A2_AnhMinh_46_PhuTrungN_NhatThienM_MohammadFaiyadH`, 2025S; original stem `Top_Cabinet_W_Beefs`; too specific for the reusable object pack.
 Future additions:
 
 When parts or scene objects are moved in from 2023 and later Assignment 2 submissions, add a reference entry here for each asset or related group of assets. Include the part name, student group or submission identifier, teaching session, original file stem if useful, and any notable cleanup or conversion work.
+
 
 
 
