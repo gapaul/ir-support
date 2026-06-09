@@ -89,9 +89,43 @@ Rejected after Swift inspection:
 - `FridgeCabinetTop` from `A2_AnhMinh_46_PhuTrungN_NhatThienM_MohammadFaiyadH`, 2025S; original stem `Fridge_Cabinet_Top`; too specific for the reusable object pack.
 - `PrintBed` from `Group_79`, 2023S; original stem `moddedprintbed`; too specific for the reusable object pack.
 - `TopCabinet` from `A2_AnhMinh_46_PhuTrungN_NhatThienM_MohammadFaiyadH`, 2025S; original stem `Top_Cabinet_W_Beefs`; too specific for the reusable object pack.
+## Student Object Batch 4
+
+Attempted move into ir_support_extra_parts on 2026-06-09. Robot link meshes, full environments, duplicated existing parts, oversized scene models, malformed candidate meshes, and objects that were too specific for general teaching use were excluded. Several accepted assets were recoloured, labelled, reoriented, or renamed after Swift inspection.
+
+- `FoodCan` from `Katia_A2_2`, 2024S; original stem `Can_Of_Food_Spam`; converted from PLY to DAE and given a simple food label.
+- `Pallet` from `Katia_A2_7`, 2024S; original stem `pallet`; scaled from millimetres, reoriented flat on the floor, given a timber-like material, and converted from PLY to DAE.
+- `SmallShippingBox` from `Katia_A2_9`, 2024S; original stem `IndividualBox`; scaled from millimetres, reoriented, converted from PLY to DAE, and renamed for clearer general use.
+- `BlueSyrupBottle` from `Khoa_A2_5`, 2024S; original stem `BlueSyrupBottle`; converted from PLY to DAE and given a simple syrup label.
+- `TestTubeHolder` from `Khoa_A2_5`, 2024S; original stem `SpatulaHolder`; converted from PLY to DAE and renamed after Swift inspection because the object is more useful as a test tube holder.
+- `BottleCrate` from `Mahdi_A2_6`, 2024S; original stem `Bottle Crate`; scaled from millimetres, simplified, recoloured grey, and converted from PLY to DAE.
+- `PlateRack` from `Quang_A2_1`, 2024S; original stem `plateRack`; converted from PLY to DAE.
+- `SafetyGate` from `Sheila_A2_1`, 2024S; original stem `Safety Gate`; scaled from millimetres, simplified, reoriented upright, material-flattened, and converted from PLY to DAE.
+- `DumplingTray` from `Sheila_A2_2`, 2024S; original stem `dumpling_tray`; converted from PLY to DAE.
+- `BottleSixPack` from `Mahdi_A2_6`, 2024S; original stem `Bottle 6 Pack Fixed`; scaled from millimetres, simplified, reoriented upright, recoloured, and converted from PLY to DAE.
+- `CandyJar` from `Sheila_A2_3`, 2024S; original stem `greenappleJar`; simplified, material-flattened, labelled, and converted from PLY to DAE.
+- `MustardBottle` from `Tony_A2_2`, 2024S; original stem `MustardBottle`; converted from PLY to DAE and given a simple mustard label.
+- `TomatoSauceBottle` from `Tony_A2_2`, 2024S; original stem `TomatoSauceBottle`; converted from PLY to DAE and given a simple tomato sauce label.
+- `MilkCrate` from `Group_54`, 2023S; original stem `MilkCrate`; converted from PLY to DAE and recoloured for Swift inspection.
+- `SafetyLightCurtain` from `Group_51`, 2023S; original stem `Safety Light Curtain`; converted from PLY to DAE and recoloured for Swift inspection.
+- `PlateStacker` from `Group_65`, 2023S; original stem `plateStacker`; converted from PLY to DAE.
+- `FireExtinguisher` from `Quang_A2_7`, 2024S; original stem `Fire`; retained as a fire-extinguisher-style prop, scaled from millimetres, simplified, reoriented, labelled, and converted from PLY to DAE. Renamed from `Flame` after Swift inspection because the mesh is a fire extinguisher, not a flame.
+- `BeerGlass` from `Group_45`, 2023S; original stem `BeerGlasses`; scaled from millimetres, simplified, reoriented upright, converted from PLY to DAE, and renamed to singular after Swift inspection.
+- `PizzaPeel` from `Group_60`, 2023S; original stem `PizzaPeel`; converted from PLY to DAE and recoloured.
+
+Rejected after Swift inspection:
+
+- `DiscHolder` from `Sheila_A2_5`, 2024S; original stem `DiscHolderv3`; removed because it was too specific and unlikely to be useful as a general teaching prop.
+
+Rejected before Swift inspection:
+
+- `CandyBox` from `Sheila_A2_3`, 2024S; original stem `candyBox`; source PLY had malformed face records and could not be imported cleanly.
+- `Shoebox` from `A2_Louis_30_LukeK_LukeH_VyasaKarthikP`, 2025S; original stem `shoebox`; source PLY had malformed face records and could not be imported cleanly.
 Future additions:
 
 When parts or scene objects are moved in from 2023 and later Assignment 2 submissions, add a reference entry here for each asset or related group of assets. Include the part name, student group or submission identifier, teaching session, original file stem if useful, and any notable cleanup or conversion work.
+
+
 
 
 
