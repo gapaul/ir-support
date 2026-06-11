@@ -4,7 +4,9 @@ Run this file directly from the IDE, for example with Ctrl+F5.
 The pytest file `test_student_candidate_robots_batch2.py` stays headless and fast.
 """
 
+import shutil
 import sys
+import tempfile
 import time
 from pathlib import Path
 
@@ -24,6 +26,8 @@ ROBOT_COLUMNS = 5
 ROBOT_SPACING = 2.35
 REVOLUTE_JOINT_AMPLITUDE = 0.38
 PRISMATIC_JOINT_AMPLITUDE = 0.12
+CACHE_BUST_SWIFT_MESHES = True
+RUN_CACHE_TOKEN = time.time_ns()
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -57,6 +61,8 @@ ROBOT_FACTORIES = [
     MitsubishiRV2RF,
 ]
 
+MESH_CACHE_DIR = None
+
 
 def grid_position(index):
     return divmod(index, ROBOT_COLUMNS)
@@ -80,6 +86,32 @@ def add_robot_labels(env):
     env.add(swift.Label("Student candidate robots, batch 2"))
     for index, factory in enumerate(ROBOT_FACTORIES):
         env.add(swift.Label(robot_label(index, factory)))
+
+
+def cache_bust_robot_meshes(robot):
+    if not CACHE_BUST_SWIFT_MESHES:
+        return
+
+    links_3d = getattr(robot, "links_3d", [])
+    if not links_3d:
+        return
+
+    global MESH_CACHE_DIR
+    if MESH_CACHE_DIR is None:
+        MESH_CACHE_DIR = Path(tempfile.mkdtemp(prefix="ir_support_swift_meshes_"))
+
+    for mesh in links_3d:
+        if not hasattr(mesh, "filename"):
+            continue
+        source = Path(mesh.filename)
+        if not source.exists():
+            continue
+        dest = (
+            MESH_CACHE_DIR
+            / f"{source.stem}_{RUN_CACHE_TOKEN}_{source.stat().st_mtime_ns}{source.suffix}"
+        )
+        shutil.copy2(source, dest)
+        mesh.filename = str(dest.resolve())
 
 
 def save_swift_screenshot():
@@ -153,6 +185,7 @@ def main():
 
     for index, factory in enumerate(ROBOT_FACTORIES):
         robot = factory(base=grid_base(index))
+        cache_bust_robot_meshes(robot)
         robot.add_to_env(env)
         robots.append(robot)
 

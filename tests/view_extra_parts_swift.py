@@ -4,7 +4,9 @@ Run this file directly from the IDE, for example with Ctrl+F5.
 The pytest file `test_extra_parts.py` stays headless and fast.
 """
 
+import shutil
 import sys
+import tempfile
 import time
 from math import pi
 from pathlib import Path
@@ -27,6 +29,8 @@ X_AMPLITUDE = 0.45
 Y_AMPLITUDE = 0.35
 Z_AMPLITUDE = 0.45
 Z_BIAS = 0.25
+CACHE_BUST_SWIFT_MESHES = True
+RUN_CACHE_TOKEN = time.time_ns()
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -35,10 +39,11 @@ for path in (REPO_ROOT, EXTRA_PARTS_ROOT):
     if str(path) not in sys.path:
         sys.path.insert(0, str(path))
 
-from ir_support_extra_parts.parts import part_mesh, part_names  # noqa: E402
+from ir_support_extra_parts.parts import part_mesh, part_names, part_path  # noqa: E402
 
 
 PARTS_TO_LOAD = part_names()
+MESH_CACHE_DIR = None
 
 
 def grid_pose(index):
@@ -57,6 +62,28 @@ def motion_pose(index, step_index):
     return SE3(x, y, z)
 
 
+def cache_bust_part_mesh(mesh, name):
+    if not CACHE_BUST_SWIFT_MESHES:
+        return
+    if not hasattr(mesh, "filename"):
+        return
+
+    source = Path(part_path(name))
+    if not source.exists():
+        return
+
+    global MESH_CACHE_DIR
+    if MESH_CACHE_DIR is None:
+        MESH_CACHE_DIR = Path(tempfile.mkdtemp(prefix="ir_support_swift_parts_"))
+
+    dest = (
+        MESH_CACHE_DIR
+        / f"{source.stem}_{RUN_CACHE_TOKEN}_{source.stat().st_mtime_ns}{source.suffix}"
+    )
+    shutil.copy2(source, dest)
+    mesh.filename = str(dest.resolve())
+
+
 def main():
     env = swift.Swift()
     env.launch(realtime=True, headless=HEADLESS)
@@ -67,6 +94,7 @@ def main():
     for index, name in enumerate(PARTS_TO_LOAD):
         base_pose = grid_pose(index)
         mesh = part_mesh(name, pose=base_pose)
+        cache_bust_part_mesh(mesh, name)
         env.add(mesh)
         meshes.append(mesh)
         base_poses.append(base_pose)

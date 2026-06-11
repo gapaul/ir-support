@@ -6,6 +6,8 @@ The pytest file `test_student_candidate_robots_batch3.py` stays headless and fas
 """
 
 import sys
+import shutil
+import tempfile
 import time
 from pathlib import Path
 
@@ -26,6 +28,8 @@ ROBOT_SPACING = 2.35
 REVOLUTE_JOINT_AMPLITUDE = 0.38
 PRISMATIC_JOINT_AMPLITUDE = 0.12
 DEFAULT_CAMERA_DISTANCE = 2.0
+CACHE_BUST_SWIFT_MESHES = True
+RUN_CACHE_TOKEN = time.time_ns()
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -56,6 +60,8 @@ ROBOT_FACTORIES = [
     ABBIRB1520ID,
     ABBIRB1660ID,
 ]
+
+MESH_CACHE_DIR = None
 
 
 def grid_position(index):
@@ -109,6 +115,27 @@ def add_robot_buttons(env, robots):
                 desc=robot_label(index, factory),
             )
         )
+
+
+def cache_bust_robot_meshes(robot):
+    if not CACHE_BUST_SWIFT_MESHES:
+        return
+
+    global MESH_CACHE_DIR
+    if MESH_CACHE_DIR is None:
+        MESH_CACHE_DIR = Path(tempfile.mkdtemp(prefix="ir_support_swift_robots_"))
+        print(f"Using Swift mesh cache-bust folder: {MESH_CACHE_DIR}")
+
+    for mesh in getattr(robot, "links_3d", []):
+        source = Path(getattr(mesh, "filename", ""))
+        if not source.exists():
+            continue
+        dest = (
+            MESH_CACHE_DIR
+            / f"{source.stem}_{RUN_CACHE_TOKEN}_{source.stat().st_mtime_ns}{source.suffix}"
+        )
+        shutil.copy2(source, dest)
+        mesh.filename = str(dest.resolve())
 
 
 def save_swift_screenshot():
@@ -177,6 +204,7 @@ def main():
 
     for index, factory in enumerate(ROBOT_FACTORIES):
         robot = factory(base=grid_base(index))
+        cache_bust_robot_meshes(robot)
         robot.add_to_env(env)
         robots.append(robot)
 
