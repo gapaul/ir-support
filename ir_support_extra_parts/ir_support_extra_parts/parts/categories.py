@@ -82,6 +82,7 @@ PART_CATEGORIES = {
     "Safety Objects": (
         "baby",
         "barrier1.5x0.2x1m",
+        "CautionSign",
         "fenceAssemblyGreenRectangle4x8x2.5m",
         "fenceFinal",
         "FireBlanket",
@@ -101,13 +102,19 @@ PART_CATEGORIES = {
     ),
     "Controls And Sensors": (
         "BarcodeScanner",
+        "Camera",
+        "ControlPanel",
         "emergencyStopButton",
         "emergencyStopWallMounted",
         "FireAlarm",
+        "LightTower",
+        "MagneticSwitch",
         "Monitor",
+        "ProximitySensor",
         "PushButton",
         "SafetyLightCurtain",
         "SafetyLight",
+        "TrafficLight",
     ),
 }
 
@@ -139,3 +146,5 @@ __all__ = [
     "parts_by_category",
     "category_summary",
 ]
+
+

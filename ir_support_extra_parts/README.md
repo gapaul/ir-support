@@ -17,29 +17,26 @@ The package is therefore organised into a small number of practical categories.
 This keeps the list browsable as the package grows and helps avoid turning the
 library into a long unsorted list of meshes.
 
-Current category counts:
+Current category counts, 99 parts total:
 
 | Category | Count | Use this for |
 | --- | ---: | --- |
 | Manipulable Objects | 20 | Small objects, tools, trays, fixtures, and props that a robot may pick, place, or interact with. |
 | Food And Packaging Props | 23 | Bottles, cartons, cans, boxes, cups, and packaged products for sorting and packing demos. |
 | Workcell Fixtures | 23 | Tables, benches, bins, crates, pallets, shelves, and larger layout objects. |
-| Safety Objects | 18 | Barriers, signs, helmets, people, cones, extinguishers, and workcell safety props. |
-| Controls And Sensors | 8 | Buttons, emergency stops, scanners, lights, light curtains, and display/control objects. |
+| Safety Objects | 19 | Barriers, signs, helmets, people, cones, extinguishers, and workcell safety props. |
+| Controls And Sensors | 14 | Buttons, emergency stops, scanners, lights, light curtains, and display/control objects. |
 
-The current collection is strongest in food/packaging props and workcell
-fixtures. The most obvious gap is controls and sensors, so future additions
-should prioritise useful interaction objects such as switches, sensors, cameras,
-pedestals, indicator towers, and simple operator panels.
+The current collection is deliberately kept just under about 100 objects so it remains
+browsable. It is strongest in food/packaging props and workcell fixtures, with
+controls and sensors now represented by a smaller but useful set of cameras,
+switches, indicators, panels, scanners, buttons, and light curtains.
 
 ## Parts By Category
 
 ### Manipulable Objects
 
-`Apple`, `BananaPeel`, `brick`, `DishRack`, `DumplingTray`, `hand`, `LegoMan`,
-`MilkPitcher`, `PizzaPeel`, `Plate`, `PlateFixture`, `PlateRack`,
-`PlateStacker`, `pen0.9x0.8x7.7m`, `StencilPlate`, `SuctionCup`,
-`TestTubeHolder`, `Toolbox`, `Tray`, `WateringCan`.
+`Apple`, `BananaPeel`, `brick`, `DishRack`, `DumplingTray`, `hand`, `LegoMan`, `MilkPitcher`, `PizzaPeel`, `Plate`, `PlateFixture`, `PlateRack`, `PlateStacker`, `pen0.9x0.8x7.7m`, `StencilPlate`, `SuctionCup`, `TestTubeHolder`, `Toolbox`, `Tray`, `WateringCan`.
 
 ### Food And Packaging Props
 
@@ -60,16 +57,11 @@ pedestals, indicator towers, and simple operator panels.
 
 ### Safety Objects
 
-`baby`, `barrier1.5x0.2x1m`, `fenceAssemblyGreenRectangle4x8x2.5m`,
-`fenceFinal`, `FireBlanket`, `FireExtinguisher`, `fireExtinguisherElevated`,
-`personFemaleBusiness`, `personMaleCasual`, `personMaleConstruction`,
-`personMaleOld`, `SafetyGate`, `SafetyHelmet`, `SafetyPerson`,
-`SafetyRailing`, `TrafficCone`, `WarningSign`, `WetFloorSign`.
+`baby`, `barrier1.5x0.2x1m`, `CautionSign`, `fenceAssemblyGreenRectangle4x8x2.5m`, `fenceFinal`, `FireBlanket`, `FireExtinguisher`, `fireExtinguisherElevated`, `personFemaleBusiness`, `personMaleCasual`, `personMaleConstruction`, `personMaleOld`, `SafetyGate`, `SafetyHelmet`, `SafetyPerson`, `SafetyRailing`, `TrafficCone`, `WarningSign`, `WetFloorSign`.
 
 ### Controls And Sensors
 
-`BarcodeScanner`, `emergencyStopButton`, `emergencyStopWallMounted`,
-`FireAlarm`, `Monitor`, `PushButton`, `SafetyLightCurtain`, `SafetyLight`.
+`BarcodeScanner`, `Camera`, `ControlPanel`, `emergencyStopButton`, `emergencyStopWallMounted`, `FireAlarm`, `LightTower`, `MagneticSwitch`, `Monitor`, `ProximitySensor`, `PushButton`, `SafetyLightCurtain`, `SafetyLight`, `TrafficLight`.
 
 ## Loading Parts
 
@@ -98,3 +90,8 @@ python tests/view_extra_parts_by_category_swift.py --category "Safety Objects"
 
 When running directly from an IDE, edit `CATEGORY_NAME` near the top of
 `tests/view_extra_parts_by_category_swift.py`.
+
+
+
+
+

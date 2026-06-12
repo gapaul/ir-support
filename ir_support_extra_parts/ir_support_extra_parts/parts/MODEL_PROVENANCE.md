@@ -88,7 +88,8 @@ Rejected after Swift inspection:
 - `ComputerTable` from `Karlos_A2_4`, 2024S; original stem `ComputerTable`; not a useful general computer table prop and removed from batch 3.
 - `FridgeCabinetTop` from `A2_AnhMinh_46_PhuTrungN_NhatThienM_MohammadFaiyadH`, 2025S; original stem `Fridge_Cabinet_Top`; too specific for the reusable object pack.
 - `PrintBed` from `Group_79`, 2023S; original stem `moddedprintbed`; too specific for the reusable object pack.
-- `TopCabinet` from `A2_AnhMinh_46_PhuTrungN_NhatThienM_MohammadFaiyadH`, 2025S; original stem `Top_Cabinet_W_Beefs`; too specific for the reusable object pack.
+- `TopCabinet` from `A2_AnhMinh_46_PhuTrungN_NhatThienM_MohammadFaiyadH`, 2025S; original stem `Top_Cabinet_W_Beefs`; 
+
 ## Student Object Batch 4
 
 Attempted move into ir_support_extra_parts on 2026-06-09. Robot link meshes, full environments, duplicated existing parts, oversized scene models, malformed candidate meshes, and objects that were too specific for general teaching use were excluded. Several accepted assets were recoloured, labelled, reoriented, or renamed after Swift inspection.
@@ -121,9 +122,34 @@ Rejected before Swift inspection:
 
 - `CandyBox` from `Sheila_A2_3`, 2024S; original stem `candyBox`; source PLY had malformed face records and could not be imported cleanly.
 - `Shoebox` from `A2_Louis_30_LukeK_LukeH_VyasaKarthikP`, 2025S; original stem `shoebox`; source PLY had malformed face records and could not be imported cleanly.
+
+## Student Object Batch 5
+
+Attempted move into ir_support_extra_parts on 2026-06-11, with final Swift review cleanup on 2026-06-12. This small batch deliberately targeted the thinner controls/sensors category while keeping the total extra-parts catalogue near 100 objects. Robot link meshes, full environments, duplicated existing parts, and oversized scene models were excluded. Accepted objects were normalised to metre-scale DAE assets, placed on the ground plane, made double-sided, and recoloured or labelled where the source material was too plain.
+
+- `LightTower` from `Group_39`, 2023S; original stem `LightTower`; converted from PLY to DAE and recoloured as a red/amber/green indicator tower.
+- `ControlPanel` from `Group_41`, 2023S; original stem `control panel C`; scaled from centimetre-like source units, converted from PLY to DAE, and given a dark panel, screen, buttons, and simple text.
+- `MagneticSwitch` from `Group_76`, 2023S; original stem `magnetic_switch_w_leads`; converted from PLY to DAE and recoloured as a dark switch body with cable and blue sensor tip.
+- `ProximitySensor` from `Mahdi_A2_6`, 2024S; original stem `Proximity Sensor`; scaled from centimetre-like source units, decimated below the target DAE size, converted from PLY to DAE, and recoloured as a metallic sensor.
+- `Camera` from `Group_10`, 2023S; original stem `camera`; scaled to a plausible workcell-camera size, converted from PLY to DAE, recoloured with a dark body, and cleaned after Swift inspection to remove generated floating lens-detail geometry.
+- `TrafficLight` from `A2_Richardo_32_DiL_KhiladA_RobeerO`, 2025S; original stem `Traffic_Light`; scaled from source units and converted from STL to a dark DAE prop. Generated red/amber/green panels were removed after Swift inspection because they did not align with the source mesh.
+- `CautionSign` from `Group_39`, 2023S; original stem `CautionSign`; converted from PLY to DAE, recoloured yellow, and given face-aligned CAUTION text on both sides after Swift inspection.
+
+Rejected after Swift inspection:
+
+- `CutterHolder` from `Group_18`, 2023S; original stem `cutter holder`; removed because the object purpose was unclear and it was not useful enough as a reusable teaching prop.
+
 Future additions:
 
 When parts or scene objects are moved in from 2023 and later Assignment 2 submissions, add a reference entry here for each asset or related group of assets. Include the part name, student group or submission identifier, teaching session, original file stem if useful, and any notable cleanup or conversion work.
+
+
+
+
+
+
+
+
 
 
 
