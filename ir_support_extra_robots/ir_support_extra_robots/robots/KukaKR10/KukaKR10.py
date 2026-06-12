@@ -1,5 +1,4 @@
 import os
-import warnings
 from math import pi
 
 import numpy as np

@@ -1,5 +1,4 @@
 import os
-import warnings
 from math import pi
 
 import roboticstoolbox as rtb
@@ -20,11 +19,6 @@ class ABBIRB1660ID(UTSMeshRobot):
     manufacturer_url = "https://www.abb.com/global/en/areas/robotics/products/robots/articulated-robots/medium-robots/irb-1660id"
 
     def __init__(self, base=None):
-        warnings.warn(
-            'The original student IRB1660ID submission included a linear rail; this Python model intentionally omits it.',
-            UserWarning,
-            stacklevel=2,
-        )
         self.link_colors = [
             (0.98, 0.42, 0.03, 1.0),
             (0.98, 0.42, 0.03, 1.0),
@@ -52,3 +46,4 @@ class ABBIRB1660ID(UTSMeshRobot):
             base=base,
             meshes_are_global_at_home=True,
         )
+

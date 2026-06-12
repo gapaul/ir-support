@@ -1,5 +1,4 @@
 import os
-import warnings
 from math import pi
 
 import roboticstoolbox as rtb
@@ -20,11 +19,6 @@ class IgusReBel(UTSMeshRobot):
     manufacturer_url = "https://www.igus.com/info/rebel"
 
     def __init__(self, base=None):
-        warnings.warn(
-            'The original student ReBeL submission included a linear rail; this Python model intentionally omits it.',
-            UserWarning,
-            stacklevel=2,
-        )
         base = self._as_se3(base) if base is not None else SE3()
         self.link_colors = [
             (0.9, 0.92, 0.9, 1.0),
@@ -52,3 +46,4 @@ class IgusReBel(UTSMeshRobot):
             home_q=[0.0] * 6,
             base=base,
         )
+

@@ -1,5 +1,4 @@
 import os
-import warnings
 from math import pi
 
 import roboticstoolbox as rtb
@@ -19,11 +18,6 @@ class DobotCR10(UTSMeshRobot):
     manufacturer_url = "https://www.dobot-robots.com/products/cr-series/cr10.html"
 
     def __init__(self, base=None):
-        warnings.warn(
-            'The original student CR10 visual mesh segmentation was not usable; this model uses scaled Dobot CR-family visual links.',
-            UserWarning,
-            stacklevel=2,
-        )
         self.link_colors = [
             (0.46, 0.48, 0.47, 1.0),
             (0.46, 0.48, 0.47, 1.0),
@@ -50,3 +44,4 @@ class DobotCR10(UTSMeshRobot):
                     home_q=[0.0] * 6,
                     base=base,
                 )
+
