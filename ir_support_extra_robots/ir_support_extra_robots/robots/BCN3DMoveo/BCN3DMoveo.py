@@ -15,6 +15,7 @@ class BCN3DMoveo(UTSMeshRobot):
     """
 
     source_note = "BCN3D Moveo, Group_36, 2023S"
+    reference_url = "https://github.com/BCN3D/BCN3D-Moveo"
 
     def __init__(self, base=None):
         self.link_colors = [

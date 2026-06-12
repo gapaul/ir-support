@@ -17,6 +17,7 @@ class IgusReBel(UTSMeshRobot):
     """
 
     source_note = 'igus ReBeL, Danial_A2_6, 2024S; original student rail variant omitted'
+    manufacturer_url = "https://www.igus.com/info/rebel"
 
     def __init__(self, base=None):
         warnings.warn(

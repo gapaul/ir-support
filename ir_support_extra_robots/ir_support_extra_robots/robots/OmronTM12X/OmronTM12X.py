@@ -15,6 +15,7 @@ class OmronTM12X(UTSMeshRobot):
     """
 
     source_note = 'Omron/Techman TM12X, Group_69, 2023S; original stem omron_tm12x'
+    manufacturer_url = "https://automation.omron.com/en/us/products/family/TM_Series_Collaborative_Robots"
 
     def __init__(self, base=None):
         self.link_colors = [(0.24, 0.25, 0.24, 1.0), (0.24, 0.25, 0.24, 1.0), (0.24, 0.25, 0.24, 1.0), (0.88, 0.88, 0.86, 1.0), (0.24, 0.25, 0.24, 1.0), (0.88, 0.88, 0.86, 1.0), (0.02, 0.13, 0.34, 1.0)]

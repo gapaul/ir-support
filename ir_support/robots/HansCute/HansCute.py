@@ -9,6 +9,8 @@ from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 class HansCute(UTSMeshRobot):
     """Hans Cute model ported from the UTS MATLAB toolbox."""
 
+
+    manufacturer_url = "https://www.hansrobot.net/"
     def __init__(self, base=None):
         links = [
             rtb.RevoluteDH(d=0.15, a=0.0, alpha=pi / 2, offset=-pi / 2, qlim=self._qlim(-360, 360)),
@@ -28,3 +30,4 @@ class HansCute(UTSMeshRobot):
             home_q=[0.0] * 7,
             base=base,
         )
+

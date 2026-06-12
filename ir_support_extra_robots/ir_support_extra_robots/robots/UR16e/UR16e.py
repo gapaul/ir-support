@@ -15,6 +15,7 @@ class UR16e(UTSMeshRobot):
     """
 
     source_note = "Universal Robots UR16e, Group_72, 2023S"
+    manufacturer_url = "https://www.universal-robots.com/products/ur16e/"
 
     def __init__(self, base=None):
         links = [

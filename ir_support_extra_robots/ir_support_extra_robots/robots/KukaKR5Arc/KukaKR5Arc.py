@@ -15,6 +15,7 @@ class KukaKR5Arc(UTSMeshRobot):
     """
 
     source_note = "KUKA KR5 Arc, Danial_A2_5 and related 2024S submissions"
+    reference_url = "https://www.kuka.com/en-de/products/robot-systems/industrial-robots/kr-cybertech-arc"
 
     def __init__(self, base=None):
         self.link_colors = [

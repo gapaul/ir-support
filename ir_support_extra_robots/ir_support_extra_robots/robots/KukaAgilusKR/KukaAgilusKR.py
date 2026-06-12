@@ -17,6 +17,7 @@ class KukaAgilusKR(UTSMeshRobot):
     """
 
     source_note = 'KUKA Agilus-family KR candidate, Group_33, 2023S; original stem KUKAKR'
+    reference_url = "https://www.kuka.com/en-de/products/robot-systems/industrial-robots/kr-agilus"
 
     def __init__(self, base=None):
         self.link_colors = [(0.04, 0.04, 0.04, 1.0), (0.92, 0.34, 0.02, 1.0), (0.92, 0.34, 0.02, 1.0), (0.92, 0.34, 0.02, 1.0), (0.92, 0.34, 0.02, 1.0), (0.92, 0.34, 0.02, 1.0), (0.04, 0.04, 0.04, 1.0)]

@@ -15,6 +15,7 @@ class JakaZu3(UTSMeshRobot):
     """
 
     source_note = 'JAKA Zu3, Group_24, 2023S; source cites JAKA Zu3 STEP files and Zhenyu Liu et al. 2023 DH parameters'
+    manufacturer_url = "https://www.jaka.com/products/jaka-zu-3/"
 
     def __init__(self, base=None):
         self.link_colors = [(0.04, 0.04, 0.04, 1.0), (0.82, 0.84, 0.82, 1.0), (0.82, 0.84, 0.82, 1.0), (0.05, 0.22, 0.55, 1.0), (0.82, 0.84, 0.82, 1.0), (0.05, 0.22, 0.55, 1.0), (0.04, 0.04, 0.04, 1.0)]

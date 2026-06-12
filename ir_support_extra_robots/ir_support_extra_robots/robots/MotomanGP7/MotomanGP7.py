@@ -6,10 +6,10 @@ import roboticstoolbox as rtb
 import spatialmath.base as spb
 from spatialmath import SE3
 
-from ir_support.robots.DHRobot3D import DHRobot3D
+from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 
 
-class MotomanGP7(DHRobot3D):
+class MotomanGP7(UTSMeshRobot):
     """Candidate Yaskawa Motoman GP7 model ported from student Assignment 2 work.
 
     WARNING: This model was created by UTS students in 41013 Robotics and
@@ -18,6 +18,7 @@ class MotomanGP7(DHRobot3D):
     """
 
     source_note = 'Yaskawa Motoman GP7, A2_Tony_14_JonathanD_RhysH, 2025S; selected as a cleaner GP7 DAE source than the larger shortlist PLY set'
+    manufacturer_url = "https://www.motoman.com/en-us/products/robots/industrial/assembly-handling/gp-series/gp7"
 
     @staticmethod
     def _qlim(lower, upper):
@@ -68,14 +69,18 @@ class MotomanGP7(DHRobot3D):
         ]
 
         super().__init__(
-            links,
-            link3d_names,
+            links=links,
+            mesh_stem="MotomanGP7",
+            mesh_dir=os.path.abspath(os.path.dirname(__file__)),
             name="MotomanGP7",
-            link3d_dir=os.path.abspath(os.path.dirname(__file__)),
-            qtest=qtest,
+            home_q=qtest,
+            base=base,
+            link3d_names=link3d_names,
             qtest_transforms=qtest_transforms,
         )
 
         if base is not None:
             self.base = self._as_se3(base)
-        self.q = qtest
+        self.home_q = np.array(qtest, dtype=float)
+        self.q = self.home_q.copy()
+

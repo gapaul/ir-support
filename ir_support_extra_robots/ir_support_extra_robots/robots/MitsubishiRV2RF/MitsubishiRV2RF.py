@@ -6,10 +6,10 @@ import roboticstoolbox as rtb
 import spatialmath.base as spb
 from spatialmath import SE3
 
-from ir_support.robots.DHRobot3D import DHRobot3D
+from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 
 
-class MitsubishiRV2RF(DHRobot3D):
+class MitsubishiRV2RF(UTSMeshRobot):
     """Candidate Mitsubishi RV-2FR model ported from student Assignment 2 work.
 
     WARNING: This model was created by UTS students in 41013 Robotics and
@@ -18,6 +18,7 @@ class MitsubishiRV2RF(DHRobot3D):
     """
 
     source_note = "Mitsubishi RV-2FR, A2_Khoa_57_HongLinhN_NhatMinhV, 2025S"
+    manufacturer_url = "https://www.mitsubishielectric.com/fa/products/rbt/robot/pmerit/vertical/rv_2f/index.html"
 
     @staticmethod
     def _as_se3(value):
@@ -48,7 +49,16 @@ class MitsubishiRV2RF(DHRobot3D):
         link3d_names.update({f"color{i}": colour for i, colour in enumerate(link_colors)})
         qtest = [0, 0, pi / 2, 0, 0, 0]
         qtest_transforms = [spb.transl(0, 0, 0) for _ in range(7)]
-        super().__init__(links, link3d_names, os.path.abspath(os.path.dirname(__file__)), "MitsubishiRV2RF", qtest, qtest_transforms)
+        super().__init__(
+            links=links,
+            mesh_stem="MitsubishiRV2RF",
+            mesh_dir=os.path.abspath(os.path.dirname(__file__)),
+            name="MitsubishiRV2RF",
+            home_q=qtest,
+            base=base,
+            link3d_names=link3d_names,
+            qtest_transforms=qtest_transforms,
+        )
         self.home_q = np.array(qtest, dtype=float)
         if base is not None:
             self.base = self._as_se3(base)

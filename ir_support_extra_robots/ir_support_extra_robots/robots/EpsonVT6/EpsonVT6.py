@@ -6,10 +6,10 @@ import roboticstoolbox as rtb
 import spatialmath.base as spb
 from spatialmath import SE3
 
-from ir_support.robots.DHRobot3D import DHRobot3D
+from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 
 
-class EpsonVT6(DHRobot3D):
+class EpsonVT6(UTSMeshRobot):
     """Candidate Epson VT6 model ported from student Assignment 2 work.
 
     WARNING: This model was created by UTS students in 41013 Robotics and
@@ -18,6 +18,7 @@ class EpsonVT6(DHRobot3D):
     """
 
     source_note = "Epson VT6, A2_Tony_12_AbishaN_JessicaL_AryaD, 2025S"
+    manufacturer_url = "https://epson.com/For-Work/Robots/6-Axis/VT6L-All-in-One-6-Axis-Robot/p/VT6LA901S"
 
     @staticmethod
     def _as_se3(value):
@@ -56,7 +57,16 @@ class EpsonVT6(DHRobot3D):
             spb.transl(-0.490307, 0.001991, 0.837018),
             spb.transl(-0.577655, 0.001991, 0.837018),
         ]
-        super().__init__(links, link3d_names, os.path.abspath(os.path.dirname(__file__)), "EpsonVT6", qtest, qtest_transforms)
+        super().__init__(
+            links=links,
+            mesh_stem="EpsonVT6",
+            mesh_dir=os.path.abspath(os.path.dirname(__file__)),
+            name="EpsonVT6",
+            home_q=qtest,
+            base=base,
+            link3d_names=link3d_names,
+            qtest_transforms=qtest_transforms,
+        )
         self.home_q = np.array(qtest, dtype=float)
         self.tool = SE3(0, 0, 0.108)
         if base is not None:

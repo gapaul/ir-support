@@ -18,6 +18,7 @@ class KukaKR6R700CR(UTSMeshRobot):
     """
 
     source_note = 'KUKA KR6 R700 CR, Group_8, 2023S'
+    manufacturer_url = "https://www.kuka.com/en-de/products/robot-systems/industrial-robots/kr-agilus"
 
     def __init__(self, base=None):
         base_adjust = SE3(0, 0, 0.20)

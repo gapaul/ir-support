@@ -10,6 +10,8 @@ from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 class Fetch(UTSMeshRobot):
     """Fetch arm model ported from the UTS MATLAB toolbox."""
 
+
+    reference_url = "https://docs.fetchrobotics.com/"
     def __init__(self, base=None):
         links = [
             rtb.RevoluteDH(d=0.05, a=0.117, alpha=-pi / 2, qlim=self._qlim(-92, 92)),
@@ -32,3 +34,4 @@ class Fetch(UTSMeshRobot):
             base=base_transform,
         )
         self.tool = SE3.Rx(pi)
+

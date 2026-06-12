@@ -7,7 +7,7 @@ import swift
 import roboticstoolbox as rtb
 import spatialmath.base as spb
 from spatialmath import SE3
-from ir_support.robots.DHRobot3D import DHRobot3D
+from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 import time
 import os
 
@@ -15,10 +15,12 @@ import os
 from math import pi
 
 # -----------------------------------------------------------------------------------#
-class UR3(DHRobot3D):
-    def __init__(self):
+class UR3(UTSMeshRobot):
+    manufacturer_url = "https://www.universal-robots.com/products/ur3-robot/"
+
+    def __init__(self, base=None):
         """
-            UR3 Robot by DHRobot3D class
+            UR3 Robot by UTSMeshRobot class
 
             Example usage:
             >>> from ir-support import UR3
@@ -59,8 +61,16 @@ class UR3(DHRobot3D):
                             spb.transl(-0.083765,-0.11333,0.61096) @ spb.trotz(pi)]
 
         current_path = os.path.abspath(os.path.dirname(__file__))
-        super().__init__(links, link3D_names, name = 'UR3', link3d_dir = current_path, qtest = qtest, qtest_transforms = qtest_transforms)
-        self.q = qtest
+        super().__init__(
+            links=links,
+            mesh_stem="UR3",
+            mesh_dir=current_path,
+            name="UR3",
+            home_q=qtest,
+            base=base,
+            link3d_names=link3D_names,
+            qtest_transforms=qtest_transforms,
+        )
 
     # -----------------------------------------------------------------------------------#
     def _create_DH(self):
@@ -102,4 +112,5 @@ class UR3(DHRobot3D):
 if __name__ == "__main__":
     r = UR3()
     r.test()
+
 

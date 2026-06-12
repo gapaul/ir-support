@@ -7,10 +7,10 @@ import roboticstoolbox as rtb
 import spatialmath.base as spb
 from spatialmath import SE3
 
-from ir_support.robots.DHRobot3D import DHRobot3D
+from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 
 
-class KukaKR60(DHRobot3D):
+class KukaKR60(UTSMeshRobot):
     """Candidate KUKA KR60 model ported from student Assignment 2 work.
 
     WARNING: This model was created by UTS students in 41013 Robotics and
@@ -19,6 +19,7 @@ class KukaKR60(DHRobot3D):
     """
 
     source_note = "Kuka KR60, A2_Khoa_51_MarcusF_HarrshawarthanG_YutoB, 2025S"
+    reference_url = "https://www.kuka.com/en-de/products/robot-systems/industrial-robots/kr-quantec"
     kuka_reference = "https://www.kuka.com/en-se/company/press/news/2019/12/new-kr-iontec"
 
     @staticmethod
@@ -66,7 +67,16 @@ class KukaKR60(DHRobot3D):
             spb.transl(0.5, 0, 1.55) @ spb.rpy2tr(pi, 2 * pi / 5 + pi / 10, 0, order="xyz"),
             spb.transl(0.65, 0, 1.55) @ spb.rpy2tr(0, 2 * pi / 5 + pi / 10, 0, order="xyz"),
         ]
-        super().__init__(links, link3d_names, os.path.abspath(os.path.dirname(__file__)), "KukaKR60", qtest, qtest_transforms)
+        super().__init__(
+            links=links,
+            mesh_stem="KukaKR60",
+            mesh_dir=os.path.abspath(os.path.dirname(__file__)),
+            name="KukaKR60",
+            home_q=qtest,
+            base=base,
+            link3d_names=link3d_names,
+            qtest_transforms=qtest_transforms,
+        )
         self.home_q = np.array(qtest, dtype=float)
         if base is not None:
             self.base = self._as_se3(base)

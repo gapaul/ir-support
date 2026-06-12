@@ -15,6 +15,7 @@ class DobotNova5(UTSMeshRobot):
     """
 
     source_note = "Dobot Nova5, Group_49, 2023S"
+    manufacturer_url = "https://www.dobot-robots.com/products/nova-series/nova5.html"
 
     def __init__(self, base=None):
         self.link_colors = [

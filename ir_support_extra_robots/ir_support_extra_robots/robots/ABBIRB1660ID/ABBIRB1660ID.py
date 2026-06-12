@@ -17,6 +17,7 @@ class ABBIRB1660ID(UTSMeshRobot):
     """
 
     source_note = 'ABB IRB 1660ID, Group_63, 2023S; original student rail variant omitted and arm meshes scaled from millimetres'
+    manufacturer_url = "https://www.abb.com/global/en/areas/robotics/products/robots/articulated-robots/medium-robots/irb-1660id"
 
     def __init__(self, base=None):
         warnings.warn(

@@ -6,10 +6,10 @@ import roboticstoolbox as rtb
 import spatialmath.base as spb
 from spatialmath import SE3
 
-from ir_support.robots.DHRobot3D import DHRobot3D
+from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 
 
-class EpsonVT6L(DHRobot3D):
+class EpsonVT6L(UTSMeshRobot):
     """Candidate Epson VT6L model ported from student Assignment 2 work.
 
     WARNING: This model was created by UTS students in 41013 Robotics and
@@ -18,6 +18,7 @@ class EpsonVT6L(DHRobot3D):
     """
 
     source_note = 'Epson VT6L, A2_Adam_61_DanielI_DanielT_EmilB, 2025S; large DAE source downsampled for the candidate package'
+    manufacturer_url = "https://epson.com/For-Work/Robots/6-Axis/VT6L-All-in-One-6-Axis-Robot/p/VT6LA901S"
 
     @staticmethod
     def _qlim(lower, upper):
@@ -68,14 +69,18 @@ class EpsonVT6L(DHRobot3D):
         ]
 
         super().__init__(
-            links,
-            link3d_names,
+            links=links,
+            mesh_stem="EpsonVT6L",
+            mesh_dir=os.path.abspath(os.path.dirname(__file__)),
             name="EpsonVT6L",
-            link3d_dir=os.path.abspath(os.path.dirname(__file__)),
-            qtest=qtest,
+            home_q=qtest,
+            base=base,
+            link3d_names=link3d_names,
             qtest_transforms=qtest_transforms,
         )
 
         if base is not None:
             self.base = self._as_se3(base)
-        self.q = qtest
+        self.home_q = np.array(qtest, dtype=float)
+        self.q = self.home_q.copy()
+

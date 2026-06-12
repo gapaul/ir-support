@@ -18,6 +18,7 @@ class ABBIRB910SC(UTSMeshRobot):
     """
 
     source_note = 'ABB IRB 910SC SCARA candidate, Group_114, 2023S'
+    manufacturer_url = "https://www.abb.com/global/en/areas/robotics/products/robots/scara-robots/irb-910sc"
 
     def __init__(self, base=None):
         self.link_colors = [

@@ -18,6 +18,7 @@ class UFactoryXArm6(UTSMeshRobot):
     """
 
     source_note = 'uFactory xArm6, Sheila_A2_7, 2024S'
+    manufacturer_url = "https://www.ufactory.cc/xarm-collaborative-robot/"
 
     def __init__(self, base=None):
         self.link_colors = [

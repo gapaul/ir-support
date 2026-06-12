@@ -18,6 +18,7 @@ class FanucM20(UTSMeshRobot):
     """
 
     source_note = 'FANUC M-20, Group_82, 2023S'
+    reference_url = "https://github.com/ros-industrial/fanuc/tree/kinetic-devel/fanuc_m20ia_support"
 
     def __init__(self, base=None):
         self.link_colors = [

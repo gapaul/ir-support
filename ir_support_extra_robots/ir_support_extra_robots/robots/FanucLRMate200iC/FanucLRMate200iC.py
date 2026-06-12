@@ -27,6 +27,7 @@ class FanucLRMate200iC(UTSMeshRobot):
              (0.05, 0.05, 0.05, 1.0)]
 
     source_note = "Fanuc200ic, A2_Khoa_51_MarcusF_HarrshawarthanG_YutoB, 2025S"
+    reference_url = "https://www.fanuc.eu/uk/en/robots/robot-filter-page/lrmate-series/lrmate-200ic"
 
     def __init__(self, base=None):
         links = [

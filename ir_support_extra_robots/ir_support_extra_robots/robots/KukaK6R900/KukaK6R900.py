@@ -15,6 +15,7 @@ class KukaK6R900(UTSMeshRobot):
     """
 
     source_note = 'KUKA K6 R900, Sheila_A2_2, 2024S; original stem KUKA_K6'
+    manufacturer_url = "https://www.kuka.com/en-de/products/robot-systems/industrial-robots/kr-agilus"
 
     def __init__(self, base=None):
         self.link_colors = [(0.04, 0.04, 0.04, 1.0), (0.92, 0.34, 0.02, 1.0), (0.92, 0.34, 0.02, 1.0), (0.92, 0.34, 0.02, 1.0), (0.92, 0.34, 0.02, 1.0), (0.92, 0.34, 0.02, 1.0), (0.04, 0.04, 0.04, 1.0)]

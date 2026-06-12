@@ -18,6 +18,7 @@ class ABBIRB1100(UTSMeshRobot):
     """
 
     source_note = 'ABB IRB 1100, Group_2, 2023S'
+    manufacturer_url = "https://www.abb.com/global/en/areas/robotics/products/robots/articulated-robots/small-robots/irb-1100"
 
     def __init__(self, base=None):
         self.link_colors = [

@@ -15,6 +15,7 @@ class ABBGoFa10(UTSMeshRobot):
     """
 
     source_note = "ABB GoFa 10, Group_13, 2023S"
+    manufacturer_url = "https://www.abb.com/global/en/areas/robotics/products/robots/collaborative-robots/gofa"
 
     def __init__(self, base=None):
         links = [

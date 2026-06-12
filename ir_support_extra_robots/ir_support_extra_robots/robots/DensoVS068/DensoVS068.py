@@ -16,6 +16,7 @@ class DensoVS068(UTSMeshRobot):
     """
 
     source_note = 'DENSO VS068, Khoa_A2_7, 2024S'
+    manufacturer_url = "https://www.denso-wave.com/en/robot/product/five-six/vs.html"
 
     def __init__(self, base=None):
         self.link_colors = [

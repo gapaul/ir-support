@@ -18,6 +18,7 @@ class Pulse75(UTSMeshRobot):
     """
 
     source_note = 'Rozum Robotics PULSE 75, Group_68, 2023S; rail-style prismatic first joint removed, rail plates trimmed from the base mesh, and base lowered onto the xy plane for the IR Support candidate model'
+    manufacturer_url = "https://rozum.com/robotic-arm-pulse-75/"
 
     def __init__(self, base=None):
         base_adjust = SE3(0, 0, -0.06996) * SE3.Rx(pi / 2) * SE3.Ry(pi / 2) * SE3.Rz(pi) * SE3.Rx(pi / 2)

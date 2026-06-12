@@ -18,6 +18,7 @@ class KukaKR10(UTSMeshRobot):
     """
 
     source_note = 'KUKA KR10, Khoa_A2_8, 2024S; using the Draft 3 link mesh set'
+    reference_url = "https://www.kuka.com/en-de/products/robot-systems/industrial-robots/kr-agilus"
 
     def __init__(self, base=None):
         self.link_colors = [

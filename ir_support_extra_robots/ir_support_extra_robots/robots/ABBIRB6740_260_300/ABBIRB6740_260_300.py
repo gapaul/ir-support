@@ -6,10 +6,10 @@ import roboticstoolbox as rtb
 import spatialmath.base as spb
 from spatialmath import SE3
 
-from ir_support.robots.DHRobot3D import DHRobot3D
+from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 
 
-class ABBIRB6740_260_300(DHRobot3D):
+class ABBIRB6740_260_300(UTSMeshRobot):
     """Candidate ABB IRB 6740-260/3.00 model ported from student Assignment 2 work.
 
     WARNING: This model was created by UTS students in 41013 Robotics and
@@ -18,6 +18,7 @@ class ABBIRB6740_260_300(DHRobot3D):
     """
 
     source_note = 'ABB IRB 6740-260/3.00, A2_Tony_19_JaidenP_VuNhatMinhH, 2025S'
+    manufacturer_url = "https://www.abb.com/global/en/areas/robotics/products/robots/articulated-robots/large-robots/irb-6740"
 
     @staticmethod
     def _qlim(lower, upper):
@@ -68,14 +69,18 @@ class ABBIRB6740_260_300(DHRobot3D):
         ]
 
         super().__init__(
-            links,
-            link3d_names,
+            links=links,
+            mesh_stem="ABBIRB6740_260_300",
+            mesh_dir=os.path.abspath(os.path.dirname(__file__)),
             name="ABBIRB6740_260_300",
-            link3d_dir=os.path.abspath(os.path.dirname(__file__)),
-            qtest=qtest,
+            home_q=qtest,
+            base=base,
+            link3d_names=link3d_names,
             qtest_transforms=qtest_transforms,
         )
 
         if base is not None:
             self.base = self._as_se3(base)
-        self.q = qtest
+        self.home_q = np.array(qtest, dtype=float)
+        self.q = self.home_q.copy()
+

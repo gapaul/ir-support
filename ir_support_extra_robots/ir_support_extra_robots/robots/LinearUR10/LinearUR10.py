@@ -9,6 +9,7 @@ from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 
 class LinearUR10(UTSMeshRobot):
     """UR10 on a linear rail model ported from the UTS MATLAB toolbox."""
+    reference_url = "https://www.universal-robots.com/products/ur10-robot/"
 
     def __init__(self, base=None):
         links = [

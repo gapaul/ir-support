@@ -18,6 +18,7 @@ class ABBIRB1300(UTSMeshRobot):
     """
 
     source_note = 'ABB 1300-class candidate from a student folder named CRB1300, A2_AnhMinh_46_PhuTrungN_NhatThienM_MohammadFaiyadH, 2025S; source DAE meshes were authored in millimetres and scaled to metres'
+    manufacturer_url = "https://www.abb.com/global/en/areas/robotics/products/robots/articulated-robots/small-robots/irb-1300"
 
     def __init__(self, base=None):
         self.link_colors = [

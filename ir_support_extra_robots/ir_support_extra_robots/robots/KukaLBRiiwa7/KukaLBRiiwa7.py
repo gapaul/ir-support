@@ -18,6 +18,7 @@ class KukaLBRiiwa7(UTSMeshRobot):
     """
 
     source_note = 'KUKA LBR iiwa 7, Group_38, 2023S'
+    manufacturer_url = "https://www.kuka.com/en-de/products/robot-systems/industrial-robots/lbr-iiwa"
 
     def __init__(self, base=None):
         self.link_colors = [

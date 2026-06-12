@@ -8,6 +8,7 @@ from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 
 class KinovaGen2(UTSMeshRobot):
     """Kinova Gen2 model ported from the UTS MATLAB toolbox."""
+    manufacturer_url = "https://www.kinovarobotics.com/product/gen2-robots"
 
     def __init__(self, base=None):
         links = [

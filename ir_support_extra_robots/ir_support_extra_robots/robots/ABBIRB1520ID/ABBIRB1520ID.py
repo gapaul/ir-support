@@ -17,6 +17,7 @@ class ABBIRB1520ID(UTSMeshRobot):
     """
 
     source_note = 'ABB IRB 1520ID, Tony_A2_1, 2024S'
+    manufacturer_url = "https://www.abb.com/global/en/areas/robotics/products/robots/articulated-robots/medium-robots/irb-1520id"
 
     def __init__(self, base=None):
         self.link_colors = [

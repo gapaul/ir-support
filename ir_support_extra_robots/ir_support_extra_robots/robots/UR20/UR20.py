@@ -18,6 +18,7 @@ class UR20(UTSMeshRobot):
     """
 
     source_note = 'Universal Robots UR20, Tony_A2_5, 2024S'
+    manufacturer_url = "https://www.universal-robots.com/products/ur20/"
 
     def __init__(self, base=None):
         base_adjust = SE3.Rz(pi)

@@ -19,3 +19,28 @@ dependencies first:
 ```bash
 python -m pip install -r requirements-dev.txt
 ```
+
+## Visual model review helpers
+
+The long-running student import batches are not kept as permanent test files.
+Use the reusable viewers instead. From a terminal, make sure python is the same virtual environment selected in VS Code, or activate the project environment first:
+
+```bash
+python tests/view_robot_model_swift.py
+python tests/view_robot_model_swift.py --package extra --robot DensoVP6242
+python tests/view_robot_model_swift.py --package core --robot UR3e
+python tests/view_extra_robots_swift.py
+python tests/view_extra_parts_by_category_swift.py --category "Safety Objects"
+python tests/view_extra_parts_swift.py
+```
+
+`view_robot_model_swift.py` is intended for detailed single-robot inspection.
+Run it with no arguments to open UR3e, then use the Swift side-panel dropdown to
+choose any core or extra robot and click `Load selected robot`. It copies meshes
+to a temporary cache-bust folder, animates every joint, and adds camera buttons
+for common views. The package-wide viewers are useful when checking that the
+installed catalogues still load together.
+
+The model import process is documented in `docs/extra_model_import_workflow.md`.
+
+

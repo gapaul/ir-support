@@ -6,10 +6,10 @@ import roboticstoolbox as rtb
 import spatialmath.base as spb
 from spatialmath import SE3
 
-from ir_support.robots.DHRobot3D import DHRobot3D
+from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 
 
-class FanucCRX10IAL(DHRobot3D):
+class FanucCRX10IAL(UTSMeshRobot):
     """Candidate FANUC CRX-10iA/L model ported from student Assignment 2 work.
 
     WARNING: This model was created by UTS students in 41013 Robotics and
@@ -18,6 +18,7 @@ class FanucCRX10IAL(DHRobot3D):
     """
 
     source_note = 'FANUC CRX-10iA/L, A2_AnhMinh_42_DaniyaS_ZainK, 2025S; using the smaller v2 DAE mesh set and the submitted identity CAD calibration transforms'
+    manufacturer_url = "https://www.fanucamerica.com/products/robots/series/collaborative-robots/crx-10ia-l-cobot"
 
     @staticmethod
     def _qlim(lower, upper):
@@ -68,14 +69,18 @@ class FanucCRX10IAL(DHRobot3D):
         ]
 
         super().__init__(
-            links,
-            link3d_names,
+            links=links,
+            mesh_stem="FanucCRX10IAL",
+            mesh_dir=os.path.abspath(os.path.dirname(__file__)),
             name="FanucCRX10IAL",
-            link3d_dir=os.path.abspath(os.path.dirname(__file__)),
-            qtest=qtest,
+            home_q=qtest,
+            base=base,
+            link3d_names=link3d_names,
             qtest_transforms=qtest_transforms,
         )
 
         if base is not None:
             self.base = self._as_se3(base)
-        self.q = qtest
+        self.home_q = np.array(qtest, dtype=float)
+        self.q = self.home_q.copy()
+

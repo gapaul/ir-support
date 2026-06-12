@@ -15,6 +15,7 @@ class FanucLRMate200iD(UTSMeshRobot):
     """
 
     source_note = "FANUC LR Mate 200iD, Tony_A2_2, 2024S"
+    manufacturer_url = "https://www.fanucamerica.com/products/robots/series/lr-mate/lr-mate-200id"
 
     def __init__(self, base=None):
         links = [

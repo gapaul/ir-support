@@ -14,4 +14,6 @@ def DensoVS060(base_offset=0.2):
     robot = Robot(links, name=name)
     robot.q = [0.0] * robot.n
     robot.base = robot.base @ SE3(0, 0, base_offset)
+    robot.manufacturer_url = "https://www.denso-wave.com/en/robot/product/five-six/vs.html"
     return robot
+

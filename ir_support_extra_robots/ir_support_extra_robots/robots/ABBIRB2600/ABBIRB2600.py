@@ -6,10 +6,10 @@ import roboticstoolbox as rtb
 import spatialmath.base as spb
 from spatialmath import SE3
 
-from ir_support.robots.DHRobot3D import DHRobot3D
+from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 
 
-class ABBIRB2600(DHRobot3D):
+class ABBIRB2600(UTSMeshRobot):
     """Candidate ABB IRB2600 model ported from student Assignment 2 work.
 
     WARNING: This model was created by UTS students in 41013 Robotics and
@@ -18,6 +18,7 @@ class ABBIRB2600(DHRobot3D):
     """
 
     source_note = "ABB IRB2600, A2_Khoa_51_MarcusF_HarrshawarthanG_YutoB, 2025S"
+    manufacturer_url = "https://www.abb.com/global/en/areas/robotics/products/robots/articulated-robots/medium-robots/irb-2600"
 
     @staticmethod
     def _as_se3(value):
@@ -56,7 +57,16 @@ class ABBIRB2600(DHRobot3D):
             spb.transl(0.957, 0, 1.28) @ spb.rpy2tr(pi, pi / 2, 0, order="xyz"),
             spb.transl(0.957, 0, 1.28) @ spb.rpy2tr(pi, pi / 2, 0, order="xyz"),
         ]
-        super().__init__(links, link3d_names, os.path.abspath(os.path.dirname(__file__)), "ABBIRB2600", qtest, qtest_transforms)
+        super().__init__(
+            links=links,
+            mesh_stem="ABBIRB2600",
+            mesh_dir=os.path.abspath(os.path.dirname(__file__)),
+            name="ABBIRB2600",
+            home_q=qtest,
+            base=base,
+            link3d_names=link3d_names,
+            qtest_transforms=qtest_transforms,
+        )
         self.home_q = np.array(qtest, dtype=float)
         if base is not None:
             self.base = self._as_se3(base)

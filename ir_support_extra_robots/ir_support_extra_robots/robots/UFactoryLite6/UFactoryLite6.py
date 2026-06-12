@@ -18,6 +18,7 @@ class UFactoryLite6(UTSMeshRobot):
     """
 
     source_note = 'uFactory Lite6, Group_5, 2023S; prismatic rail stripped from the original LinearLite6 source; first DH height adjusted to the standalone Lite6 value'
+    manufacturer_url = "https://www.ufactory.cc/lite-6-collaborative-robot/"
 
     def __init__(self, base=None):
         self.link_colors = [

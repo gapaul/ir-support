@@ -15,6 +15,7 @@ class ProSixVT6(UTSMeshRobot):
     """
 
     source_note = "ProSix VT6, A2_Tan_8_DineshS_DanishS_MahakS, 2025S"
+    manufacturer_url = "https://epson.com/For-Work/Robots/6-Axis/VT6L-All-in-One-6-Axis-Robot/p/VT6LA901S"
 
     def __init__(self, base=None):
         links = [

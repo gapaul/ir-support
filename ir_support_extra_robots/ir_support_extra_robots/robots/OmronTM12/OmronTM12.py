@@ -15,6 +15,7 @@ class OmronTM12(UTSMeshRobot):
     """
 
     source_note = "Omron TM12, Group_1 and Group_37, 2023S"
+    manufacturer_url = "https://automation.omron.com/en/us/products/family/TM_Series_Collaborative_Robots"
 
     def __init__(self, base=None):
         links = [

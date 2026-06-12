@@ -17,6 +17,7 @@ class Kuka361(UTSMeshRobot):
     """
 
     source_note = 'Kuka361 / Kuker student KUKA candidate, Katia_A2_2, 2024S; exact commercial model identity not verified'
+    reference_url = "https://www.kuka.com/en-de/products/robot-systems/industrial-robots"
 
     def __init__(self, base=None):
         self.link_colors = [(0.04, 0.04, 0.04, 1.0), (0.92, 0.34, 0.02, 1.0), (0.92, 0.34, 0.02, 1.0), (0.92, 0.34, 0.02, 1.0), (0.92, 0.34, 0.02, 1.0), (0.92, 0.34, 0.02, 1.0), (0.04, 0.04, 0.04, 1.0)]

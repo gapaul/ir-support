@@ -15,6 +15,7 @@ class AuboI5(UTSMeshRobot):
     """
 
     source_note = "Aubo i5, Group_11, 2023S"
+    manufacturer_url = "https://www.aubo-robotics.com/products/aubo-i5/"
 
     def __init__(self, base=None):
         links = [

@@ -9,6 +9,8 @@ from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 class DensoVM6083(UTSMeshRobot):
     """Denso VM6083 model ported from the UTS MATLAB toolbox."""
 
+
+    manufacturer_url = "https://www.denso-wave.com/en/robot/product/five-six/vm.html"
     def __init__(self, base=None):
         links = [
             rtb.RevoluteDH(d=0.475, a=0.180, alpha=-pi / 2, qlim=self._qlim(-170, 170)),
@@ -27,3 +29,4 @@ class DensoVM6083(UTSMeshRobot):
             home_q=[0.0] * 6,
             base=base,
         )
+

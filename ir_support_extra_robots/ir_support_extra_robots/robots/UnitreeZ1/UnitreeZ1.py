@@ -23,6 +23,7 @@ class UnitreeZ1(UTSMeshRobot):
              (0.04, 0.05, 0.06, 1.0)]
 
     source_note = "Unitree Z1, A2_Tan_8_DineshS_DanishS_MahakS, 2025S"
+    manufacturer_url = "https://www.unitree.com/z1"
 
     def __init__(self, base=None):
         links = [

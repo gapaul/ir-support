@@ -7,7 +7,7 @@ import swift
 import roboticstoolbox as rtb
 import spatialmath.base as spb
 from spatialmath import SE3
-from ir_support.robots.DHRobot3D import DHRobot3D
+from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 import time
 import os
 
@@ -15,10 +15,12 @@ import os
 from math import pi
 
 # -----------------------------------------------------------------------------------#
-class UR5(DHRobot3D):   
-    def __init__(self):     
+class UR5(UTSMeshRobot):   
+    manufacturer_url = "https://www.universal-robots.com/products/ur5-robot/"
+
+    def __init__(self, base=None):     
         """ 
-        UR5 Robot by DHRobot3D class
+        UR5 Robot by UTSMeshRobot class
         
         Example usage:
         >>> from ir-support import UR5
@@ -60,8 +62,16 @@ class UR5(DHRobot3D):
                             spb.transl(-0.093542,-0.11018,0.90314) @ spb.trotx(pi)]
         
         current_path = os.path.abspath(os.path.dirname(__file__))
-        super().__init__(links, link3D_names, name = 'UR5', link3d_dir = current_path, qtest = qtest, qtest_transforms = qtest_transforms)
-        self.q = qtest
+        super().__init__(
+            links=links,
+            mesh_stem="UR5",
+            mesh_dir=current_path,
+            name="UR5",
+            home_q=qtest,
+            base=base,
+            link3d_names=link3D_names,
+            qtest_transforms=qtest_transforms,
+        )
 
     # -----------------------------------------------------------------------------------#
     def _create_DH(self):

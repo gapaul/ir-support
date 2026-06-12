@@ -23,6 +23,7 @@ class MyCobot320(UTSMeshRobot):
              (0.05, 0.05, 0.05, 1.0)]
 
     source_note = "MyCobot320, A2_Tan_8_DineshS_DanishS_MahakS, 2025S"
+    manufacturer_url = "https://www.elephantrobotics.com/en/mycobot-320/"
 
     def __init__(self, base=None):
         links = [

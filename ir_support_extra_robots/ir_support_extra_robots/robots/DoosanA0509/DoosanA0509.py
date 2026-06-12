@@ -16,6 +16,7 @@ class DoosanA0509(UTSMeshRobot):
     """
 
     source_note = "Doosan A0509, Group_75, 2023S"
+    manufacturer_url = "https://www.doosanrobotics.com/en/products/a-series/a0509"
 
     def __init__(self, base=None):
         self.link_colors = [

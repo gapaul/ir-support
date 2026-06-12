@@ -8,6 +8,7 @@ from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 
 class IRB120(UTSMeshRobot):
     """ABB IRB120 model ported from the UTS MATLAB toolbox."""
+    manufacturer_url = "https://www.abb.com/global/en/areas/robotics/products/robots/articulated-robots/small-robots/irb-120"
 
     def __init__(self, base=None):
         links = [

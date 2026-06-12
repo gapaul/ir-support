@@ -18,6 +18,7 @@ class OmronTM5900(UTSMeshRobot):
     """
 
     source_note = 'Omron TM5-900, Group_70, 2023S; using the full TM5 link mesh set'
+    manufacturer_url = "https://automation.omron.com/en/us/products/family/TM_Series_Collaborative_Robots"
 
     def __init__(self, base=None):
         self.link_colors = [

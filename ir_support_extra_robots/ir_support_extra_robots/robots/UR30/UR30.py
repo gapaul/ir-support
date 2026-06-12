@@ -18,6 +18,7 @@ class UR30(UTSMeshRobot):
     """
 
     source_note = 'Universal Robots UR30, Katia_A2_5, 2024S'
+    manufacturer_url = "https://www.universal-robots.com/products/ur30/"
 
     def __init__(self, base=None):
         self.link_colors = [

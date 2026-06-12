@@ -8,6 +8,7 @@ from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 
 class UR5e(UTSMeshRobot):
     """Universal Robots UR5e model ported from the UTS MATLAB toolbox."""
+    manufacturer_url = "https://www.universal-robots.com/products/ur5e/"
 
     def __init__(self, base=None):
         links = [

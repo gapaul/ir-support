@@ -16,6 +16,7 @@ class KukaLBRiiwa14(UTSMeshRobot):
     """
 
     source_note = 'KUKA LBR iiwa 14, Group_51, 2023S; Robotiq gripper assets omitted'
+    manufacturer_url = "https://www.kuka.com/en-de/products/robot-systems/industrial-robots/lbr-iiwa"
 
     def __init__(self, base=None):
         self.link_colors = [

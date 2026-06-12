@@ -15,6 +15,7 @@ class KukaKR4(UTSMeshRobot):
     """
 
     source_note = "KUKA KR4, Group_41, 2023S"
+    manufacturer_url = "https://www.kuka.com/en-de/products/robot-systems/industrial-robots/kr-agilus"
 
     def __init__(self, base=None):
         self.link_colors = [

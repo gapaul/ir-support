@@ -5,10 +5,10 @@ import numpy as np
 import roboticstoolbox as rtb
 from spatialmath import SE3
 
-from ir_support.robots.DHRobot3D import DHRobot3D
+from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 
 
-class DensoVP6242(DHRobot3D):
+class DensoVP6242(UTSMeshRobot):
     """Candidate DENSO VP6242 model ported from student Assignment 2 work.
 
     WARNING: This model was created by UTS students in 41013 Robotics and
@@ -17,6 +17,7 @@ class DensoVP6242(DHRobot3D):
     """
 
     source_note = 'DENSO VP6242 student model, Group_76, 2023S; repaired to a 6-axis approximation using DENSO VP-6242 published dimensions'
+    manufacturer_url = "https://www.denso-wave.com/en/robot/product/five-six/vp.html"
     _MESH_FRAME_Q_MAP = (0, 1, 2, None, None, 3, 4, 5)
     _MESH_FRAME_INDICES = (0, 1, 2, 3, 6, 7, 8)
 
@@ -82,11 +83,13 @@ class DensoVP6242(DHRobot3D):
         )
 
         super().__init__(
-            links,
-            link3d_names,
-            link3d_dir=os.path.abspath(os.path.dirname(__file__)),
+            links=links,
+            mesh_stem="DensoVP6242",
+            mesh_dir=os.path.abspath(os.path.dirname(__file__)),
             name="DensoVP6242",
-            qtest=qtest,
+            home_q=qtest,
+            base=base,
+            link3d_names=link3d_names,
             qtest_transforms=qtest_transforms,
         )
 

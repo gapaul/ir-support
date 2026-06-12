@@ -15,6 +15,7 @@ class KukaTitan(UTSMeshRobot):
     """
 
     source_note = "KUKA Titan, Karlos_A2_1, 2024S"
+    manufacturer_url = "https://www.kuka.com/en-de/products/robot-systems/industrial-robots/kr-titan"
 
     def __init__(self, base=None):
         self.link_colors = [

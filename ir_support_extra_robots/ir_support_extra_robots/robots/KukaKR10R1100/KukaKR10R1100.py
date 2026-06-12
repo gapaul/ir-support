@@ -6,10 +6,10 @@ import roboticstoolbox as rtb
 import spatialmath.base as spb
 from spatialmath import SE3
 
-from ir_support.robots.DHRobot3D import DHRobot3D
+from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 
 
-class KukaKR10R1100(DHRobot3D):
+class KukaKR10R1100(UTSMeshRobot):
     """Candidate KUKA KR10 R1100 model ported from student Assignment 2 work.
 
     WARNING: This model was created by UTS students in 41013 Robotics and
@@ -18,6 +18,7 @@ class KukaKR10R1100(DHRobot3D):
     """
 
     source_note = "Kuka KR10 R1100, A2_Tony_12_AbishaN_JessicaL_AryaD, 2025S"
+    manufacturer_url = "https://www.kuka.com/en-de/products/robot-systems/industrial-robots/kr-agilus"
 
     @staticmethod
     def _as_se3(value):
@@ -56,7 +57,16 @@ class KukaKR10R1100(DHRobot3D):
             spb.transl(-0.02, -0.03, -0.042),
             spb.transl(-0.02, -0.01, -0.042),
         ]
-        super().__init__(links, link3d_names, os.path.abspath(os.path.dirname(__file__)), "KukaKR10R1100", qtest, qtest_transforms)
+        super().__init__(
+            links=links,
+            mesh_stem="KukaKR10R1100",
+            mesh_dir=os.path.abspath(os.path.dirname(__file__)),
+            name="KukaKR10R1100",
+            home_q=qtest,
+            base=base,
+            link3d_names=link3d_names,
+            qtest_transforms=qtest_transforms,
+        )
         self.home_q = np.array(qtest, dtype=float)
         if base is not None:
             self.base = self._as_se3(base)

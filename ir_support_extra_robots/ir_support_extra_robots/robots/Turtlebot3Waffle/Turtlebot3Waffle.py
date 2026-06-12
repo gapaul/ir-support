@@ -6,6 +6,7 @@ from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 
 class Turtlebot3Waffle(UTSMeshRobot):
     """TurtleBot3 Waffle visual model ported from the UTS MATLAB toolbox."""
+    reference_url = "https://emanual.robotis.com/docs/en/platform/turtlebot3/features/"
 
     def __init__(self, base=None):
         links = [

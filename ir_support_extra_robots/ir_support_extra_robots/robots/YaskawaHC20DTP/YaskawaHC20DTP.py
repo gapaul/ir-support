@@ -18,6 +18,7 @@ class YaskawaHC20DTP(UTSMeshRobot):
     """
 
     source_note = 'Yaskawa HC20DTP, Group_60, 2023S; source cites Yaskawa HC20DTP datasheet dimensions'
+    manufacturer_url = "https://www.motoman.com/en-us/products/robots/collaborative/hc-series/hc20dtp"
 
     def __init__(self, base=None):
         self.link_colors = [
