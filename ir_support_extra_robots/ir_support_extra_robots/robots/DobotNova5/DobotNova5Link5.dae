@@ -1,0 +1,1675 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 4.0.2 commit date:2023-12-05, commit time:07:41, hash:9be62e85b727</authoring_tool>
+    </contributor>
+    <created>2026-06-03T22:34:39</created>
+    <modified>2026-06-03T22:34:39</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="mat_176_128_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_128_176_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_064_208_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_128_160_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_048_208_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_032_208_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_032_224_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_048_192_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_064_160_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_096_144_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_112_144_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_080_144_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_048_176_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_064_176_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_080_160_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_096_128_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_096_112_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_064_192_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_112_192_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_096_192_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_208_112_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_176_160_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_192_128_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_255_080_224-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_112_176_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_144_176_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_160_144_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_080_192_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_240_096_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_208_128_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_160_176_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_192_144_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_240_096_224-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_240_080_224-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_080_176_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_112_128_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_224_112_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_176_144_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_080_208_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_112_160_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_192_112_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_112_160_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_144_160_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_224_096_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_224_128_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_128_144_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_192_096_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_096_160_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_144_112_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_208_096_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_096_160_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_144_096_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_208_080_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_128_128_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_160_160_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_096_176_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_160_096_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_144_112_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_128_128_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_144_128_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_096_176_255-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="mat_176_112_240-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.96 0.97 0.95 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images/>
+  <library_materials>
+    <material id="mat_176_128_240-material" name="mat_176_128_240">
+      <instance_effect url="#mat_176_128_240-effect"/>
+    </material>
+    <material id="mat_128_176_240-material" name="mat_128_176_240">
+      <instance_effect url="#mat_128_176_240-effect"/>
+    </material>
+    <material id="mat_064_208_255-material" name="mat_064_208_255">
+      <instance_effect url="#mat_064_208_255-effect"/>
+    </material>
+    <material id="mat_128_160_240-material" name="mat_128_160_240">
+      <instance_effect url="#mat_128_160_240-effect"/>
+    </material>
+    <material id="mat_048_208_255-material" name="mat_048_208_255">
+      <instance_effect url="#mat_048_208_255-effect"/>
+    </material>
+    <material id="mat_032_208_255-material" name="mat_032_208_255">
+      <instance_effect url="#mat_032_208_255-effect"/>
+    </material>
+    <material id="mat_032_224_255-material" name="mat_032_224_255">
+      <instance_effect url="#mat_032_224_255-effect"/>
+    </material>
+    <material id="mat_048_192_255-material" name="mat_048_192_255">
+      <instance_effect url="#mat_048_192_255-effect"/>
+    </material>
+    <material id="mat_064_160_255-material" name="mat_064_160_255">
+      <instance_effect url="#mat_064_160_255-effect"/>
+    </material>
+    <material id="mat_096_144_255-material" name="mat_096_144_255">
+      <instance_effect url="#mat_096_144_255-effect"/>
+    </material>
+    <material id="mat_112_144_255-material" name="mat_112_144_255">
+      <instance_effect url="#mat_112_144_255-effect"/>
+    </material>
+    <material id="mat_080_144_255-material" name="mat_080_144_255">
+      <instance_effect url="#mat_080_144_255-effect"/>
+    </material>
+    <material id="mat_048_176_255-material" name="mat_048_176_255">
+      <instance_effect url="#mat_048_176_255-effect"/>
+    </material>
+    <material id="mat_064_176_255-material" name="mat_064_176_255">
+      <instance_effect url="#mat_064_176_255-effect"/>
+    </material>
+    <material id="mat_080_160_255-material" name="mat_080_160_255">
+      <instance_effect url="#mat_080_160_255-effect"/>
+    </material>
+    <material id="mat_096_128_255-material" name="mat_096_128_255">
+      <instance_effect url="#mat_096_128_255-effect"/>
+    </material>
+    <material id="mat_096_112_255-material" name="mat_096_112_255">
+      <instance_effect url="#mat_096_112_255-effect"/>
+    </material>
+    <material id="mat_064_192_255-material" name="mat_064_192_255">
+      <instance_effect url="#mat_064_192_255-effect"/>
+    </material>
+    <material id="mat_112_192_255-material" name="mat_112_192_255">
+      <instance_effect url="#mat_112_192_255-effect"/>
+    </material>
+    <material id="mat_096_192_255-material" name="mat_096_192_255">
+      <instance_effect url="#mat_096_192_255-effect"/>
+    </material>
+    <material id="mat_208_112_240-material" name="mat_208_112_240">
+      <instance_effect url="#mat_208_112_240-effect"/>
+    </material>
+    <material id="mat_176_160_240-material" name="mat_176_160_240">
+      <instance_effect url="#mat_176_160_240-effect"/>
+    </material>
+    <material id="mat_192_128_240-material" name="mat_192_128_240">
+      <instance_effect url="#mat_192_128_240-effect"/>
+    </material>
+    <material id="mat_255_080_224-material" name="mat_255_080_224">
+      <instance_effect url="#mat_255_080_224-effect"/>
+    </material>
+    <material id="mat_112_176_255-material" name="mat_112_176_255">
+      <instance_effect url="#mat_112_176_255-effect"/>
+    </material>
+    <material id="mat_144_176_240-material" name="mat_144_176_240">
+      <instance_effect url="#mat_144_176_240-effect"/>
+    </material>
+    <material id="mat_160_144_240-material" name="mat_160_144_240">
+      <instance_effect url="#mat_160_144_240-effect"/>
+    </material>
+    <material id="mat_080_192_255-material" name="mat_080_192_255">
+      <instance_effect url="#mat_080_192_255-effect"/>
+    </material>
+    <material id="mat_240_096_240-material" name="mat_240_096_240">
+      <instance_effect url="#mat_240_096_240-effect"/>
+    </material>
+    <material id="mat_208_128_240-material" name="mat_208_128_240">
+      <instance_effect url="#mat_208_128_240-effect"/>
+    </material>
+    <material id="mat_160_176_240-material" name="mat_160_176_240">
+      <instance_effect url="#mat_160_176_240-effect"/>
+    </material>
+    <material id="mat_192_144_240-material" name="mat_192_144_240">
+      <instance_effect url="#mat_192_144_240-effect"/>
+    </material>
+    <material id="mat_240_096_224-material" name="mat_240_096_224">
+      <instance_effect url="#mat_240_096_224-effect"/>
+    </material>
+    <material id="mat_240_080_224-material" name="mat_240_080_224">
+      <instance_effect url="#mat_240_080_224-effect"/>
+    </material>
+    <material id="mat_080_176_255-material" name="mat_080_176_255">
+      <instance_effect url="#mat_080_176_255-effect"/>
+    </material>
+    <material id="mat_112_128_255-material" name="mat_112_128_255">
+      <instance_effect url="#mat_112_128_255-effect"/>
+    </material>
+    <material id="mat_224_112_240-material" name="mat_224_112_240">
+      <instance_effect url="#mat_224_112_240-effect"/>
+    </material>
+    <material id="mat_176_144_240-material" name="mat_176_144_240">
+      <instance_effect url="#mat_176_144_240-effect"/>
+    </material>
+    <material id="mat_080_208_255-material" name="mat_080_208_255">
+      <instance_effect url="#mat_080_208_255-effect"/>
+    </material>
+    <material id="mat_112_160_240-material" name="mat_112_160_240">
+      <instance_effect url="#mat_112_160_240-effect"/>
+    </material>
+    <material id="mat_192_112_240-material" name="mat_192_112_240">
+      <instance_effect url="#mat_192_112_240-effect"/>
+    </material>
+    <material id="mat_112_160_255-material" name="mat_112_160_255">
+      <instance_effect url="#mat_112_160_255-effect"/>
+    </material>
+    <material id="mat_144_160_240-material" name="mat_144_160_240">
+      <instance_effect url="#mat_144_160_240-effect"/>
+    </material>
+    <material id="mat_224_096_240-material" name="mat_224_096_240">
+      <instance_effect url="#mat_224_096_240-effect"/>
+    </material>
+    <material id="mat_224_128_240-material" name="mat_224_128_240">
+      <instance_effect url="#mat_224_128_240-effect"/>
+    </material>
+    <material id="mat_128_144_240-material" name="mat_128_144_240">
+      <instance_effect url="#mat_128_144_240-effect"/>
+    </material>
+    <material id="mat_192_096_240-material" name="mat_192_096_240">
+      <instance_effect url="#mat_192_096_240-effect"/>
+    </material>
+    <material id="mat_096_160_240-material" name="mat_096_160_240">
+      <instance_effect url="#mat_096_160_240-effect"/>
+    </material>
+    <material id="mat_144_112_240-material" name="mat_144_112_240">
+      <instance_effect url="#mat_144_112_240-effect"/>
+    </material>
+    <material id="mat_208_096_240-material" name="mat_208_096_240">
+      <instance_effect url="#mat_208_096_240-effect"/>
+    </material>
+    <material id="mat_096_160_255-material" name="mat_096_160_255">
+      <instance_effect url="#mat_096_160_255-effect"/>
+    </material>
+    <material id="mat_144_096_240-material" name="mat_144_096_240">
+      <instance_effect url="#mat_144_096_240-effect"/>
+    </material>
+    <material id="mat_208_080_240-material" name="mat_208_080_240">
+      <instance_effect url="#mat_208_080_240-effect"/>
+    </material>
+    <material id="mat_128_128_255-material" name="mat_128_128_255">
+      <instance_effect url="#mat_128_128_255-effect"/>
+    </material>
+    <material id="mat_160_160_240-material" name="mat_160_160_240">
+      <instance_effect url="#mat_160_160_240-effect"/>
+    </material>
+    <material id="mat_096_176_240-material" name="mat_096_176_240">
+      <instance_effect url="#mat_096_176_240-effect"/>
+    </material>
+    <material id="mat_160_096_240-material" name="mat_160_096_240">
+      <instance_effect url="#mat_160_096_240-effect"/>
+    </material>
+    <material id="mat_144_112_255-material" name="mat_144_112_255">
+      <instance_effect url="#mat_144_112_255-effect"/>
+    </material>
+    <material id="mat_128_128_240-material" name="mat_128_128_240">
+      <instance_effect url="#mat_128_128_240-effect"/>
+    </material>
+    <material id="mat_144_128_240-material" name="mat_144_128_240">
+      <instance_effect url="#mat_144_128_240-effect"/>
+    </material>
+    <material id="mat_096_176_255-material" name="mat_096_176_255">
+      <instance_effect url="#mat_096_176_255-effect"/>
+    </material>
+    <material id="mat_176_112_240-material" name="mat_176_112_240">
+      <instance_effect url="#mat_176_112_240-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Nova5Link5-mesh" name="Nova5Link5">
+      <mesh>
+        <source id="Nova5Link5-mesh-positions">
+          <float_array id="Nova5Link5-mesh-positions-array" count="699">0 0.05397093 0 -0.003373026 0.05397093 0.03209221 0.00112611 0.05397093 0.03224933 0.005603373 0.05397093 0.03177875 -0.007806599 0.05397093 0.03131043 0.009971618 0.05397093 0.03068965 -0.01208823 0.05397093 0.02991932 0.01414573 0.05397093 0.0290032 -0.0161345 0.05397093 0.02794575 0.01804453 0.05397093 0.02675217 -0.01986682 0.05397087 0.02542829 0.02159214 0.05397093 0.02398055 -0.02321243 0.05397087 0.02241593 0.02471941 0.05397093 0.02074211 -0.02610617 0.05397087 0.01896727 0.02736562 0.05397093 0.01709997 -0.02849185 0.05397087 0.01514935 0.02947914 0.05397093 0.01312494 -0.03032296 0.05397087 0.01103663 0.03101891 0.05397093 0.008894503 -0.03156387 0.05397087 0.006709098 0.03195494 0.05397093 0.004490971 -0.03219044 0.05397087 0.002250969 0.03226894 0.05397093 0 -0.03226906 0.05397087 0 -0.03219044 0.05397087 -0.002250909 -0.032269 0 0 -0.03224933 0.001125812 0.001125812 -0.03219038 0.002250909 -0.002250909 -0.03224933 0.001125812 -0.001125752 -0.03156387 0.05397087 -0.006709098 -0.03156387 0.006708979 -0.006709039 -0.03177875 0.005603373 -0.005603373 -0.03219038 0.002250909 0.002250969 -0.03177875 0.005603373 0.005603432 -0.03032296 0.05397087 -0.01103663 -0.03032296 0.01103651 -0.01103663 -0.03068965 0.009971618 -0.009971618 -0.03068965 0.009971618 0.009971678 -0.03156387 0.006708979 0.006709098 -0.02849185 0.05397087 -0.01514935 -0.02849185 0.01514929 -0.01514935 -0.0290032 0.01414573 -0.01414573 -0.0290032 0.01414573 0.01414579 -0.03032296 0.01103663 0.01103663 -0.02610617 0.05397087 -0.01896721 -0.02610617 0.01896721 -0.01896721 -0.02675223 0.01804459 -0.01804453 -0.02675223 0.01804453 0.01804459 -0.02849185 0.01514929 0.01514935 -0.02321243 0.05397087 -0.02241587 -0.02321237 0.02241581 -0.02241587 -0.02398055 0.02159208 -0.02159214 -0.02398055 0.02159208 0.02159219 -0.02610617 0.01896721 0.01896727 -0.01986682 0.05397087 -0.02542829 -0.01986676 0.02542823 -0.02542829 -0.02074211 0.02471941 -0.02471947 -0.02074211 0.02471941 0.02471947 -0.02321237 0.02241593 0.02241593 -0.0161345 0.05397087 -0.02794575 -0.0161345 0.02794575 -0.02794575 -0.01709997 0.02736562 -0.02736562 -0.01709997 0.02736562 0.02736568 -0.01986676 0.02542829 0.02542829 -0.01208817 0.05397087 -0.02991926 -0.01208817 0.02991926 -0.02991926 -0.013125 0.0294792 -0.0294792 -0.013125 0.0294792 0.0294792 -0.0161345 0.02794575 0.02794575 -0.007806599 0.05397087 -0.03131043 -0.007806599 0.03131043 -0.03131043 -0.008894562 0.03101891 -0.03101891 -0.008894562 0.03101891 0.03101897 -0.01208817 0.02991926 0.02991932 -0.004490971 0.03195488 -0.03195494 -0.003373026 0.03209215 -0.03209221 -0.003373026 0.05397087 -0.03209221 -0.004490971 0.03195488 0.03195494 -0.007806599 0.03131043 0.03131043 0 0.032269 -0.032269 0.00112611 0.05397087 -0.03224933 -0.003373026 0.03209215 0.03209221 0.009971618 0.05397087 -0.03068959 0.01414573 0.05397087 -0.02900314 0.005603373 0.05397087 -0.03177875 0.02159214 0.05397093 -0.02398049 0.02471941 0.05397093 -0.02074205 0.01804453 0.05397093 -0.02675217 0.02947914 0.05397093 -0.01312494 0.03101891 0.05397093 -0.008894503 0.02736562 0.05397093 -0.01709991 0.03195494 0.05397093 -0.004490971 0.00112611 0.03224927 -0.03224933 0.004490911 0.03195488 -0.03195494 0.00112611 0.03224939 0.03224933 0 0.032269 0.032269 0.005603373 0.03177869 -0.03177875 0.008894503 0.03101891 -0.03101891 0.004490911 0.03195488 0.03195494 0.005603373 0.03177881 0.03177875 0.009971618 0.03068959 -0.03068959 0.01312494 0.0294792 -0.0294792 0.009971618 0.03068959 0.03068965 0.008894503 0.03101891 0.03101897 0.01414573 0.02900308 -0.02900314 0.01709991 0.02736562 -0.02736562 0.01312494 0.0294792 0.0294792 0.01414573 0.0290032 0.0290032 0.01804453 0.02675217 -0.02675217 0.02074205 0.02471941 -0.02471947 0.01804453 0.02675217 0.02675223 0.01709991 0.02736562 0.02736568 0.02159214 0.02398049 -0.02398049 0.02398049 0.02159219 -0.02159214 0.02074205 0.02471947 0.02471947 0.02159214 0.02398049 0.02398055 0.02471947 0.02074205 -0.02074205 0.02675217 0.01804459 -0.01804453 0.02471947 0.02074217 0.02074211 0.02398049 0.02159219 0.02159219 0.02736562 0.01709997 -0.01709991 0.02900314 0.01414579 -0.01414579 0.02675217 0.01804459 0.01804459 0.02736562 0.01709997 0.01709997 0.0294792 0.01312494 -0.01312494 0.03068959 0.009971618 -0.009971618 0.0294792 0.01312494 0.013125 0.02900314 0.01414579 0.01414579 0.03101891 0.008894503 -0.008894503 0.03177875 0.005603432 -0.005603373 0.03068959 0.009971618 0.009971678 0.03101891 0.008894503 0.008894562 0.03195494 0.004490911 -0.004490911 0.03224933 0.00112617 -0.00112611 0.03195494 0.004490911 0.004490971 0.03177875 0.005603373 0.005603432 0.032269 0 0 0.03224933 0.00112617 0.00112617 0 0 0.05694305 0.004490911 0.031955 0.05694305 0 0.032269 0.05694305 -0.004490971 0.031955 0.05694305 0 0 -0.04866147 -0.004490971 0.03195488 -0.04866147 0 0.032269 -0.04866147 0.004490911 0.03195488 -0.04866147 -0.008894562 0.03101891 -0.04866147 -0.008894562 0.03101891 0.05694305 0.008894503 0.03101891 -0.04866147 0.008894503 0.03101891 0.05694305 -0.013125 0.0294792 -0.04866147 -0.013125 0.0294792 0.05694305 0.01312494 0.0294792 -0.04866147 0.01312494 0.0294792 0.05694305 -0.01709997 0.02736562 -0.04866147 -0.01709997 0.02736562 0.05694305 0.01709991 0.02736562 -0.04866147 0.01709991 0.02736562 0.05694305 -0.02074211 0.02471941 -0.04866147 -0.02074211 0.02471947 0.05694305 0.02074205 0.02471941 -0.04866147 0.02074205 0.02471947 0.05694305 -0.02398055 0.02159208 -0.04866147 -0.02398055 0.02159219 0.05694305 0.02398049 0.02159208 -0.04866147 0.02398049 0.02159219 0.05694305 -0.02675223 0.01804447 -0.04866147 -0.02675223 0.01804453 0.05694305 0.02675217 0.01804459 -0.04866147 0.02675217 0.01804453 0.05694305 -0.0290032 0.01414573 -0.04866147 -0.0290032 0.01414579 0.05694305 0.02900314 0.01414579 -0.04866147 0.02900314 0.01414579 0.05694305 -0.03068965 0.009971618 -0.04866147 -0.03068965 0.009971618 0.05694305 0.03068959 0.009971618 -0.04866147 0.03068959 0.009971737 0.05694305 -0.03177875 0.005603373 -0.04866147 -0.03177875 0.005603373 0.05694305 0.03177875 0.005603432 -0.04866147 0.03177875 0.005603492 0.05694305 -0.03224933 0.00112611 -0.04866147 -0.03224933 0.00112617 0.05694305 0.03224933 0.00112611 -0.04866147 0.03224933 0.00112617 0.05694305 -0.032269 0 -0.04866147 -0.03209221 -0.003373026 0.05694311 0.03209221 -0.003373026 -0.04866147 0.032269 0 0.05694305 -0.03209221 -0.003373146 -0.04866147 -0.02991926 -0.01208829 -0.04866147 -0.03131049 -0.007806599 -0.04866147 -0.02241593 -0.02321249 -0.04866147 -0.02542829 -0.01986688 -0.04866147 -0.02794575 -0.01613456 -0.04866147 -0.01103663 -0.03032302 -0.04866147 -0.01514935 -0.02849185 -0.04866147 -0.01896721 -0.02610623 -0.04866147 0.002250969 -0.03219038 -0.04866147 -0.002250909 -0.03219038 -0.04866147 -0.006709039 -0.03156393 -0.04866147 0.01514935 -0.02849185 -0.04866147 0.01103663 -0.03032302 -0.04866147 0.006709098 -0.03156393 -0.04866147 0.02542829 -0.01986676 -0.04866147 0.02241593 -0.02321237 -0.04866147 0.01896721 -0.02610617 -0.04866147 0.03131043 -0.007806599 -0.04866147 0.02991926 -0.01208817 -0.04866147 0.02794575 -0.0161345 -0.04866147 0.02991932 -0.01208817 0.05694305 0.03131049 -0.007806539 0.05694305 0.03209221 -0.003372907 0.05694305 0.02241593 -0.02321237 0.05694305 0.02542835 -0.01986676 0.05694305 0.02794581 -0.0161345 0.05694305 0.01103663 -0.0303229 0.05694311 0.01514941 -0.02849185 0.05694311 0.01896727 -0.02610611 0.05694311 -0.002250909 -0.03219038 0.05694311 0.002250969 -0.03219038 0.05694311 0.006709098 -0.03156381 0.05694311 -0.01514935 -0.02849185 0.05694311 -0.01103663 -0.0303229 0.05694311 -0.006709039 -0.03156381 0.05694311 -0.02542829 -0.01986676 0.05694311 -0.02241587 -0.02321237 0.05694311 -0.01896721 -0.02610611 0.05694311 -0.03131043 -0.007806599 0.05694311 -0.02991926 -0.01208817 0.05694311 -0.02794575 -0.0161345 0.05694311</float_array>
+          <technique_common>
+            <accessor source="#Nova5Link5-mesh-positions-array" count="233" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Nova5Link5-mesh-normals">
+          <float_array id="Nova5Link5-mesh-normals-array" count="1341">0 1 -2.00827e-7 0 1 1.50621e-7 0 1 0 0 1 -4.01655e-7 0 1 -2.00828e-7 0 1 1.00414e-6 0 1 -8.03309e-7 -1.86777e-5 1 -1.10455e-5 -2.01334e-6 1 1.80745e-6 -2.30494e-6 1 2.00828e-6 0 1 1.60662e-6 -2.55169e-6 1 2.61076e-6 0 1 -1.60662e-6 -2.74876e-6 1 1.00414e-6 0 1 1.60663e-6 -2.89233e-6 1 0 -2.97961e-6 1 0 0 1 1.60662e-6 -3.00156e-6 1 4.25719e-7 -3.00156e-6 1 -4.2572e-7 -0.9998478 -4.78908e-7 0.01744925 -0.9993908 3.71178e-4 0.03490024 -0.9993909 -8.74433e-7 -0.0349003 -0.9986672 7.27644e-4 -0.05160832 -0.9998478 -5.56772e-7 -0.01744931 -0.9902686 -8.20708e-7 -0.1391701 -0.9824616 0.004558444 -0.1864095 -0.9925464 -6.04513e-7 -0.1218679 -0.9986297 -6.80983e-7 0.05233454 -0.9925464 -5.83101e-7 0.1218678 -0.9902677 0.00121802 0.1391704 -0.9612618 -7.52862e-7 -0.2756375 -0.9470343 0.004992485 -0.3210937 -0.9659262 -9.66918e-7 -0.2588175 -0.9612603 0.001339077 0.2756389 -0.9816289 -6.02259e-7 0.1908002 -0.9659251 -4.55789e-7 0.2588221 -0.9135441 -7.49359e-7 -0.4067399 -0.8932054 0.005500733 -0.4496152 -0.9205038 -7.48326e-7 -0.3907337 -0.9135439 0.001479804 0.4067373 -0.9455189 -4.74276e-7 0.3255675 -0.9205048 -4.01383e-7 0.3907312 -0.8480492 -7.38748e-7 -0.5299176 -0.8219885 0.00608915 -0.5694716 -0.857168 -6.39619e-7 -0.5150368 -0.8480479 0.001640498 0.5299172 -0.8910041 -4.69404e-7 0.4539954 -0.857169 -4.43907e-7 0.5150353 -0.7660432 -5.12179e-7 -0.6427893 -0.734698 0.006761968 -0.6783607 -0.7771466 -7.5679e-7 -0.6293197 -0.766043 0.001820087 0.6427868 -0.8191514 -4.05683e-7 0.5735775 -0.7771446 -3.69245e-7 0.6293221 -0.6691334 -7.92724e-7 -0.7431424 -0.6329617 0.007510483 -0.7741468 -0.6820026 -5.90793e-7 -0.7313498 -0.669128 0.002015173 0.7431446 -0.7313582 -2.20702e-7 0.6819936 -0.6819974 -1.36533e-7 0.7313547 -0.5591889 -2.48403e-7 -0.8290403 -0.5186699 0.008314967 -0.8549342 -0.5735771 -6.68603e-7 -0.8191516 -0.5591925 0.002216041 0.8290349 -0.6293108 -4.70341e-7 0.7771537 -0.5735833 -4.52826e-7 0.8191472 -0.4383733 -2.68786e-7 -0.8987931 -0.3939983 0.009129524 -0.9190658 -0.4539937 -1.43949e-7 -0.891005 -0.4383728 0.00240606 0.89879 -0.5150242 -3.10269e-7 0.8571757 -0.4539903 -2.48314e-7 0.8910066 -0.3090162 -1.42644e-7 -0.9510568 -0.261285 0.009887099 -0.9652112 -0.325564 -2.01518e-7 -0.9455201 -0.3090093 0.002568185 0.9510557 -0.390749 0 0.9204972 -0.3255614 0 0.945521 -0.1908079 0 -0.9816274 -0.1231379 0.01050436 -0.9923341 -0.1736526 -5.90961e-7 -0.984807 -0.1736499 0.002676844 0.9848039 -0.2588216 3.43665e-7 0.9659252 -0.1908051 3.92127e-7 0.981628 -0.05233567 -5.35635e-7 -0.9986296 -0.03489559 0.002715826 -0.9993873 -0.1218863 0 0.9925441 -0.0348984 0 0.999391 -2.89233e-6 1 0 -2.97961e-6 1 0 -2.30495e-6 1 -3.21324e-6 -2.55169e-6 1 -1.60662e-6 -2.74876e-6 1 0 -1.31902e-6 1 -3.21324e-6 -1.68254e-6 1 -3.21325e-6 -2.01335e-6 1 -1.60662e-6 0 1 -2.71117e-6 -5.22502e-7 1 -3.01241e-6 -9.29795e-7 1 -3.21324e-6 1.12715e-6 1 -3.21325e-6 7.2792e-7 1 -2.40993e-6 3.14514e-7 1 -2.81159e-6 0 1 -1.60662e-6 -1.78799e-5 1 -1.12463e-5 0 1 1.60662e-6 0 1 -1.60662e-6 0 1 -1.60662e-6 0.01744848 -5.05767e-7 -0.9998478 0.08715569 -4.7043e-7 -0.9961947 0.1045278 0.002677083 -0.9945185 0.1045269 5.60358e-7 0.9945221 -0.05252432 0.00363034 0.9986131 0.01744371 5.22837e-7 0.999848 0.1564275 -2.50152e-7 -0.9876894 0.2249557 -2.20752e-7 -0.9743691 0.2419218 0.002567589 -0.9702923 0.08746963 0.003552079 0.9961609 0.1564264 0 0.9876897 0.241923 0 0.9702955 0.2923655 -3.1215e-7 -0.9563067 0.3583634 -2.65286e-7 -0.9335821 0.3746053 0.002406954 -0.9271813 0.3746032 0 0.9271853 0.2256938 0.003386199 0.9741925 0.2923791 0 0.9563025 0.422622 0 -0.9063062 0.4848055 0 -0.8746221 0.4999986 0.002216219 -0.8660234 0.3594167 0.003156006 0.9331719 0.4226123 1.31268e-7 0.9063106 0.5000039 1.94192e-7 0.8660233 0.5446519 0 -0.8386622 0.6018166 0 -0.7986344 0.6156603 0.002015113 -0.7880092 0.6156604 7.71907e-7 0.7880117 0.4860339 0.002895176 0.8739352 0.5446494 6.96066e-7 0.8386638 0.6560541 2.15397e-7 -0.7547139 0.7071084 1.67436e-7 -0.7071052 0.7193391 0.001820683 -0.6946567 0.6030702 0.002626299 0.7976838 0.6560638 7.29387e-7 0.7547055 0.7193385 5.38899e-7 0.6946598 0.7547047 2.91605e-7 -0.6560648 0.7986347 2.12753e-7 -0.6018162 0.8090146 0.001641154 -0.5877863 0.8090171 6.80931e-7 0.5877853 0.7082884 0.002368867 0.7059193 0.7547044 6.68403e-7 0.6560651 0.8386695 3.50405e-7 -0.5446407 0.8746216 3.53817e-7 -0.4848063 0.8829462 0.001480221 -0.4694719 0.799659 0.002134263 0.6004506 0.8386713 6.24988e-7 0.5446379 0.8829484 7.01332e-7 0.46947 0.9063007 5.53526e-7 -0.4226338 0.9335818 5.80826e-7 -0.3583646 0.9396924 0.00134015 -0.3420184 0.9396921 7.91355e-7 0.3420218 0.8754345 0.001925826 0.4833331 0.9063038 9.03583e-7 0.4226267 0.9563035 7.16532e-7 -0.2923759 0.9743704 7.27869e-7 -0.2249495 0.9781465 0.001219153 -0.2079134 0.9341617 0.001744627 0.3568457 0.9563036 6.14824e-7 0.2923756 0.9781476 7.17085e-7 0.2079117 0.9876873 6.52772e-7 -0.1564412 0.9961947 4.93633e-7 -0.08715623 0.9975636 0.001116216 -0.06975603 0.9975641 6.53265e-7 0.06975597 0.9747164 0.001588881 0.2234404 0.9876874 7.08767e-7 0.1564409 0.9998478 7.1815e-7 -0.01744949 0.996319 0.001456618 0.08571106 0.9998478 6.95455e-7 0.01744937 -2.51035e-7 5.77224e-7 1 0 5.77224e-7 1 8.53516e-7 -3.46333e-7 -1 -1.60661e-6 -3.46333e-7 -1 -0.06976729 0.9975571 -0.003557085 -0.05235111 0.9986287 0 0.06976753 0.9975633 -3.9437e-7 0.01776373 0.9997401 -0.01428842 0.0697453 0.997562 0.00238794 0.01742017 0.9998483 0 -0.06974536 0.9975649 2.62005e-7 -0.05251437 0.9986153 0.003149807 0.08714944 0.9961953 0 0.08718216 0.9961925 -4.31033e-6 -0.1218695 0.9925462 0 -0.1218754 0.9925454 -4.13627e-6 7.02895e-7 -3.39593e-7 -1 -0.2079027 0.9781436 -0.003397345 -0.1907998 0.9816291 -1.99708e-7 -0.2079257 0.9781447 -3.93319e-6 -0.1913657 0.9815142 0.003040611 1.60661e-6 5.65987e-7 1 0 -3.39593e-7 -1 0.2079038 0.9781493 0 0.1585234 0.9872626 -0.01352548 0.1563525 0.9877013 -4.13628e-6 0.207925 0.978142 0.002342879 -1.40579e-6 5.65987e-7 1 0.2249368 0.9743734 2.44199e-7 0.2249662 0.9743667 0 -0.2588161 0.9659267 0 -0.2588207 0.9659254 0 -3.01241e-7 -3.26242e-7 -1 -0.3420181 0.9396882 -0.003143787 -0.3255741 0.9455166 0 -0.342019 0.939693 0 -0.3264544 0.9452086 0.00286746 -1.60662e-6 5.43738e-7 1 0 -3.26242e-7 -1 0.3420197 0.9396928 0 0.2958454 0.9551551 -0.01242017 0.2923989 0.9562965 -2.4918e-7 0.3420183 0.9396907 0.002243936 1.10455e-6 5.43738e-7 1 0.3583586 0.9335841 -2.24597e-7 0.3583583 0.9335842 0 -0.3907144 0.920512 0 -0.3907123 0.9205129 0 6.02481e-7 -3.06541e-7 -1 -0.4694701 0.8829438 -0.002844452 -0.4539963 0.8910036 0 -0.4694736 0.8829466 1.66346e-7 -0.4550714 0.890451 0.002661943 0 5.10903e-7 1 0 -3.06541e-7 -1 0.4694719 0.8829475 0 0.4269043 0.9042279 -0.01116633 0.4225824 0.9063246 0 0.469471 0.8829455 0.002111256 -4.01655e-7 5.10903e-7 1 0.4847968 0.8746269 0 0.48482 0.874614 1.4566e-7 -0.5150236 0.8571761 3.03339e-7 -0.5150235 0.8571761 3.27609e-7 6.02476e-7 -2.80872e-7 -1 -0.5877926 0.8090077 -0.00253582 -0.5735927 0.8191407 2.04574e-7 -0.5877804 0.8090205 3.30309e-7 -0.5747188 0.8183473 0.002443015 -1.60663e-6 4.68126e-7 1 0 -2.80872e-7 -1 0.5877951 0.80901 -1.51783e-7 0.5491327 0.8356764 -0.009925544 0.5446372 0.8386719 0 0.5877777 0.8090202 0.001952409 1.00414e-6 4.68127e-7 1 0.6018291 0.798625 0 0.6018086 0.7986404 0 -0.6293112 0.7771535 1.34906e-7 -0.6293646 0.7771103 -2.20504e-6 -3.01242e-6 -1.84933e-6 -1 -0.6946548 0.7193399 -0.002244889 -0.6820028 0.7313497 1.7716e-7 -0.6946567 0.7193414 -1.97485e-6 -0.6830937 0.7303274 0.002226054 1.60663e-6 3.08222e-6 1 1.60662e-6 -2.49741e-7 -1 0.6946555 0.7193427 -2.70016e-7 0.6603453 0.7509111 -0.00876373 0.6560961 0.7546774 0 0.6946545 0.7193413 0.00178653 -4.01656e-7 4.16235e-7 1 0.707095 0.7071186 -2.46698e-6 0.7070941 0.7071195 -1.82811e-7 -0.7313379 0.6820154 1.19323e-7 -0.7313777 0.6819726 -1.64454e-6 6.02476e-7 0 -1 -0.7880153 0.6156526 -0.00198698 -0.7771399 0.629328 0 -0.7880156 0.6156556 -1.59003e-6 -0.778129 0.6281014 0.002022743 0 0 1 -1.60663e-6 -2.13747e-7 -1 0.7880073 0.6156659 -2.1494e-6 0.7585315 0.6515908 -0.007727801 0.7547024 0.6560674 -2.74102e-7 0.7880154 0.6156534 0.001628756 1.00413e-6 3.56238e-7 1 0.7986311 0.601821 -1.40717e-7 0.7986421 0.6018062 0 -0.8191518 0.5735768 -1.95162e-6 -0.8191515 0.5735774 0 -1.00415e-6 0 -1 -0.8660216 0.5000038 -0.001759052 -0.857173 0.5150287 -1.82771e-6 -0.8660236 0.5000033 1.54416e-7 -0.8579797 0.5136805 0.00183624 0 -1.73591e-7 -1 0.8660236 0.5000032 -1.58363e-7 0.8417636 0.5398028 -0.006851553 0.8386685 0.5446423 1.24553e-7 0.8660217 0.5000044 0.001479566 8.03319e-7 2.89319e-7 1 0.8746184 0.4848121 0 0.8746179 0.484813 -1.25835e-7 -0.8910076 0.4539886 0 -0.8910073 0.4539893 -9.99968e-7 4.01658e-7 0 -1 -0.9271821 0.374608 -0.001566052 -0.920506 0.3907285 1.23898e-7 -0.9271863 0.3746005 -8.21626e-7 -0.9211019 0.3893181 0.001674354 8.03299e-7 0 1 0 -1.30055e-7 -1 0.9271857 0.3746024 0 0.9086202 0.4175787 -0.006104826 0.9063133 0.4226067 0 0.927182 0.374609 0.001344799 8.03316e-7 2.16762e-7 1 0.9335817 0.3583648 0 0.9335807 0.3583673 -6.30585e-7 -0.9455122 0.3255867 0 -0.9455207 0.3255623 1.37523e-7 -2.00828e-7 0 -1 -0.9702948 0.241922 -0.001404583 -0.9659274 0.2588132 0 -0.9702958 0.2419217 1.22713e-7 -0.9663075 0.2573863 0.001530945 4.01656e-7 0 -1 0.9702955 0.2419227 0 0.9578052 0.2873662 -0.00548166 0.9563027 0.2923787 -5.07139e-7 0.9702939 0.2419263 0.001226544 8.03312e-7 1.39986e-7 1 0.9743705 0.2249493 0 0.9743708 0.2249484 -6.45114e-7 -0.9816257 0.1908165 1.82855e-7 -0.981626 0.1908153 1.53359e-7 2.00826e-7 0 -1 -0.9945212 0.1045279 -0.001269876 -0.9925469 0.121864 1.80143e-7 -0.994522 0.1045281 1.5074e-7 -0.992715 0.120479 0.001407682 -4.01662e-7 0 1 -4.01653e-7 0 -1 0.9945219 0.1045289 0 0.98843 0.1515966 -0.004960656 0.9876884 0.1564348 -5.17057e-7 0.9945212 0.1045292 0.001123547 8.03305e-7 0 1 0.9961944 0.08715927 -2.61285e-7 0.9961945 0.08715826 0 -0.9986297 0.05233395 1.81764e-7 -0.9986295 0.05233776 0 -2.00209e-7 0 -1 -0.9998478 0.01745229 0 -0.9998478 0.01745426 0 -0.9993909 -0.03489917 6.52605e-7 0 2.48696e-6 1 -3.01244e-7 -2.4749e-6 -1 0.9993909 -0.03490054 0 0.9999063 0.01291924 -0.004528284 0.9998477 0.01745212 0 0.9998477 0.01745682 -1.29751e-7 0 1.6539e-5 1 -0.9999007 0.01354235 0.003906548 0 -4.4177e-6 -1 -0.9986295 -0.05233907 1.83985e-7 -0.9986295 -0.05233752 1.52983e-7 -8.03298e-7 -1.43044e-7 -1 -2.0083e-7 0 -1 -8.0331e-7 -3.09745e-7 -1 0 -2.58853e-7 -1 0 -2.02927e-7 -1 -1.60661e-6 -4.22885e-7 -1 0 -3.9257e-7 -1 0 -3.54611e-7 -1 0 -4.62908e-7 -1 -1.60663e-6 -4.58404e-7 -1 0 -4.44975e-7 -1 0 -4.22884e-7 -1 1.60662e-6 -4.44975e-7 -1 1.60663e-6 -4.58404e-7 -1 0 0 -1 -1.60662e-6 -2.30488e-6 -1 0 -3.92569e-7 -1 8.03316e-7 0 -1 -8.03318e-7 0 -1 1.47889e-7 0 1 8.03308e-7 0 1 0 3.17166e-7 1 0 2.94423e-7 1 1.60664e-6 1.72869e-6 1 0 3.4718e-7 1 1.60662e-6 3.43801e-7 1 1.60662e-6 3.33731e-7 1 0 3.17166e-7 1 -1.60662e-6 3.33731e-7 1 -1.60662e-6 3.43801e-7 1 0 2.32309e-7 1 1.60664e-6 2.65958e-7 1 0 2.94423e-7 1 8.03315e-7 0 1 0 1.52195e-7 1 0 1.9414e-7 1 0 0 1 0.9986295 -0.05233687 -1.33885e-7 0.9986295 -0.05233776 0 -0.9848077 -0.1736481 2.60369e-7 -0.9848079 -0.1736481 0 0.9848086 -0.1736434 0 0.9848087 -0.1736434 0 -0.9510578 -0.309013 0 -0.951056 -0.3090189 3.94082e-7 0.9510576 -0.309014 1.37735e-7 0.9510557 -0.3090198 -1.37738e-7 -0.898791 -0.4383777 5.07725e-7 -0.8987917 -0.438376 4.82081e-7 0.898794 -0.4383713 -1.37738e-7 0.8987933 -0.4383729 -1.53042e-7 -0.8290395 -0.5591901 5.76895e-7 -0.829039 -0.5591908 5.6625e-7 0.8290385 -0.5591916 -1.5304e-7 0.8290378 -0.5591928 -1.83648e-7 -0.7431457 -0.6691297 6.6023e-7 -0.743145 -0.6691305 7.34595e-7 0.7431453 -0.6691301 -1.53041e-7 0.7431451 -0.6691305 -1.22432e-7 -0.6427797 -0.7660511 7.77554e-7 -0.64278 -0.7660509 7.65211e-7 0.6427817 -0.7660495 0 0.6427937 -0.7660394 5.81552e-7 -0.5299127 -0.8480522 8.03994e-7 -0.5299292 -0.8480419 0 0.5299299 -0.8480416 6.42766e-7 0.5299143 -0.8480514 -1.22433e-7 -0.4067483 -0.9135403 0 -0.4067305 -0.9135482 8.57032e-7 0.4067305 -0.9135482 0 0.406749 -0.9135401 7.65199e-7 -0.2756383 -0.9612615 8.78819e-7 -0.2756381 -0.9612615 8.57026e-7 0.2756382 -0.9612615 7.9581e-7 0.2756388 -0.9612614 8.57028e-7 -0.1391518 -0.9902712 8.99185e-7 -0.1391748 -0.9902679 -1.22433e-7 0.1391748 -0.9902679 8.57029e-7 0.1391518 -0.9902712 -1.22433e-7 0 -1 0 0 -1 -1.22432e-7</float_array>
+          <technique_common>
+            <accessor source="#Nova5Link5-mesh-normals-array" count="447" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Nova5Link5-mesh-vertices">
+          <input semantic="POSITION" source="#Nova5Link5-mesh-positions"/>
+        </vertices>
+        <triangles material="mat_176_128_240-material" count="38">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>0 0 1 0 2 0 0 2 4 2 1 2 0 4 6 4 4 4 83 100 0 100 84 100 86 2 0 2 87 2 88 103 0 103 86 103 84 104 0 104 88 104 87 2 0 2 91 2 78 192 142 192 82 192 98 205 149 205 97 205 101 217 153 217 98 217 102 221 153 221 101 221 160 246 139 246 156 246 164 260 160 260 58 260 164 262 139 262 160 262 168 276 164 276 53 276 168 278 139 278 164 278 171 290 41 290 167 290 172 292 168 292 48 292 172 278 139 278 168 278 143 304 175 304 171 304 190 360 137 360 186 360 139 361 190 361 186 361 213 278 214 278 139 278 214 385 190 385 139 385 221 390 222 390 139 390 222 391 223 391 139 391 226 395 221 395 139 395 190 403 214 403 137 403 193 405 188 405 191 405 214 407 213 407 189 407 192 409 230 409 193 409 196 413 231 413 192 413 195 417 232 417 196 417 194 421 227 421 195 421 199 425 228 425 194 425 223 443 222 443 205 443 200 446 222 446 221 446</p>
+        </triangles>
+        <triangles material="mat_128_176_240-material" count="1">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>3 1 0 1 2 1</p>
+        </triangles>
+        <triangles material="mat_064_208_255-material" count="9">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>5 3 0 3 3 3 7 2 0 2 5 2 0 7 10 7 8 7 99 118 100 118 3 118 100 119 5 119 3 119 103 123 7 123 5 123 143 257 163 257 159 257 130 342 185 342 181 342 133 343 185 343 130 343</p>
+        </triangles>
+        <triangles material="mat_128_160_240-material" count="1">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>0 5 8 5 6 5</p>
+        </triangles>
+        <triangles material="mat_048_208_255-material" count="12">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>9 6 0 6 7 6 39 36 38 36 20 36 81 102 0 102 85 102 100 124 104 124 5 124 104 125 103 125 5 125 134 169 133 169 92 169 154 222 107 222 103 222 157 231 143 231 153 231 174 301 128 301 124 301 184 340 139 340 180 340 185 341 143 341 181 341 200 374 201 374 143 374</p>
+        </triangles>
+        <triangles material="mat_032_208_255-material" count="36">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>11 2 0 2 9 2 0 18 24 18 22 18 0 19 25 19 24 19 38 34 18 34 20 34 38 41 44 41 18 41 58 65 64 65 10 65 65 67 66 67 60 67 66 68 67 68 60 68 67 69 61 69 60 69 60 94 0 94 65 94 93 108 80 108 81 108 148 198 139 198 142 198 140 202 100 202 99 202 150 206 104 206 100 206 150 218 103 218 104 218 154 219 103 219 150 219 174 298 124 298 170 298 174 313 127 313 128 313 178 314 127 314 174 314 139 315 178 315 174 315 178 317 131 317 127 317 178 328 132 328 131 328 134 347 185 347 133 347 189 356 143 356 185 356 134 357 189 357 185 357 203 377 204 377 143 377 204 378 205 378 143 378 205 379 200 379 143 379 206 380 207 380 143 380 207 381 208 381 143 381 208 382 203 382 143 382 209 383 210 383 143 383 210 384 211 384 143 384 211 380 206 380 143 380 189 380 209 380 143 380 228 397 229 397 139 397</p>
+        </triangles>
+        <triangles material="mat_032_224_255-material" count="45">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>0 8 12 8 10 8 0 9 14 9 12 9 0 11 16 11 14 11 0 13 18 13 16 13 0 15 20 15 18 15 0 16 22 16 20 16 43 40 16 40 18 40 44 42 43 42 18 42 48 46 14 46 16 46 43 47 49 47 16 47 49 48 48 48 16 48 53 52 12 52 14 52 48 53 54 53 14 53 54 54 53 54 14 54 58 58 10 58 12 58 53 59 59 59 12 59 59 60 58 60 12 60 70 73 71 73 65 73 71 74 72 74 65 74 72 75 66 75 65 75 75 79 71 79 70 79 76 80 75 80 70 80 77 81 76 81 70 81 80 85 76 85 77 85 81 86 80 86 77 86 77 97 0 97 81 97 70 98 0 98 77 98 65 99 0 99 70 99 139 177 140 177 141 177 142 178 139 178 141 178 150 203 100 203 140 203 139 204 150 204 140 204 139 220 154 220 150 220 139 236 158 236 154 236 139 252 162 252 158 252 139 268 166 268 162 268 139 284 170 284 166 284 139 299 174 299 170 299 188 355 139 355 184 355 137 358 189 358 134 358 227 396 228 396 139 396 230 399 231 399 139 399 231 400 232 400 139 400 232 401 227 401 139 401 188 402 230 402 139 402</p>
+        </triangles>
+        <triangles material="mat_048_192_255-material" count="14">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>13 2 0 2 11 2 34 30 20 30 22 30 61 62 62 62 55 62 25 90 0 90 30 90 55 95 0 95 60 95 137 174 134 174 23 174 135 175 138 175 23 175 138 176 137 176 23 176 153 215 143 215 149 215 151 223 67 223 66 223 61 227 67 227 151 227 158 235 108 235 154 235 155 239 62 239 61 239 229 398 224 398 139 398</p>
+        </triangles>
+        <triangles material="mat_064_160_255-material" count="7">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>15 10 0 10 13 10 33 29 34 29 22 29 30 89 0 89 35 89 50 96 0 96 55 96 116 143 13 143 11 143 158 238 112 238 108 238 170 286 123 286 119 286</p>
+        </triangles>
+        <triangles material="mat_096_144_255-material" count="10">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>17 12 0 12 15 12 23 17 0 17 21 17 57 57 51 57 50 57 123 154 124 154 15 154 135 171 23 171 21 171 46 275 52 275 163 275 217 278 212 278 139 278 218 387 219 387 139 387 212 415 217 415 210 415 219 435 218 435 203 435</p>
+        </triangles>
+        <triangles material="mat_112_144_255-material" count="4">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>19 14 0 14 17 14 21 2 0 2 19 2 127 159 19 159 17 159 132 167 21 167 19 167</p>
+        </triangles>
+        <triangles material="mat_080_144_255-material" count="36">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>26 20 27 20 24 20 28 23 29 23 24 23 29 24 26 24 24 24 31 26 32 26 25 26 32 27 28 27 25 27 27 28 33 28 22 28 55 55 56 55 50 55 45 91 0 91 50 91 40 92 0 92 45 92 35 93 0 93 40 93 112 137 111 137 9 137 111 141 115 141 11 141 115 142 116 142 11 142 143 179 144 179 145 179 146 180 143 180 145 180 144 181 76 181 145 181 143 193 147 193 144 193 147 194 71 194 144 194 143 209 151 209 147 209 158 250 111 250 112 250 162 254 115 254 111 254 162 266 116 266 115 266 166 270 120 270 116 270 169 279 143 279 165 279 166 282 119 282 120 282 173 294 143 294 169 294 27 350 184 350 33 350 26 362 188 362 27 362 215 278 216 278 139 278 216 386 217 386 139 386 219 388 220 388 139 388 220 389 215 389 139 389 217 419 216 419 211 419 216 423 215 423 206 423 215 427 220 427 207 427 220 431 219 431 208 431</p>
+        </triangles>
+        <triangles material="mat_048_176_255-material" count="15">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>27 21 22 21 24 21 76 182 80 182 145 182 144 191 75 191 76 191 71 195 75 195 144 195 147 207 72 207 71 207 66 211 72 211 147 211 162 251 111 251 158 251 166 267 116 267 162 267 170 283 119 283 166 283 27 354 188 354 184 354 217 416 211 416 210 416 216 420 206 420 211 420 215 424 207 424 206 424 220 428 208 428 207 428 219 432 203 432 208 432</p>
+        </triangles>
+        <triangles material="mat_064_176_255-material" count="21">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>25 22 28 22 24 22 34 35 39 35 20 35 62 63 56 63 55 63 92 106 0 106 23 106 111 135 11 135 9 135 128 161 127 161 17 161 127 165 131 165 19 165 131 166 132 166 19 166 23 170 134 170 92 170 132 172 136 172 21 172 136 173 135 173 21 173 149 199 143 199 146 199 155 226 61 226 151 226 154 234 108 234 107 234 159 242 56 242 155 242 159 255 57 255 56 255 163 258 51 258 159 258 170 297 124 297 123 297 181 325 143 325 177 325 212 412 210 412 209 412 218 436 204 436 203 436</p>
+        </triangles>
+        <triangles material="mat_080_160_255-material" count="11">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>30 25 31 25 25 25 56 56 57 56 50 56 108 136 112 136 9 136 124 160 128 160 17 160 80 183 146 183 145 183 151 210 66 210 147 210 143 225 155 225 151 225 51 259 57 259 159 259 165 263 143 263 161 263 177 310 143 310 173 310 33 339 184 339 34 339</p>
+        </triangles>
+        <triangles material="mat_096_128_255-material" count="9">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>35 31 36 31 30 31 36 32 37 32 30 32 37 33 31 33 30 33 50 49 51 49 45 49 51 50 52 50 45 50 119 147 15 147 13 147 116 148 120 148 13 148 120 149 119 149 13 149 119 153 123 153 15 153</p>
+        </triangles>
+        <triangles material="mat_096_112_255-material" count="7">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>40 37 41 37 35 37 41 38 42 38 35 38 42 39 36 39 35 39 45 43 46 43 40 43 46 44 47 44 40 44 47 45 41 45 40 45 52 51 46 51 45 51</p>
+        </triangles>
+        <triangles material="mat_064_192_255-material" count="8">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>60 61 61 61 55 61 103 129 107 129 7 129 108 131 9 131 7 131 93 184 146 184 80 184 143 241 159 241 155 241 56 243 62 243 155 243 161 247 143 247 157 247 39 324 180 324 38 324</p>
+        </triangles>
+        <triangles material="mat_112_192_255-material" count="5">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>63 64 8 64 10 64 95 117 99 117 3 117 92 164 130 164 90 164 180 323 176 323 38 323 201 375 202 375 143 375</p>
+        </triangles>
+        <triangles material="mat_096_192_255-material" count="9">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>64 66 63 66 10 66 90 107 0 107 92 107 85 110 94 110 81 110 96 187 142 187 141 187 152 214 139 214 148 214 143 273 167 273 163 273 180 278 139 278 176 278 182 329 132 329 178 329 139 330 182 330 178 330</p>
+        </triangles>
+        <triangles material="mat_208_112_240-material" count="3">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>68 70 6 70 8 70 202 437 225 437 197 437 202 438 226 438 225 438</p>
+        </triangles>
+        <triangles material="mat_176_160_240-material" count="2">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>63 71 69 71 8 71 95 111 3 111 2 111</p>
+        </triangles>
+        <triangles material="mat_192_128_240-material" count="3">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>69 72 68 72 8 72 83 116 98 116 85 116 201 442 221 442 226 442</p>
+        </triangles>
+        <triangles material="mat_255_080_224-material" count="22">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>73 76 4 76 6 76 68 77 74 77 6 77 74 78 73 78 6 78 78 82 1 82 4 82 73 83 79 83 4 83 79 84 78 84 4 84 78 87 82 87 1 87 82 88 2 88 1 88 105 126 102 126 84 126 106 127 105 127 84 127 88 128 106 128 84 128 109 132 106 132 88 132 110 133 109 133 88 133 86 134 110 134 88 134 113 138 110 138 86 138 114 139 113 139 86 139 87 140 114 140 86 140 117 144 114 144 87 144 118 145 117 145 87 145 91 146 118 146 87 146 121 150 118 150 91 150 122 151 121 151 91 151</p>
+        </triangles>
+        <triangles material="mat_112_176_255-material" count="2">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>85 101 0 101 83 101 94 189 146 189 93 189</p>
+        </triangles>
+        <triangles material="mat_144_176_240-material" count="2">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>89 2 0 2 90 2 95 186 96 186 141 186</p>
+        </triangles>
+        <triangles material="mat_160_144_240-material" count="6">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>91 105 0 105 89 105 82 188 142 188 96 188 156 230 139 230 152 230 64 245 160 245 63 245 186 345 135 345 182 345 139 346 186 346 182 346</p>
+        </triangles>
+        <triangles material="mat_080_192_255-material" count="8">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>94 109 93 109 81 109 140 185 95 185 141 185 140 190 99 190 95 190 44 308 176 308 43 308 38 319 176 319 44 319 182 332 136 332 132 332 184 338 180 338 34 338 182 344 135 344 136 344</p>
+        </triangles>
+        <triangles material="mat_240_096_240-material" count="3">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>82 112 96 112 2 112 74 213 152 213 73 213 69 229 156 229 68 229</p>
+        </triangles>
+        <triangles material="mat_208_128_240-material" count="2">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>96 113 95 113 2 113 90 158 126 158 89 158</p>
+        </triangles>
+        <triangles material="mat_160_176_240-material" count="1">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>97 114 94 114 85 114</p>
+        </triangles>
+        <triangles material="mat_192_144_240-material" count="1">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>98 115 97 115 85 115</p>
+        </triangles>
+        <triangles material="mat_240_096_224-material" count="4">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>101 120 98 120 83 120 89 152 122 152 91 152 125 156 122 156 89 156 126 157 125 157 89 157</p>
+        </triangles>
+        <triangles material="mat_240_080_224-material" count="2">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>102 121 101 121 83 121 84 122 102 122 83 122</p>
+        </triangles>
+        <triangles material="mat_080_176_255-material" count="2">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>107 130 108 130 7 130 34 334 180 334 39 334</p>
+        </triangles>
+        <triangles material="mat_112_128_255-material" count="1">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>124 155 17 155 15 155</p>
+        </triangles>
+        <triangles material="mat_224_112_240-material" count="1">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>129 162 126 162 90 162</p>
+        </triangles>
+        <triangles material="mat_176_144_240-material" count="4">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>130 163 129 163 90 163 152 212 148 212 73 212 202 376 197 376 143 376 201 441 226 441 202 441</p>
+        </triangles>
+        <triangles material="mat_080_208_255-material" count="1">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>133 168 130 168 92 168</p>
+        </triangles>
+        <triangles material="mat_112_160_240-material" count="6">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>148 196 142 196 78 196 98 216 153 216 149 216 102 232 157 232 153 232 58 256 160 256 64 256 199 426 229 426 228 426 200 445 221 445 201 445</p>
+        </triangles>
+        <triangles material="mat_192_112_240-material" count="18">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>79 197 148 197 78 197 73 208 148 208 79 208 105 233 157 233 102 233 106 237 157 237 105 237 143 320 179 320 175 320 129 327 181 327 126 327 143 335 183 335 179 335 143 351 187 351 183 351 143 363 191 363 187 363 192 366 193 366 143 366 193 367 191 367 143 367 194 368 195 368 143 368 195 369 196 369 143 369 196 370 192 370 143 370 197 371 198 371 143 371 198 372 199 372 143 372 199 373 194 373 143 373 198 429 229 429 199 429</p>
+        </triangles>
+        <triangles material="mat_112_160_255-material" count="2">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>94 200 149 200 146 200 167 274 46 274 163 274</p>
+        </triangles>
+        <triangles material="mat_144_160_240-material" count="4">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>97 201 149 201 94 201 176 307 172 307 43 307 176 309 139 309 172 309 130 331 181 331 129 331</p>
+        </triangles>
+        <triangles material="mat_224_096_240-material" count="3">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>68 224 152 224 74 224 156 228 152 228 68 228 160 244 156 244 63 244</p>
+        </triangles>
+        <triangles material="mat_224_128_240-material" count="1">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>63 240 156 240 69 240</p>
+        </triangles>
+        <triangles material="mat_128_144_240-material" count="3">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>106 248 161 248 157 248 126 326 181 326 177 326 198 430 224 430 229 430</p>
+        </triangles>
+        <triangles material="mat_192_096_240-material" count="5">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>109 249 161 249 106 249 110 253 161 253 109 253 175 305 36 305 171 305 125 312 177 312 122 312 126 316 177 316 125 316</p>
+        </triangles>
+        <triangles material="mat_096_160_240-material" count="11">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>59 261 164 261 58 261 53 272 164 272 59 272 54 277 168 277 53 277 48 288 168 288 54 288 214 404 189 404 137 404 193 406 230 406 188 406 192 410 231 410 230 410 196 414 232 414 231 414 195 418 227 418 232 418 194 422 228 422 227 422 222 444 200 444 205 444</p>
+        </triangles>
+        <triangles material="mat_144_112_240-material" count="2">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>110 264 165 264 161 264 122 311 177 311 173 311</p>
+        </triangles>
+        <triangles material="mat_208_096_240-material" count="5">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>113 265 165 265 110 265 114 269 165 269 113 269 121 296 173 296 118 296 122 300 173 300 121 300 197 433 224 433 198 433</p>
+        </triangles>
+        <triangles material="mat_096_160_255-material" count="2">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>163 271 52 271 51 271 224 393 225 393 139 393</p>
+        </triangles>
+        <triangles material="mat_144_096_240-material" count="1">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>114 280 169 280 165 280</p>
+        </triangles>
+        <triangles material="mat_208_080_240-material" count="6">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>117 281 169 281 114 281 118 285 169 285 117 285 179 321 31 321 175 321 183 336 28 336 179 336 187 353 26 353 183 353 191 364 26 364 187 364</p>
+        </triangles>
+        <triangles material="mat_128_128_255-material" count="2">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>167 287 47 287 46 287 41 291 47 291 167 291</p>
+        </triangles>
+        <triangles material="mat_160_160_240-material" count="1">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>143 289 171 289 167 289</p>
+        </triangles>
+        <triangles material="mat_096_176_240-material" count="4">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>49 293 172 293 48 293 43 303 172 303 49 303 186 348 138 348 135 348 186 359 137 359 138 359</p>
+        </triangles>
+        <triangles material="mat_160_096_240-material" count="7">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>118 295 173 295 169 295 175 318 37 318 36 318 31 322 37 322 175 322 179 333 32 333 31 333 28 337 32 337 179 337 183 349 29 349 28 349 26 352 29 352 183 352</p>
+        </triangles>
+        <triangles material="mat_144_112_255-material" count="2">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>171 302 42 302 41 302 36 306 42 306 171 306</p>
+        </triangles>
+        <triangles material="mat_128_128_240-material" count="3">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>191 365 188 365 26 365 212 278 213 278 139 278 213 411 212 411 209 411</p>
+        </triangles>
+        <triangles material="mat_144_128_240-material" count="3">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>223 392 218 392 139 392 225 394 226 394 139 394 218 439 223 439 204 439</p>
+        </triangles>
+        <triangles material="mat_096_176_255-material" count="2">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>213 408 209 408 189 408 223 440 205 440 204 440</p>
+        </triangles>
+        <triangles material="mat_176_112_240-material" count="1">
+          <input semantic="VERTEX" source="#Nova5Link5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Nova5Link5-mesh-normals" offset="1"/>
+          <p>197 434 225 434 224 434</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Nova5Link5" name="Nova5Link5" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#Nova5Link5-mesh" name="Nova5Link5">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="mat_176_128_240-material" target="#mat_176_128_240-material"/>
+              <instance_material symbol="mat_128_176_240-material" target="#mat_128_176_240-material"/>
+              <instance_material symbol="mat_064_208_255-material" target="#mat_064_208_255-material"/>
+              <instance_material symbol="mat_128_160_240-material" target="#mat_128_160_240-material"/>
+              <instance_material symbol="mat_048_208_255-material" target="#mat_048_208_255-material"/>
+              <instance_material symbol="mat_032_208_255-material" target="#mat_032_208_255-material"/>
+              <instance_material symbol="mat_032_224_255-material" target="#mat_032_224_255-material"/>
+              <instance_material symbol="mat_048_192_255-material" target="#mat_048_192_255-material"/>
+              <instance_material symbol="mat_064_160_255-material" target="#mat_064_160_255-material"/>
+              <instance_material symbol="mat_096_144_255-material" target="#mat_096_144_255-material"/>
+              <instance_material symbol="mat_112_144_255-material" target="#mat_112_144_255-material"/>
+              <instance_material symbol="mat_080_144_255-material" target="#mat_080_144_255-material"/>
+              <instance_material symbol="mat_048_176_255-material" target="#mat_048_176_255-material"/>
+              <instance_material symbol="mat_064_176_255-material" target="#mat_064_176_255-material"/>
+              <instance_material symbol="mat_080_160_255-material" target="#mat_080_160_255-material"/>
+              <instance_material symbol="mat_096_128_255-material" target="#mat_096_128_255-material"/>
+              <instance_material symbol="mat_096_112_255-material" target="#mat_096_112_255-material"/>
+              <instance_material symbol="mat_064_192_255-material" target="#mat_064_192_255-material"/>
+              <instance_material symbol="mat_112_192_255-material" target="#mat_112_192_255-material"/>
+              <instance_material symbol="mat_096_192_255-material" target="#mat_096_192_255-material"/>
+              <instance_material symbol="mat_208_112_240-material" target="#mat_208_112_240-material"/>
+              <instance_material symbol="mat_176_160_240-material" target="#mat_176_160_240-material"/>
+              <instance_material symbol="mat_192_128_240-material" target="#mat_192_128_240-material"/>
+              <instance_material symbol="mat_255_080_224-material" target="#mat_255_080_224-material"/>
+              <instance_material symbol="mat_112_176_255-material" target="#mat_112_176_255-material"/>
+              <instance_material symbol="mat_144_176_240-material" target="#mat_144_176_240-material"/>
+              <instance_material symbol="mat_160_144_240-material" target="#mat_160_144_240-material"/>
+              <instance_material symbol="mat_080_192_255-material" target="#mat_080_192_255-material"/>
+              <instance_material symbol="mat_240_096_240-material" target="#mat_240_096_240-material"/>
+              <instance_material symbol="mat_208_128_240-material" target="#mat_208_128_240-material"/>
+              <instance_material symbol="mat_160_176_240-material" target="#mat_160_176_240-material"/>
+              <instance_material symbol="mat_192_144_240-material" target="#mat_192_144_240-material"/>
+              <instance_material symbol="mat_240_096_224-material" target="#mat_240_096_224-material"/>
+              <instance_material symbol="mat_240_080_224-material" target="#mat_240_080_224-material"/>
+              <instance_material symbol="mat_080_176_255-material" target="#mat_080_176_255-material"/>
+              <instance_material symbol="mat_112_128_255-material" target="#mat_112_128_255-material"/>
+              <instance_material symbol="mat_224_112_240-material" target="#mat_224_112_240-material"/>
+              <instance_material symbol="mat_176_144_240-material" target="#mat_176_144_240-material"/>
+              <instance_material symbol="mat_080_208_255-material" target="#mat_080_208_255-material"/>
+              <instance_material symbol="mat_112_160_240-material" target="#mat_112_160_240-material"/>
+              <instance_material symbol="mat_192_112_240-material" target="#mat_192_112_240-material"/>
+              <instance_material symbol="mat_112_160_255-material" target="#mat_112_160_255-material"/>
+              <instance_material symbol="mat_144_160_240-material" target="#mat_144_160_240-material"/>
+              <instance_material symbol="mat_224_096_240-material" target="#mat_224_096_240-material"/>
+              <instance_material symbol="mat_224_128_240-material" target="#mat_224_128_240-material"/>
+              <instance_material symbol="mat_128_144_240-material" target="#mat_128_144_240-material"/>
+              <instance_material symbol="mat_192_096_240-material" target="#mat_192_096_240-material"/>
+              <instance_material symbol="mat_096_160_240-material" target="#mat_096_160_240-material"/>
+              <instance_material symbol="mat_144_112_240-material" target="#mat_144_112_240-material"/>
+              <instance_material symbol="mat_208_096_240-material" target="#mat_208_096_240-material"/>
+              <instance_material symbol="mat_096_160_255-material" target="#mat_096_160_255-material"/>
+              <instance_material symbol="mat_144_096_240-material" target="#mat_144_096_240-material"/>
+              <instance_material symbol="mat_208_080_240-material" target="#mat_208_080_240-material"/>
+              <instance_material symbol="mat_128_128_255-material" target="#mat_128_128_255-material"/>
+              <instance_material symbol="mat_160_160_240-material" target="#mat_160_160_240-material"/>
+              <instance_material symbol="mat_096_176_240-material" target="#mat_096_176_240-material"/>
+              <instance_material symbol="mat_160_096_240-material" target="#mat_160_096_240-material"/>
+              <instance_material symbol="mat_144_112_255-material" target="#mat_144_112_255-material"/>
+              <instance_material symbol="mat_128_128_240-material" target="#mat_128_128_240-material"/>
+              <instance_material symbol="mat_144_128_240-material" target="#mat_144_128_240-material"/>
+              <instance_material symbol="mat_096_176_255-material" target="#mat_096_176_255-material"/>
+              <instance_material symbol="mat_176_112_240-material" target="#mat_176_112_240-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

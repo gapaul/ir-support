@@ -9,6 +9,8 @@ from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 class DobotMagician(UTSMeshRobot):
     """Dobot Magician model ported from the UTS MATLAB toolbox."""
 
+
+    manufacturer_url = "https://www.dobot-robots.com/products/education/magician.html"
     def __init__(self, base=None):
         links = [
             rtb.RevoluteDH(d=0.1392, a=0.0, alpha=-pi / 2, qlim=self._qlim(-135, 135)),
@@ -26,3 +28,4 @@ class DobotMagician(UTSMeshRobot):
             home_q=[0.0] * 5,
             base=base,
         )
+

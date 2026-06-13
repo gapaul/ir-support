@@ -15,6 +15,7 @@ class YaskawaGP4(UTSMeshRobot):
     """
 
     source_note = "Yaskawa GP4, Group_48, 2023S"
+    manufacturer_url = "https://www.motoman.com/en-us/products/robots/industrial/assembly-handling/gp-series/gp4"
 
     def __init__(self, base=None):
         links = [

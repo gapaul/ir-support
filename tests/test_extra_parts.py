@@ -11,7 +11,7 @@ for path in (REPO_ROOT, EXTRA_PARTS_ROOT):
     if str(path) not in sys.path:
         sys.path.insert(0, str(path))
 
-from ir_support_extra_parts.parts import PART_NAMES, part_mesh, part_names, part_path  # noqa: E402
+from ir_support_extra_parts.parts import PART_NAMES, part_mesh, part_names, part_path, part_reference_url  # noqa: E402
 
 
 def test_extra_parts_are_discoverable_and_dae_only():
@@ -43,3 +43,10 @@ def test_all_extra_part_meshes_load():
         assert mesh is not None
         assert np.asarray(mesh.T).shape == (4, 4)
         assert np.isfinite(mesh.T).all()
+
+
+def test_extra_part_reference_url_is_optional():
+    assert part_reference_url("brick") is None
+    assert part_reference_url("brick.dae") is None
+
+

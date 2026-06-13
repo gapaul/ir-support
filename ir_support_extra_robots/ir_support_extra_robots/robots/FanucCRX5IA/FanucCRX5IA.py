@@ -15,6 +15,7 @@ class FanucCRX5IA(UTSMeshRobot):
     """
 
     source_note = "FANUC CRX-5iA candidate, Group_9, 2023S"
+    manufacturer_url = "https://www.fanucamerica.com/products/robots/series/collaborative-robots/crx-5ia-cobot"
 
     def __init__(self, base=None):
         links = [

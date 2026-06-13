@@ -9,6 +9,8 @@ from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 class UR10(UTSMeshRobot):
     """Universal Robots UR10 model ported from the UTS MATLAB toolbox."""
 
+
+    manufacturer_url = "https://www.universal-robots.com/products/ur10-robot/"
     def __init__(self, base=None):
         links = [
             rtb.RevoluteDH(d=0.128, a=0.0, alpha=pi / 2, qlim=self._qlim(-360, 360)),
@@ -27,3 +29,4 @@ class UR10(UTSMeshRobot):
             home_q=[0.0, -pi / 2, 0.0, 0.0, 0.0, 0.0],
             base=base,
         )
+

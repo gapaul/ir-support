@@ -15,6 +15,7 @@ class FanucCRX10IA(UTSMeshRobot):
     """
 
     source_note = "FANUC CRX-10iA, Victor_A2_9, 2024S; final fixed gripper link omitted from DH chain"
+    manufacturer_url = "https://www.fanucamerica.com/products/robots/series/collaborative-robots/crx-10ia-cobot"
 
     def __init__(self, base=None):
         links = [

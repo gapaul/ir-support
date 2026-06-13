@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ir-support-extra-parts"
-version = "0.1.0"
+version = "0.2.0"
 description = "Optional parts and scene-object model pack for ir-support."
 authors = ["41013 Robotics"]
 readme = "README.md"
@@ -9,8 +9,10 @@ include = ["ir_support_extra_parts/**/*.dae", "ir_support_extra_parts/**/*.txt",
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.11"
-ir-support = ">=1.3.0,<2.0.0"
+ir-support = ">=1.3.1,<2.0.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+

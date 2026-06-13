@@ -20,10 +20,10 @@ jobs:
         id: check-codeowner
         run: |
           if grep -q "${{ github.actor }}" .github/CODEOWNERS; then
-            echo "::set-output name=is_codeowner::true"
+            echo "is_codeowner=true" >> "$GITHUB_OUTPUT"
             echo "${{ github.actor }} is a codeowner, proceeding with release"
           else
-            echo "::set-output name=is_codeowner::false"
+            echo "is_codeowner=false" >> "$GITHUB_OUTPUT"
             echo "${{ github.actor }} is not a codeowner, aborting"
             exit 1
           fi
@@ -42,22 +42,55 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install and Configure Poetry
+      - name: Install and configure Poetry
         env:
           POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_API_TOKEN }}
         run: |
           curl -sSL https://install.python-poetry.org | python3 -
+          export PATH="$HOME/.local/bin:$PATH"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
           poetry config virtualenvs.create false
-          poetry config pypi-token.pypi $POETRY_PYPI_TOKEN_PYPI
+          poetry config pypi-token.pypi "$POETRY_PYPI_TOKEN_PYPI"
 
-      - name: Install dependencies
+      - name: Install root dependencies
         run: |
           poetry install --no-interaction --no-root
 
-      - name: Build package
+      - name: Build ir-support
         run: |
           poetry build
 
-      - name: Publish to PyPI
+      - name: Build extra robot package
+        working-directory: ir_support_extra_robots
+        run: |
+          poetry build
+
+      - name: Build extra parts package
+        working-directory: ir_support_extra_parts
+        run: |
+          poetry build
+
+      - name: Build full meta-package
+        working-directory: ir_support_full
+        run: |
+          poetry build
+
+      - name: Publish ir-support
         run: |
           poetry publish --no-interaction --verbose
+
+      - name: Publish extra robot package
+        working-directory: ir_support_extra_robots
+        run: |
+          poetry publish --no-interaction --verbose
+
+      - name: Publish extra parts package
+        working-directory: ir_support_extra_parts
+        run: |
+          poetry publish --no-interaction --verbose
+
+      - name: Publish full meta-package
+        working-directory: ir_support_full
+        run: |
+          poetry publish --no-interaction --verbose
+

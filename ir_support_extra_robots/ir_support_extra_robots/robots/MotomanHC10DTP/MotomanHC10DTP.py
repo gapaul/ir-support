@@ -8,6 +8,7 @@ from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 
 class MotomanHC10DTP(UTSMeshRobot):
     """Motoman HC10DTP model ported from the UTS MATLAB toolbox."""
+    manufacturer_url = "https://www.motoman.com/en-us/products/robots/collaborative/hc-series/hc10dtp"
 
     def __init__(self, base=None):
         links = [

@@ -8,6 +8,7 @@ from ir_support.robots.UTSMeshRobot import UTSMeshRobot
 
 class MyCobot280(UTSMeshRobot):
     """MyCobot 280 model ported from the UTS MATLAB toolbox."""
+    manufacturer_url = "https://www.elephantrobotics.com/en/mycobot-280/"
 
     def __init__(self, base=None):
         links = [

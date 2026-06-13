@@ -15,6 +15,7 @@ class DobotCR3(UTSMeshRobot):
     """
 
     source_note = "Dobot CR3, Group_28, 2023S"
+    manufacturer_url = "https://www.dobot-robots.com/products/cr-series/cr3.html"
 
     def __init__(self, base=None):
         links = [
