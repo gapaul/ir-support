@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
 
       - name: Check if initiator is codeowner
         id: check-codeowner
@@ -35,10 +35,10 @@ jobs:
     environment: "PyPI release"
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
           python-version: '3.10'
 
@@ -77,20 +77,20 @@ jobs:
 
       - name: Publish ir-support
         run: |
-          poetry publish --no-interaction --verbose
+          poetry publish --no-interaction --verbose --skip-existing
 
       - name: Publish extra robot package
         working-directory: ir_support_extra_robots
         run: |
-          poetry publish --no-interaction --verbose
+          poetry publish --no-interaction --verbose --skip-existing
 
       - name: Publish extra parts package
         working-directory: ir_support_extra_parts
         run: |
-          poetry publish --no-interaction --verbose
+          poetry publish --no-interaction --verbose --skip-existing
 
       - name: Publish full meta-package
         working-directory: ir_support_full
         run: |
-          poetry publish --no-interaction --verbose
+          poetry publish --no-interaction --verbose --skip-existing
 
