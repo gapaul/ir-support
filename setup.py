@@ -19,6 +19,7 @@ setup(
     packages=find_packages(include=["ir_support", "ir_support.*"]),
     install_requires=[
         "rvc3python>=0.9.2,<0.10.0",
+        "swift-sim>=1.1.0,<2.0.0",
         "numpy>=1.26.4,<2.0.0",
         "pandas>=2.2.3,<3.0.0",
         "trimesh>=4.4.3,<5.0.0",
