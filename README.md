@@ -15,7 +15,7 @@ then
 pip install ir-support
 ```
 
-It is currently tested on Python 3.8 - 3.11
+It is currently tested on Python 3.10 - 3.12
 
 # Contact
  - via 41013 subject teams site
