@@ -167,8 +167,10 @@ def get_ply_data(ply_file_path:str, simplified:float = 1):
 
     # Simplified output if required
     if simplified > 1:
-        simplified_mesh = Trimesh(vertices = vertices,
-                                  faces= faces).simplify_quadric_decimation(int(len(faces)/simplified))
+        target_face_count = int(len(faces) / simplified)
+        simplified_mesh = Trimesh(vertices=vertices, faces=faces).simplify_quadric_decimation(
+            face_count=target_face_count
+        )
         vertices = simplified_mesh.vertices
         faces = simplified_mesh.faces
 

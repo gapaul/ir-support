@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="ir_support",
-    version="1.4.0",
+    version="1.4.1",
     description="Python package including some classes & functions supporting the subject 41013 Industrial Robotics at UTS, along with the Robotics Toolbox for Python",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
@@ -32,6 +32,9 @@ setup(
         "matplotlib>=3.10.0,<3.11.0",
         "pygame>=2.6.1,<3.0.0",
         "line_profiler>=5.0.0,<6.0.0",
+        "fast-simplification>=0.1.9,<0.2.0",
+        "openpyxl>=3.1.0,<4.0.0",
+        "pytest>=8.0.0,<9.0.0",
     ],
     url="https://github.com/gapaul/ir-support",
     author="Quang Ngo",
