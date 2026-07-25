@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="ir_support",
-    version="1.4.2",
+    version="1.4.3",
     description="Python package including some classes & functions supporting the subject 41013 Industrial Robotics at UTS, along with the Robotics Toolbox for Python",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
