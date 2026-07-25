@@ -15,12 +15,47 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
+SWIFT_RELATIVE = Path("swift") / "Swift.py"
 SWIFT_ROUTE_RELATIVE = Path("swift") / "SwiftRoute.py"
 ROBOT_PLOT_RELATIVE = Path("roboticstoolbox") / "backends" / "PyPlot" / "RobotPlot.py"
 MACHINEVISION_SOURCES_RELATIVE = Path("machinevisiontoolbox") / "Sources.py"
 
 SWIFT_ROUTE_OLD = "self.path = urllib.parse.unquote(self.path[9:])"
 SWIFT_ROUTE_NEW = "self.path = urllib.parse.unquote(self.path[10:])"
+SWIFT_CONNECT_TIMEOUT_OLD = "            inq.get(timeout=10)"
+SWIFT_CONNECT_TIMEOUT_NEW = '            inq.get(timeout=float(os.environ.get("IR_SUPPORT_SWIFT_CONNECT_TIMEOUT", "30")))'
+SWIFT_ROUTE_JSON_DEFAULT_MARKER = "def _ir_support_json_default"
+SWIFT_ROUTE_JSON_DEFAULT_ANCHOR = "from typing_extensions import Literal as L\n"
+SWIFT_ROUTE_JSON_DEFAULT_BLOCK = """
+
+def _ir_support_json_default(value):
+    if hasattr(value, "tolist"):
+        return value.tolist()
+    raise TypeError(f"Object of type {value.__class__.__name__} is not JSON serializable")
+"""
+SWIFT_ROUTE_JSON_DUMPS_OLD = "json.dumps(msg)"
+SWIFT_ROUTE_JSON_DUMPS_NEW = "json.dumps(msg, default=_ir_support_json_default)"
+SWIFT_HTTP_RESET_MARKER = "except ConnectionResetError:"
+SWIFT_HTTP_HANDLER_OLD = """            def __init__(self, *args, **kwargs):
+                super(MyHttpRequestHandler, self).__init__(
+                    *args, directory=str(root_dir), **kwargs
+                )
+
+            def log_message(self, format, *args):
+"""
+SWIFT_HTTP_HANDLER_NEW = """            def __init__(self, *args, **kwargs):
+                super(MyHttpRequestHandler, self).__init__(
+                    *args, directory=str(root_dir), **kwargs
+                )
+
+            def handle(self):
+                try:
+                    super().handle()
+                except ConnectionResetError:
+                    pass
+
+            def log_message(self, format, *args):
+"""
 
 ROBOT_PLOT_FIXED_BLOCK = [
     "        if options is not None:",
@@ -36,6 +71,92 @@ ROBOT_PLOT_OLD_MERGE = "defaults[key] = {**defaults[key], **options[key]}"
 
 MACHINEVISION_OLD_IMPORT = "from numpy.char import array"
 MACHINEVISION_NEW_IMPORT = "from numpy import array"
+
+SWIFT_TIMEOUT_MARKER = "Timed out waiting for Swift browser response"
+SWIFT_QUEUE_IMPORT_OLD = "from queue import Queue"
+SWIFT_QUEUE_IMPORT_NEW = "from queue import Queue, Empty"
+SWIFT_SEND_SOCKET_OLD = """    def _send_socket(self, code, data=None, expected=True):
+        msg = [expected, [code, data]]
+
+        self.outq.put(msg)
+
+        if expected:
+            return self.inq.get()
+        else:
+            return "0"
+"""
+SWIFT_SEND_SOCKET_NEW = """    def _send_socket(self, code, data=None, expected=True, timeout=None):
+        msg = [expected, [code, data]]
+
+        self.outq.put(msg)
+
+        if expected:
+            if timeout is None:
+                timeout = getattr(self, "_ir_support_socket_timeout", 20.0)
+            try:
+                return self.inq.get(timeout=timeout)
+            except Empty as exc:
+                raise TimeoutError(
+                    f"Timed out waiting for Swift browser response to {code!r}. "
+                    "Check that the Swift browser page is open and connected."
+                ) from exc
+        else:
+            return "0"
+"""
+SWIFT_SHAPE_MOUNT_OLD = """                while not int(self._send_socket("shape_mounted", [id, 1])):
+                    time.sleep(0.1)
+"""
+SWIFT_SHAPE_MOUNT_NEW = """                mount_deadline = time.time() + getattr(self, "_ir_support_mount_timeout", 20.0)
+                while not int(self._send_socket("shape_mounted", [id, 1])):
+                    if time.time() > mount_deadline:
+                        raise TimeoutError(
+                            "Timed out waiting for Swift browser to mount shape. "
+                            "Check that the Swift browser page is open and connected."
+                        )
+                    time.sleep(0.1)
+"""
+SWIFT_ROBOT_MOUNT_OLD = """                while not int(self._send_socket("shape_mounted", [id, len(robob)])):
+                    time.sleep(0.1)
+"""
+SWIFT_ROBOT_MOUNT_NEW = """                mount_deadline = time.time() + getattr(self, "_ir_support_mount_timeout", 20.0)
+                while not int(self._send_socket("shape_mounted", [id, len(robob)])):
+                    if time.time() > mount_deadline:
+                        raise TimeoutError(
+                            "Timed out waiting for Swift browser to mount robot. "
+                            "Check that the Swift browser page is open and connected."
+                        )
+                    time.sleep(0.1)
+"""
+SWIFT_SHAPE_UPDATE_MARKER = "Swift 1.1.0 browser bundle has no shape_update handler"
+SWIFT_SHAPE_UPDATE_OLD = """        if shape._changed:
+            shape._changed = False
+            id = self.swift_objects.index(shape)
+            self._send_socket("shape_update", [id, shape.to_dict()])
+"""
+SWIFT_SHAPE_UPDATE_NEW = """        if shape._changed:
+            shape._changed = False
+            # Swift 1.1.0 browser bundle has no shape_update handler.
+            # Pose updates are sent below through shape_poses during render.
+"""
+SWIFT_HEADLESS_CLOSE_MARKER = 'hasattr(self, "server")'
+SWIFT_STOP_THREADS_OLD = """    def _stop_threads(self):
+        self._run_thread = False
+        if not self.headless:
+            self.socket.join(1)
+        if not self._dev:
+            self.server.join(1)
+"""
+SWIFT_STOP_THREADS_NEW = """    def _stop_threads(self):
+        self._run_thread = False
+        if not self.headless and hasattr(self, "socket"):
+            self.socket.join(1)
+        if not self.headless and not self._dev and hasattr(self, "server"):
+            self.server.join(1)
+"""
+SWIFT_CANVAS_CHUNK_RELATIVE = Path("swift") / "out" / "_next" / "static" / "chunks" / "pages"
+SWIFT_CANVAS_FIXED = "preserveDrawingBuffer:!0"
+SWIFT_CANVAS_OLD = "gl:{antialias:!0}"
+SWIFT_CANVAS_NEW = "gl:{antialias:!0,preserveDrawingBuffer:!0}"
 
 
 @dataclass
@@ -63,6 +184,14 @@ def _site_path_candidates(relative_path: Path) -> list[Path]:
 def _first_site_path(relative_path: Path) -> Path | None:
     candidates = _site_path_candidates(relative_path)
     return candidates[0] if candidates else None
+
+
+def _swift_canvas_chunk_path() -> Path | None:
+    for chunk_dir in _site_path_candidates(SWIFT_CANVAS_CHUNK_RELATIVE):
+        candidates = sorted(chunk_dir.glob("index-*.js"))
+        if candidates:
+            return candidates[0]
+    return None
 
 
 def _backup_file(path: Path) -> Path:
@@ -140,6 +269,171 @@ def check_swift_route(patch: bool = False) -> DoctorResult:
     _backup_file(path)
     _write_text(path, text.replace(SWIFT_ROUTE_OLD, SWIFT_ROUTE_NEW, 1))
     return DoctorResult("SwiftRoute.py", "PATCHED", f"Applied Windows path fix in {path}.")
+
+
+def check_swift_connect_timeout(patch: bool = False) -> DoctorResult:
+    path = _first_site_path(SWIFT_ROUTE_RELATIVE)
+    if path is None:
+        return DoctorResult("Swift connect timeout", "SKIP", "Could not find swift/SwiftRoute.py in this Python environment.")
+
+    text = _read_text(path)
+    if SWIFT_CONNECT_TIMEOUT_NEW in text:
+        return DoctorResult("Swift connect timeout", "OK", f"Swift browser connection timeout is configurable in {path}.")
+
+    if SWIFT_CONNECT_TIMEOUT_OLD not in text:
+        return DoctorResult("Swift connect timeout", "WARN", f"Could not recognise Swift's browser connection timeout in {path}; leaving it unchanged.")
+
+    if not patch:
+        return DoctorResult("Swift connect timeout", "ISSUE", f"Swift browser connection timeout is short in {path}. Run again with --patch to make it configurable.")
+
+    _backup_file(path)
+    _write_text(path, text.replace(SWIFT_CONNECT_TIMEOUT_OLD, SWIFT_CONNECT_TIMEOUT_NEW, 1))
+    return DoctorResult("Swift connect timeout", "PATCHED", f"Made Swift browser connection timeout configurable in {path}.")
+
+
+def check_swift_json_serialisation(patch: bool = False) -> DoctorResult:
+    path = _first_site_path(SWIFT_ROUTE_RELATIVE)
+    if path is None:
+        return DoctorResult("Swift JSON", "SKIP", "Could not find swift/SwiftRoute.py in this Python environment.")
+
+    text = _read_text(path)
+    if SWIFT_ROUTE_JSON_DEFAULT_MARKER in text and SWIFT_ROUTE_JSON_DUMPS_NEW in text:
+        return DoctorResult("Swift JSON", "OK", f"Swift JSON serialisation fix is already present in {path}.")
+
+    if SWIFT_ROUTE_JSON_DEFAULT_ANCHOR not in text or SWIFT_ROUTE_JSON_DUMPS_OLD not in text:
+        return DoctorResult("Swift JSON", "WARN", f"Could not recognise Swift's JSON send path in {path}; leaving it unchanged.")
+
+    if not patch:
+        return DoctorResult("Swift JSON", "ISSUE", f"Swift may fail to send NumPy scalar values to the browser in {path}. Run again with --patch to add a safe JSON encoder.")
+
+    patched = text.replace(
+        SWIFT_ROUTE_JSON_DEFAULT_ANCHOR,
+        SWIFT_ROUTE_JSON_DEFAULT_ANCHOR + SWIFT_ROUTE_JSON_DEFAULT_BLOCK,
+        1,
+    )
+    patched = patched.replace(SWIFT_ROUTE_JSON_DUMPS_OLD, SWIFT_ROUTE_JSON_DUMPS_NEW)
+    _backup_file(path)
+    _write_text(path, patched)
+    return DoctorResult("Swift JSON", "PATCHED", f"Added safe Swift JSON serialisation in {path}.")
+
+
+def check_swift_http_reset(patch: bool = False) -> DoctorResult:
+    path = _first_site_path(SWIFT_ROUTE_RELATIVE)
+    if path is None:
+        return DoctorResult("Swift HTTP reset", "SKIP", "Could not find swift/SwiftRoute.py in this Python environment.")
+
+    text = _read_text(path)
+    if SWIFT_HTTP_RESET_MARKER in text:
+        return DoctorResult("Swift HTTP reset", "OK", f"Swift HTTP reset handling is already present in {path}.")
+
+    if SWIFT_HTTP_HANDLER_OLD not in text:
+        return DoctorResult("Swift HTTP reset", "WARN", f"Could not recognise Swift's HTTP request handler in {path}; leaving it unchanged.")
+
+    if not patch:
+        return DoctorResult("Swift HTTP reset", "ISSUE", f"Swift may print HTTP ConnectionResetError noise during browser shutdown in {path}. Run again with --patch to suppress expected reset errors.")
+
+    _backup_file(path)
+    _write_text(path, text.replace(SWIFT_HTTP_HANDLER_OLD, SWIFT_HTTP_HANDLER_NEW, 1))
+    return DoctorResult("Swift HTTP reset", "PATCHED", f"Suppressed expected Swift HTTP reset errors in {path}.")
+
+
+def check_swift_canvas_buffer(patch: bool = False) -> DoctorResult:
+    path = _swift_canvas_chunk_path()
+    if path is None:
+        return DoctorResult("Swift canvas", "SKIP", "Could not find Swift's bundled browser canvas script in this Python environment.")
+
+    text = _read_text(path)
+    if SWIFT_CANVAS_FIXED in text:
+        return DoctorResult("Swift canvas", "OK", f"Swift canvas readback support is already present in {path}.")
+
+    if SWIFT_CANVAS_OLD not in text:
+        return DoctorResult("Swift canvas", "WARN", f"Could not recognise Swift's canvas renderer options in {path}; leaving it unchanged.")
+
+    if not patch:
+        return DoctorResult("Swift canvas", "ISSUE", f"Swift canvas readback may be unreliable in {path}. Run again with --patch to preserve the WebGL drawing buffer.")
+
+    _backup_file(path)
+    _write_text(path, text.replace(SWIFT_CANVAS_OLD, SWIFT_CANVAS_NEW, 1))
+    return DoctorResult("Swift canvas", "PATCHED", f"Enabled Swift WebGL drawing-buffer preservation in {path}.")
+
+
+def check_swift_headless_close(patch: bool = False) -> DoctorResult:
+    path = _first_site_path(SWIFT_RELATIVE)
+    if path is None:
+        return DoctorResult("Swift headless close", "SKIP", "Could not find swift/Swift.py in this Python environment.")
+
+    text = _read_text(path)
+    if SWIFT_HEADLESS_CLOSE_MARKER in text:
+        return DoctorResult("Swift headless close", "OK", f"Swift headless close fix is already present in {path}.")
+
+    if SWIFT_STOP_THREADS_OLD not in text:
+        return DoctorResult("Swift headless close", "WARN", f"Could not recognise Swift's _stop_threads block in {path}; leaving it unchanged.")
+
+    if not patch:
+        return DoctorResult("Swift headless close", "ISSUE", f"Swift headless close may fail in {path}. Run again with --patch to guard missing browser threads.")
+
+    _backup_file(path)
+    _write_text(path, text.replace(SWIFT_STOP_THREADS_OLD, SWIFT_STOP_THREADS_NEW, 1))
+    return DoctorResult("Swift headless close", "PATCHED", f"Guarded missing Swift browser threads in {path}.")
+
+
+def check_swift_shape_update(patch: bool = False) -> DoctorResult:
+    path = _first_site_path(SWIFT_RELATIVE)
+    if path is None:
+        return DoctorResult("Swift shape update", "SKIP", "Could not find swift/Swift.py in this Python environment.")
+
+    chunk_path = _swift_canvas_chunk_path()
+    if chunk_path is not None and "shape_update" in _read_text(chunk_path):
+        return DoctorResult("Swift shape update", "OK", f"Swift browser bundle already supports shape_update in {chunk_path}.")
+
+    text = _read_text(path)
+    if SWIFT_SHAPE_UPDATE_MARKER in text:
+        return DoctorResult("Swift shape update", "OK", f"Unsupported Swift shape_update sends are already disabled in {path}.")
+
+    if SWIFT_SHAPE_UPDATE_OLD not in text:
+        return DoctorResult("Swift shape update", "WARN", f"Could not recognise Swift's shape_update send block in {path}; leaving it unchanged.")
+
+    if not patch:
+        return DoctorResult("Swift shape update", "ISSUE", f"Swift browser bundle does not handle shape_update messages from {path}. Run again with --patch to disable that unsupported send path.")
+
+    _backup_file(path)
+    _write_text(path, text.replace(SWIFT_SHAPE_UPDATE_OLD, SWIFT_SHAPE_UPDATE_NEW, 1))
+    return DoctorResult("Swift shape update", "PATCHED", f"Disabled unsupported Swift shape_update sends in {path}.")
+
+
+def check_swift_socket_timeouts(patch: bool = False) -> DoctorResult:
+    path = _first_site_path(SWIFT_RELATIVE)
+    if path is None:
+        return DoctorResult("Swift.py", "SKIP", "Could not find swift/Swift.py in this Python environment.")
+
+    text = _read_text(path)
+    if SWIFT_TIMEOUT_MARKER in text:
+        return DoctorResult("Swift.py", "OK", f"Swift socket timeout patch is already present in {path}.")
+
+    required_snippets = [
+        SWIFT_SEND_SOCKET_OLD,
+        SWIFT_SHAPE_MOUNT_OLD,
+        SWIFT_ROBOT_MOUNT_OLD,
+    ]
+    missing_snippets = [snippet for snippet in required_snippets if snippet not in text]
+    if SWIFT_QUEUE_IMPORT_OLD not in text and SWIFT_QUEUE_IMPORT_NEW not in text:
+        missing_snippets.append(SWIFT_QUEUE_IMPORT_OLD)
+    if missing_snippets:
+        return DoctorResult("Swift.py", "WARN", f"Could not recognise the expected Swift socket code in {path}; leaving it unchanged.")
+
+    if not patch:
+        return DoctorResult("Swift.py", "ISSUE", f"Swift browser communication can hang indefinitely in {path}. Run again with --patch to add socket and mount timeouts.")
+
+    patched = text
+    if SWIFT_QUEUE_IMPORT_NEW not in patched:
+        patched = patched.replace(SWIFT_QUEUE_IMPORT_OLD, SWIFT_QUEUE_IMPORT_NEW, 1)
+    patched = patched.replace(SWIFT_SEND_SOCKET_OLD, SWIFT_SEND_SOCKET_NEW, 1)
+    patched = patched.replace(SWIFT_SHAPE_MOUNT_OLD, SWIFT_SHAPE_MOUNT_NEW, 1)
+    patched = patched.replace(SWIFT_ROBOT_MOUNT_OLD, SWIFT_ROBOT_MOUNT_NEW, 1)
+
+    _backup_file(path)
+    _write_text(path, patched)
+    return DoctorResult("Swift.py", "PATCHED", f"Added Swift socket and mount timeouts in {path}.")
 
 
 def _find_robot_plot_options_block(lines: list[str]) -> tuple[int, int] | None:
@@ -245,12 +539,29 @@ def check_machinevision_sources(patch: bool = False) -> DoctorResult:
     return DoctorResult("MachineVision Sources.py", "PATCHED", f"Updated NumPy import in {path}.")
 
 
-def run_checks(patch: bool = False) -> list[DoctorResult]:
-    return [
+COMMON_CHECKS_DESCRIPTION = "common Windows/lab setup fixes"
+ADVANCED_SWIFT_CAPTURE_DESCRIPTION = "advanced Swift capture/headless fixes"
+
+
+def run_checks(patch: bool = False, advanced_swift_capture: bool = False) -> list[DoctorResult]:
+    common_results = [
         check_websockets(patch=patch),
         check_swift_route(patch=patch),
+        check_swift_connect_timeout(patch=patch),
+        check_swift_http_reset(patch=patch),
+        check_swift_socket_timeouts(patch=patch),
         check_robot_plot(patch=patch),
         check_machinevision_sources(patch=patch),
+    ]
+
+    if not advanced_swift_capture:
+        return common_results
+
+    return common_results + [
+        check_swift_json_serialisation(patch=patch),
+        check_swift_canvas_buffer(patch=patch),
+        check_swift_headless_close(patch=patch),
+        check_swift_shape_update(patch=patch),
     ]
 
 
@@ -267,21 +578,47 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--patch",
         action="store_true",
-        help="Apply known safe patches to the active Python environment. Without this flag, only report issues.",
+        help="Apply common Windows/lab setup patches to the active Python environment. Without this flag, only report issues.",
+    )
+    parser.add_argument(
+        "--patch-advanced-swift-capture",
+        action="store_true",
+        help=(
+            "Apply common patches plus additional Swift patches for browser screenshot, "
+            "headless, and video-capture workflows."
+        ),
     )
     args = parser.parse_args(argv)
+    patch = args.patch or args.patch_advanced_swift_capture
+    advanced_swift_capture = args.patch_advanced_swift_capture
 
     print("IR Support doctor")
     print(f"Python: {sys.executable}")
-    print(f"Mode: {'patch' if args.patch else 'check only'}")
+    if args.patch_advanced_swift_capture:
+        mode = f"patch ({COMMON_CHECKS_DESCRIPTION} + {ADVANCED_SWIFT_CAPTURE_DESCRIPTION})"
+    elif args.patch:
+        mode = f"patch ({COMMON_CHECKS_DESCRIPTION})"
+    else:
+        mode = f"check only ({COMMON_CHECKS_DESCRIPTION})"
+    print(f"Mode: {mode}")
     print()
 
-    results = run_checks(patch=args.patch)
+    results = run_checks(patch=patch, advanced_swift_capture=advanced_swift_capture)
     _print_results(results)
 
-    if not args.patch and any(result.status in {"ISSUE", "WARN"} for result in results):
+    if not patch and any(result.status in {"ISSUE", "WARN"} for result in results):
         print()
         print("Run again with --patch to apply supported fixes, or use the manual instructions on the Canvas FAQ page.")
+        print(
+            "For Swift screenshot, headless browser, or video-capture workflows, "
+            "run with --patch-advanced-swift-capture."
+        )
+    elif not advanced_swift_capture:
+        print()
+        print(
+            "Advanced Swift capture checks were not run. Use --patch-advanced-swift-capture "
+            "if you need Swift screenshot, headless browser, or video-capture support."
+        )
 
     return 0
 

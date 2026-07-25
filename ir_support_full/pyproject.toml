@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ir-support-full"
-version = "0.2.3"
+version = "0.2.4"
 description = "Meta-package that installs ir-support and the optional robot and parts model packs."
 authors = ["41013 Teaching Team <41013@uts.edu.au>"]
 readme = "README.md"
@@ -8,7 +8,7 @@ packages = [{include = "ir_support_full"}]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.13"
-ir-support = ">=1.4.2,<2.0.0"
+ir-support = ">=1.4.3,<2.0.0"
 ir-support-extra-robots = ">=0.2.1,<0.3.0"
 ir-support-extra-parts = ">=0.2.1,<0.3.0"
 
