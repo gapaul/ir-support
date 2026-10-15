@@ -136,7 +136,7 @@ class DHRobot3D(rtb.DHRobot, ABC):
         """
         Overload `=` operator so the object can update its 3D model whenever a new joint state is assigned
         """
-        if name == 'q' and hasattr(self, 'q') or name == 'base' and hasattr(self, 'base'):
-            self._update_3dmodel()  # Update the 3D model before setting the attribute
-        super().__setattr__(name, value)  # Call the base class method to set the attribute
+        super().__setattr__(name, value)  # Set the new state before updating the meshes
+        if name in {'q', 'base'} and hasattr(self, 'links_3d'):
+            self._update_3dmodel()
 

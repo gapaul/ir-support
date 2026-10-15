@@ -67,11 +67,6 @@ class UTSMeshRobot(DHRobot3D):
         self.q = self.home_q.copy()
         self._update_3dmodel()
 
-    def __setattr__(self, name, value):
-        super().__setattr__(name, value)
-        if name in {"q", "base"} and hasattr(self, "links_3d"):
-            self._update_3dmodel()
-
     @staticmethod
     def _link_frame_transforms(links, q):
         transforms = [np.eye(4)]
